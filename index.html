@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momen Seru Bersama Teman - Simpan Kenangan Indah</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ff6b6b;
+        --secondary: #4ecdc4;
+        --accent: #ffd166;
+        --light: #f7fff7;
+        --dark: #1a535c;
+        --success: #06d6a0;
+        --warning: #ffd166;
+        --danger: #ef476f;
+        --purple: #6a67ce;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary) !important;
+        font-size: 1.2rem;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--purple) 100%
+        );
+        color: white;
+        padding: 3rem 0;
+        border-radius: 0 0 30px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-title {
+        font-weight: 800;
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        margin-top: -2rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      .stats-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        margin-bottom: 1rem;
+        border: 2px solid transparent;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+
+      .stats-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
+
+      .stats-label {
+        color: #6c757d;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+        font-size: 1.5rem;
+      }
+
+      /* Tabs */
+      .nav-tabs {
+        border-bottom: 2px solid #e9ecef;
+        margin-bottom: 1.5rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .nav-tabs .nav-link {
+        border: none;
+        color: #6c757d;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        border-radius: 10px 10px 0 0;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+        min-width: auto;
+      }
+
+      .nav-tabs .nav-link.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* Moment Cards */
+      .moment-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+        border: 1px solid #f1f3f4;
+      }
+
+      .moment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .moment-header {
+        padding: 1.25rem;
+        background: rgba(255, 107, 107, 0.05);
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .moment-header:hover {
+        background: rgba(255, 107, 107, 0.1);
+      }
+
+      .moment-title {
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .moment-meta {
+        color: #6c757d;
+        font-size: 0.8rem;
+      }
+
+      .moment-content {
+        padding: 1.25rem;
+      }
+
+      /* Buttons */
+      .btn {
+        border-radius: 50px;
+        padding: 0.6rem 1.25rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background: #ff5252;
+        transform: translateY(-2px);
+      }
+
+      .btn-success {
+        background: var(--success);
+        border: none;
+      }
+
+      .btn-light {
+        background: white;
+        border: none;
+        color: var(--dark);
+      }
+
+      .btn-sm {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-height: 36px;
+      }
+
+      /* Floating Button */
+      .floating-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+
+      .floating-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(255, 209, 102, 0.7);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+        }
+        50% {
+          box-shadow: 0 5px 30px rgba(255, 209, 102, 0.8);
+        }
+        100% {
+          box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+        }
+      }
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 2.5rem 1rem;
+        color: #6c757d;
+      }
+
+      .empty-state i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+
+      .empty-state h3 {
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+        font-size: 1.25rem;
+      }
+
+      /* Modal */
+      .modal-content {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .modal-header {
+        padding: 1.25rem;
+      }
+
+      .modal-body {
+        padding: 1.25rem;
+      }
+
+      .modal-footer {
+        padding: 1rem 1.25rem;
+      }
+
+      /* Form Controls */
+      .form-control,
+      .form-select {
+        border-radius: 10px;
+        padding: 0.75rem;
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .form-control:focus,
+      .form-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+      }
+
+      /* Image Upload */
+      .image-upload-container {
+        border: 2px dashed var(--secondary);
+        border-radius: 10px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        background: rgba(78, 205, 196, 0.05);
+      }
+
+      .image-upload-container:hover {
+        border-color: var(--primary);
+        background: rgba(255, 107, 107, 0.05);
+      }
+
+      .image-preview {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 10px;
+        margin: 0.75rem auto;
+        display: block;
+        border: 2px solid var(--secondary);
+      }
+
+      .item-image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 0.75rem;
+        border: 2px solid var(--secondary);
+        cursor: pointer;
+      }
+
+      .item-image-placeholder {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        border-radius: 8px;
+        margin-right: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+        border: 2px dashed var(--secondary);
+      }
+
+      /* Photo Gallery */
+      .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .photo-thumbnail {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .photo-thumbnail:hover {
+        transform: scale(1.1);
+        border-color: var(--primary);
+      }
+
+      /* Memory Gallery */
+      .memory-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .memory-photo {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent);
+      }
+
+      .memory-photo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      /* Badge styles */
+      .badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      /* Confetti */
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: var(--primary);
+        top: -10px;
+        border-radius: 50%;
+        animation: confetti-fall 5s linear forwards;
+        z-index: 10000;
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Mobile-specific improvements */
+      @media (max-width: 576px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .hero-title {
+          font-size: 1.75rem;
+        }
+
+        .hero-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .stats-number {
+          font-size: 1.75rem;
+        }
+
+        .section-title {
+          font-size: 1.25rem;
+        }
+
+        .moment-title {
+          font-size: 1rem;
+        }
+
+        .btn {
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+
+        .btn-group .btn {
+          width: auto;
+          margin-bottom: 0;
+        }
+
+        .d-flex.justify-content-between {
+          flex-direction: column;
+        }
+
+        .d-flex.justify-content-between > * {
+          margin-bottom: 0.75rem;
+        }
+
+        .d-flex.justify-content-between > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      /* Friend List */
+      .friend-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .friend-tag {
+        background: var(--secondary);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .friend-tag i {
+        margin-left: 0.25rem;
+        cursor: pointer;
+      }
+
+      /* Swipe Gallery */
+      .swipe-gallery {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .swipe-gallery-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .swipe-gallery-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .swipe-gallery-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .swipe-gallery-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        z-index: 10;
+      }
+
+      .swipe-gallery-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .swipe-gallery-indicator.active {
+        background-color: white;
+        transform: scale(1.2);
+      }
+
+      .swipe-gallery-nav {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .swipe-gallery:hover .swipe-gallery-nav {
+        opacity: 1;
+      }
+
+      .swipe-gallery-nav.prev {
+        left: 0;
+      }
+
+      .swipe-gallery-nav.next {
+        right: 0;
+      }
+
+      .swipe-gallery-nav-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      /* Mobile swipe gallery improvements */
+      @media (max-width: 576px) {
+        .swipe-gallery {
+          height: 50vh;
+        }
+
+        .swipe-gallery-nav {
+          opacity: 1;
+          width: 40px;
+        }
+
+        .swipe-gallery-nav-icon {
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-heart me-2"></i>Momen Seru Bersama Teman
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#moments">Momen Saya</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#friends">Teman</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center position-relative">
+        <h1 class="hero-title">Simpan Momen Berharga Bersama Teman</h1>
+        <p class="hero-subtitle">
+          Kumpulkan kenangan indah, foto, dan cerita bersama teman-teman
+          terdekatmu
+        </p>
+        <button
+          class="btn btn-light btn-lg"
+          data-bs-toggle="modal"
+          data-bs-target="#addMomentModal"
+        >
+          <i class="fas fa-plus me-2"></i>Buat Momen Baru
+        </button>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-4">
+            <div class="stats-card fade-in">
+              <div class="stats-number" id="totalMoments">0</div>
+              <div class="stats-label">Momen</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stats-card fade-in" style="animation-delay: 0.1s">
+              <div class="stats-number" id="totalFriends">0</div>
+              <div class="stats-label">Teman</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stats-card fade-in" style="animation-delay: 0.2s">
+              <div class="stats-number" id="totalPhotos">0</div>
+              <div class="stats-label">Foto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content" id="moments">
+      <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="moments-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#moments-content"
+              type="button"
+              role="tab"
+            >
+              <i class="fas fa-images me-2"></i>Momen
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="friends-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#friends-content"
+              type="button"
+              role="tab"
+            >
+              <i class="fas fa-users me-2"></i>Teman
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <!-- Moments Tab -->
+          <div
+            class="tab-pane fade show active"
+            id="moments-content"
+            role="tabpanel"
+          >
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="section-title mb-0">Daftar Momen Saya</h2>
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-primary btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="fas fa-filter me-1"></i>Filter
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item filter-option"
+                      data-filter="all"
+                      href="#"
+                      >Semua</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item filter-option"
+                      data-filter="recent"
+                      href="#"
+                      >Terbaru</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item filter-option"
+                      data-filter="favorite"
+                      href="#"
+                      >Favorit</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="momentsContainer">
+              <!-- Moment items will be dynamically added here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+              <i class="fas fa-images"></i>
+              <h3>Belum Ada Momen</h3>
+              <p>Mulai buat momen berharga bersama teman-temanmu!</p>
+              <button
+                class="btn btn-primary mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#addMomentModal"
+              >
+                <i class="fas fa-plus me-2"></i>Buat Momen Pertama
+              </button>
+            </div>
+          </div>
+
+          <!-- Friends Tab -->
+          <div class="tab-pane fade" id="friends-content" role="tabpanel">
+            <h2 class="section-title">Daftar Teman</h2>
+
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Tambah Teman Baru</h5>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="friendName"
+                    placeholder="Nama teman"
+                  />
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    id="addFriendBtn"
+                  >
+                    <i class="fas fa-plus me-1"></i>Tambah
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-0">
+                <div class="friends-list" id="friendsList">
+                  <!-- Friend items will be dynamically added here -->
+                </div>
+
+                <div id="emptyFriendsState" class="empty-state py-4">
+                  <i class="fas fa-user-friends"></i>
+                  <h5>Belum Ada Teman</h5>
+                  <p>Tambahkan teman untuk mulai berbagi momen!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>
+          &copy; 2023 Momen Seru Bersama Teman. Simpan kenangan indah bersama
+          teman-temanmu!
+        </p>
+      </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div
+      class="floating-btn"
+      data-bs-toggle="modal"
+      data-bs-target="#addMomentModal"
+    >
+      <i class="fas fa-plus"></i>
+    </div>
+
+    <!-- Add Moment Modal -->
+    <div class="modal fade" id="addMomentModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Buat Momen Baru</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addMomentForm">
+              <div class="mb-3">
+                <label for="momentName" class="form-label">Nama Momen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="momentName"
+                  placeholder="Contoh: Liburan ke Bali"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="momentDate" class="form-label">Tanggal Momen</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="momentDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="momentLocation" class="form-label"
+                  >Lokasi (Opsional)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="momentLocation"
+                  placeholder="Contoh: Pantai Kuta, Bali"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Teman yang Terlibat</label>
+                <div id="friendsChecklist" class="friends-checklist">
+                  <!-- Friends checklist will be dynamically added here -->
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="momentDescription" class="form-label"
+                  >Deskripsi Momen (Opsional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="momentDescription"
+                  rows="3"
+                  placeholder="Ceritakan momen spesial ini..."
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Foto Momen (Opsional)</label>
+                <div
+                  class="image-upload-container"
+                  id="momentImageUploadContainer"
+                >
+                  <i class="fas fa-cloud-upload-alt fa-2x mb-3 text-muted"></i>
+                  <p class="mb-2">Klik atau drag & drop untuk upload foto</p>
+                  <small class="text-muted"
+                    >Format: JPG, PNG, GIF (Max 2MB)</small
+                  >
+                  <input
+                    type="file"
+                    id="momentImages"
+                    accept="image/*"
+                    multiple
+                    class="d-none"
+                  />
+                </div>
+                <div id="momentImagesPreview" class="memory-gallery"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-primary" id="saveMomentBtn">
+              Simpan Momen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-5">
+            <i
+              class="fas fa-check-circle text-success mb-3"
+              style="font-size: 4rem"
+            ></i>
+            <h3 class="mb-3">Berhasil!</h3>
+            <p id="successMessage">Momen berhasil ditambahkan!</p>
+            <button
+              type="button"
+              class="btn btn-primary mt-3"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swipe Gallery Modal -->
+    <div class="modal fade" id="swipeGalleryModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Foto Momen</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="swipe-gallery" id="swipeGallery">
+              <div class="swipe-gallery-container" id="swipeGalleryContainer">
+                <!-- Slides will be added dynamically -->
+              </div>
+              <div class="swipe-gallery-indicators" id="swipeGalleryIndicators">
+                <!-- Indicators will be added dynamically -->
+              </div>
+              <div class="swipe-gallery-nav prev" onclick="swipeGalleryPrev()">
+                <div class="swipe-gallery-nav-icon">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+              </div>
+              <div class="swipe-gallery-nav next" onclick="swipeGalleryNext()">
+                <div class="swipe-gallery-nav-icon">
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Data storage
+      let moments = JSON.parse(localStorage.getItem("moments")) || [];
+      let friends = JSON.parse(localStorage.getItem("friends")) || [];
+      let currentSwipeGalleryData = null;
+
+      // DOM Elements
+      const momentsContainer = document.getElementById("momentsContainer");
+      const emptyState = document.getElementById("emptyState");
+      const friendsList = document.getElementById("friendsList");
+      const emptyFriendsState = document.getElementById("emptyFriendsState");
+      const addMomentForm = document.getElementById("addMomentForm");
+      const saveMomentBtn = document.getElementById("saveMomentBtn");
+      const addFriendBtn = document.getElementById("addFriendBtn");
+      const friendNameInput = document.getElementById("friendName");
+      const friendsChecklist = document.getElementById("friendsChecklist");
+      const totalMomentsEl = document.getElementById("totalMoments");
+      const totalFriendsEl = document.getElementById("totalFriends");
+      const totalPhotosEl = document.getElementById("totalPhotos");
+      const momentImagesInput = document.getElementById("momentImages");
+      const momentImagesPreview = document.getElementById(
+        "momentImagesPreview"
+      );
+      const momentImageUploadContainer = document.getElementById(
+        "momentImageUploadContainer"
+      );
+      const swipeGalleryContainer = document.getElementById(
+        "swipeGalleryContainer"
+      );
+      const swipeGalleryIndicators = document.getElementById(
+        "swipeGalleryIndicators"
+      );
+
+      // Initialize the app
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMoments();
+        renderFriends();
+        updateStats();
+        setupEventListeners();
+        setupImageUpload();
+        setupSwipeGallery();
+      });
+
+      // Setup event listeners
+      function setupEventListeners() {
+        // Save moment button
+        saveMomentBtn.addEventListener("click", addMoment);
+
+        // Add friend button
+        addFriendBtn.addEventListener("click", addFriend);
+
+        // Filter options
+        document.querySelectorAll(".filter-option").forEach((option) => {
+          option.addEventListener("click", function (e) {
+            e.preventDefault();
+            const filter = this.getAttribute("data-filter");
+            filterMoments(filter);
+          });
+        });
+      }
+
+      // Setup image upload functionality
+      function setupImageUpload() {
+        // Click to upload
+        momentImageUploadContainer.addEventListener("click", function () {
+          momentImagesInput.click();
+        });
+
+        // File selection
+        momentImagesInput.addEventListener("change", function (e) {
+          handleImagesUpload(e.target.files);
+        });
+
+        // Drag and drop
+        momentImageUploadContainer.addEventListener("dragover", function (e) {
+          e.preventDefault();
+          this.classList.add("dragover");
+        });
+
+        momentImageUploadContainer.addEventListener("dragleave", function (e) {
+          e.preventDefault();
+          this.classList.remove("dragover");
+        });
+
+        momentImageUploadContainer.addEventListener("drop", function (e) {
+          e.preventDefault();
+          this.classList.remove("dragover");
+          if (e.dataTransfer.files.length) {
+            handleImagesUpload(e.dataTransfer.files);
+          }
+        });
+      }
+
+      // Setup swipe gallery functionality
+      function setupSwipeGallery() {
+        const swipeGallery = document.getElementById("swipeGallery");
+        let startX = 0;
+        let endX = 0;
+
+        swipeGallery.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].clientX;
+        });
+
+        swipeGallery.addEventListener("touchmove", (e) => {
+          endX = e.touches[0].clientX;
+        });
+
+        swipeGallery.addEventListener("touchend", () => {
+          const diff = startX - endX;
+          const minSwipeDistance = 50;
+
+          if (Math.abs(diff) > minSwipeDistance) {
+            if (diff > 0) {
+              // Swipe left - next photo
+              swipeGalleryNext();
+            } else {
+              // Swipe right - previous photo
+              swipeGalleryPrev();
+            }
+          }
+        });
+      }
+
+      // Handle multiple images upload
+      function handleImagesUpload(files) {
+        if (!files || files.length === 0) return;
+
+        momentImagesPreview.innerHTML = "";
+
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          if (!file.type.startsWith("image/")) {
+            alert("Silakan pilih file gambar yang valid!");
+            continue;
+          }
+
+          if (file.size > 2 * 1024 * 1024) {
+            alert("Ukuran file maksimal 2MB!");
+            continue;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.className = "memory-photo";
+            img.onclick = function () {
+              openSwipeGallery([e.target.result]);
+            };
+            momentImagesPreview.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      // Add a new moment
+      function addMoment() {
+        const name = document.getElementById("momentName").value;
+        const date = document.getElementById("momentDate").value;
+        const location = document.getElementById("momentLocation").value;
+        const description = document.getElementById("momentDescription").value;
+
+        if (!name || !date) {
+          alert("Nama dan tanggal momen harus diisi!");
+          return;
+        }
+
+        // Get selected friends
+        const selectedFriends = [];
+        document
+          .querySelectorAll(".friend-checkbox:checked")
+          .forEach((checkbox) => {
+            selectedFriends.push(parseInt(checkbox.value));
+          });
+
+        // Get uploaded images
+        const images = [];
+        momentImagesPreview.querySelectorAll("img").forEach((img) => {
+          images.push(img.src);
+        });
+
+        const newMoment = {
+          id: Date.now(),
+          name,
+          date,
+          location,
+          description,
+          friends: selectedFriends,
+          images: images,
+          favorite: false,
+          createdAt: new Date().toISOString(),
+        };
+
+        moments.push(newMoment);
+        saveToLocalStorage();
+        renderMoments();
+        updateStats();
+
+        // Show success message
+        document.getElementById("successMessage").textContent =
+          "Momen berhasil ditambahkan!";
+        const successModal = new bootstrap.Modal(
+          document.getElementById("successModal")
+        );
+        successModal.show();
+
+        // Reset form
+        addMomentForm.reset();
+        momentImagesPreview.innerHTML = "";
+        const addMomentModal = bootstrap.Modal.getInstance(
+          document.getElementById("addMomentModal")
+        );
+        addMomentModal.hide();
+
+        // Add confetti animation
+        createConfetti();
+      }
+
+      // Add a new friend
+      function addFriend() {
+        const name = friendNameInput.value.trim();
+
+        if (!name) {
+          alert("Nama teman harus diisi!");
+          return;
+        }
+
+        // Check if friend already exists
+        if (
+          friends.some(
+            (friend) => friend.name.toLowerCase() === name.toLowerCase()
+          )
+        ) {
+          alert("Teman dengan nama ini sudah ada!");
+          return;
+        }
+
+        const newFriend = {
+          id: Date.now(),
+          name,
+          addedAt: new Date().toISOString(),
+        };
+
+        friends.push(newFriend);
+        saveToLocalStorage();
+        renderFriends();
+        updateStats();
+        renderFriendsChecklist();
+
+        // Clear input
+        friendNameInput.value = "";
+
+        // Show success message
+        document.getElementById("successMessage").textContent =
+          "Teman berhasil ditambahkan!";
+        const successModal = new bootstrap.Modal(
+          document.getElementById("successModal")
+        );
+        successModal.show();
+      }
+
+      // Delete a moment
+      function deleteMoment(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus momen ini?")) {
+          moments = moments.filter((m) => m.id !== id);
+          saveToLocalStorage();
+          renderMoments();
+          updateStats();
+        }
+      }
+
+      // Delete a friend
+      function deleteFriend(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus teman ini?")) {
+          friends = friends.filter((f) => f.id !== id);
+          saveToLocalStorage();
+          renderFriends();
+          updateStats();
+          renderFriendsChecklist();
+        }
+      }
+
+      // Toggle favorite status
+      function toggleFavorite(id) {
+        const moment = moments.find((m) => m.id === id);
+        if (moment) {
+          moment.favorite = !moment.favorite;
+          saveToLocalStorage();
+          renderMoments();
+        }
+      }
+
+      // Toggle moment details visibility
+      function toggleMomentDetails(id) {
+        const detailsContainer = document.getElementById(`details-${id}`);
+        const toggleIcon = document.getElementById(`toggle-icon-${id}`);
+
+        if (detailsContainer.style.display === "none") {
+          detailsContainer.style.display = "block";
+          toggleIcon.className = "fas fa-chevron-up";
+        } else {
+          detailsContainer.style.display = "none";
+          toggleIcon.className = "fas fa-chevron-down";
+        }
+      }
+
+      // Open swipe gallery modal
+      function openSwipeGallery(photos, startIndex = 0) {
+        currentSwipeGalleryData = {
+          photos: photos,
+          currentIndex: startIndex,
+        };
+
+        renderSwipeGallery();
+        const modal = new bootstrap.Modal(
+          document.getElementById("swipeGalleryModal")
+        );
+        modal.show();
+      }
+
+      // Render swipe gallery
+      function renderSwipeGallery() {
+        if (!currentSwipeGalleryData) return;
+
+        const { photos, currentIndex } = currentSwipeGalleryData;
+
+        // Clear previous content
+        swipeGalleryContainer.innerHTML = "";
+        swipeGalleryIndicators.innerHTML = "";
+
+        // Add slides
+        photos.forEach((photo, index) => {
+          const slide = document.createElement("div");
+          slide.className = "swipe-gallery-slide";
+          slide.innerHTML = `<img src="${photo}" alt="Foto ${index + 1}">`;
+          swipeGalleryContainer.appendChild(slide);
+
+          // Add indicator
+          const indicator = document.createElement("div");
+          indicator.className = `swipe-gallery-indicator ${
+            index === currentIndex ? "active" : ""
+          }`;
+          indicator.setAttribute("data-index", index);
+          indicator.onclick = () => goToSlide(index);
+          swipeGalleryIndicators.appendChild(indicator);
+        });
+
+        // Update position
+        updateSwipeGalleryPosition();
+      }
+
+      // Update swipe gallery position
+      function updateSwipeGalleryPosition() {
+        if (!currentSwipeGalleryData) return;
+        swipeGalleryContainer.style.transform = `translateX(-${
+          currentSwipeGalleryData.currentIndex * 100
+        }%)`;
+      }
+
+      // Go to specific slide
+      function goToSlide(index) {
+        if (!currentSwipeGalleryData) return;
+        currentSwipeGalleryData.currentIndex = index;
+        updateSwipeGalleryPosition();
+        updateSwipeGalleryIndicators();
+      }
+
+      // Update swipe gallery indicators
+      function updateSwipeGalleryIndicators() {
+        if (!currentSwipeGalleryData) return;
+        const indicators = document.querySelectorAll(
+          ".swipe-gallery-indicator"
+        );
+        indicators.forEach((indicator, index) => {
+          if (index === currentSwipeGalleryData.currentIndex) {
+            indicator.classList.add("active");
+          } else {
+            indicator.classList.remove("active");
+          }
+        });
+      }
+
+      // Swipe gallery next
+      function swipeGalleryNext() {
+        if (!currentSwipeGalleryData) return;
+        const nextIndex =
+          (currentSwipeGalleryData.currentIndex + 1) %
+          currentSwipeGalleryData.photos.length;
+        goToSlide(nextIndex);
+      }
+
+      // Swipe gallery previous
+      function swipeGalleryPrev() {
+        if (!currentSwipeGalleryData) return;
+        const prevIndex =
+          currentSwipeGalleryData.currentIndex === 0
+            ? currentSwipeGalleryData.photos.length - 1
+            : currentSwipeGalleryData.currentIndex - 1;
+        goToSlide(prevIndex);
+      }
+
+      // Render moments
+      function renderMoments(filter = "all") {
+        let filteredMoments = moments;
+
+        if (filter === "recent") {
+          filteredMoments = [...moments].sort(
+            (a, b) => new Date(b.date) - new Date(a.date)
+          );
+        } else if (filter === "favorite") {
+          filteredMoments = moments.filter((m) => m.favorite);
+        }
+
+        if (filteredMoments.length === 0) {
+          momentsContainer.style.display = "none";
+          emptyState.style.display = "block";
+        } else {
+          momentsContainer.style.display = "block";
+          emptyState.style.display = "none";
+
+          momentsContainer.innerHTML = "";
+
+          filteredMoments.forEach((moment, index) => {
+            const momentCard = document.createElement("div");
+            momentCard.className = "moment-card fade-in";
+            momentCard.style.animationDelay = `${index * 0.1}s`;
+
+            // Format date
+            const date = new Date(moment.date);
+            const formattedDate = `${date
+              .getDate()
+              .toString()
+              .padStart(2, "0")}/${(date.getMonth() + 1)
+              .toString()
+              .padStart(2, "0")}/${date.getFullYear()}`;
+
+            // Get friend names
+            const friendNames = moment.friends.map((friendId) => {
+              const friend = friends.find((f) => f.id === friendId);
+              return friend ? friend.name : "Unknown";
+            });
+
+            momentCard.innerHTML = `
+                        <div class="moment-header" onclick="toggleMomentDetails(${
+                          moment.id
+                        })">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h4 class="moment-title">
+                                        ${moment.name}
+                                        ${
+                                          moment.favorite
+                                            ? '<span class="badge bg-warning ms-2"><i class="fas fa-star me-1"></i>Favorit</span>'
+                                            : ""
+                                        }
+                                    </h4>
+                                    <p class="moment-meta">${formattedDate} ${
+              moment.location ? `• ${moment.location}` : ""
+            }</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i id="toggle-icon-${
+                                      moment.id
+                                    }" class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moment-content" id="details-${
+                          moment.id
+                        }" style="display: none;">
+                            ${
+                              moment.description
+                                ? `<p class="mb-3">${moment.description}</p>`
+                                : ""
+                            }
+                            
+                            <div class="mb-3">
+                                <h6>Teman yang Terlibat:</h6>
+                                <div class="friend-list">
+                                    ${friendNames
+                                      .map(
+                                        (name) =>
+                                          `<span class="friend-tag">${name}</span>`
+                                      )
+                                      .join("")}
+                                </div>
+                            </div>
+                            
+                            ${
+                              moment.images.length > 0
+                                ? `
+                                <div class="mb-3">
+                                    <h6>Foto Momen:</h6>
+                                    <div class="memory-gallery">
+                                        ${moment.images
+                                          .map(
+                                            (img, idx) => `
+                                            <img src="${img}" class="memory-photo" onclick="openSwipeGallery(${JSON.stringify(
+                                              moment.images
+                                            ).replace(
+                                              /"/g,
+                                              "&quot;"
+                                            )}, ${idx})" alt="Foto momen ${
+                                              idx + 1
+                                            }">
+                                        `
+                                          )
+                                          .join("")}
+                                    </div>
+                                </div>
+                            `
+                                : ""
+                            }
+                            
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <button class="btn btn-sm ${
+                                      moment.favorite
+                                        ? "btn-warning"
+                                        : "btn-outline-warning"
+                                    }" onclick="event.stopPropagation(); toggleFavorite(${
+              moment.id
+            })">
+                                        <i class="fas ${
+                                          moment.favorite
+                                            ? "fa-star"
+                                            : "fa-star"
+                                        } me-1"></i>${
+              moment.favorite ? "Favorit" : "Tandai Favorit"
+            }
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="event.stopPropagation(); deleteMoment(${
+                                      moment.id
+                                    })">
+                                        <i class="fas fa-trash me-1"></i>Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+            momentsContainer.appendChild(momentCard);
+          });
+        }
+      }
+
+      // Render friends
+      function renderFriends() {
+        if (friends.length === 0) {
+          friendsList.style.display = "none";
+          emptyFriendsState.style.display = "block";
+        } else {
+          friendsList.style.display = "block";
+          emptyFriendsState.style.display = "none";
+
+          friendsList.innerHTML = "";
+
+          friends.forEach((friend) => {
+            const friendItem = document.createElement("div");
+            friendItem.className = "p-3 border-bottom";
+
+            friendItem.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">${friend.name}</h6>
+                                <small class="text-muted">Ditambahkan: ${new Date(
+                                  friend.addedAt
+                                ).toLocaleDateString("id-ID")}</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteFriend(${
+                              friend.id
+                            })">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+
+            friendsList.appendChild(friendItem);
+          });
+        }
+      }
+
+      // Render friends checklist for moment creation
+      function renderFriendsChecklist() {
+        friendsChecklist.innerHTML = "";
+
+        if (friends.length === 0) {
+          friendsChecklist.innerHTML =
+            '<p class="text-muted">Belum ada teman. Tambahkan teman terlebih dahulu.</p>';
+          return;
+        }
+
+        friends.forEach((friend) => {
+          const checkboxContainer = document.createElement("div");
+          checkboxContainer.className = "form-check";
+
+          checkboxContainer.innerHTML = `
+                    <input class="form-check-input friend-checkbox" type="checkbox" value="${friend.id}" id="friend-${friend.id}">
+                    <label class="form-check-label" for="friend-${friend.id}">
+                        ${friend.name}
+                    </label>
+                `;
+
+          friendsChecklist.appendChild(checkboxContainer);
+        });
+      }
+
+      // Filter moments
+      function filterMoments(filter) {
+        renderMoments(filter);
+      }
+
+      // Update statistics
+      function updateStats() {
+        const totalMoments = moments.length;
+        const totalFriends = friends.length;
+
+        let totalPhotos = 0;
+        moments.forEach((moment) => {
+          totalPhotos += moment.images.length;
+        });
+
+        totalMomentsEl.textContent = totalMoments;
+        totalFriendsEl.textContent = totalFriends;
+        totalPhotosEl.textContent = totalPhotos;
+      }
+
+      // Save to localStorage
+      function saveToLocalStorage() {
+        localStorage.setItem("moments", JSON.stringify(moments));
+        localStorage.setItem("friends", JSON.stringify(friends));
+      }
+
+      // Create confetti animation
+      function createConfetti() {
+        const colors = ["#FF6B6B", "#4ECDC4", "#FFD166", "#06D6A0", "#6A67CE"];
+
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement("div");
+          confetti.className = "confetti";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.width = Math.random() * 10 + 5 + "px";
+          confetti.style.height = Math.random() * 10 + 5 + "px";
+          confetti.style.animationDelay = Math.random() * 5 + "s";
+
+          document.body.appendChild(confetti);
+
+          setTimeout(() => {
+            confetti.remove();
+          }, 5000);
+        }
+      }
+
+      // Initialize friends checklist
+      renderFriendsChecklist();
+    </script>
+  </body>
+</html>
