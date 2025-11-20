@@ -581,22 +581,39 @@
         border-color: var(--primary);
       }
 
-      /* Photo Modal */
+      /* Photo Modal - IMPROVED */
       .photo-modal .modal-dialog {
-        max-width: 90%;
-        max-height: 90vh;
+        max-width: 80%;
+        max-height: 80vh;
+      }
+
+      .photo-modal .modal-content {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .photo-modal .modal-header {
+        background: var(--primary);
+        color: white;
+        border-bottom: none;
       }
 
       .photo-modal .modal-body {
-        padding: 0;
+        padding: 1rem;
         text-align: center;
-        background: #000;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .photo-modal .modal-body img {
         max-width: 100%;
-        max-height: 80vh;
+        max-height: 60vh;
         object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
       /* Edit Button Styles */
@@ -635,6 +652,9 @@
         .btn-group .btn {
           width: auto;
           margin-bottom: 0;
+        }
+        .photo-modal .modal-dialog {
+          max-width: 95%;
         }
       }
 
@@ -841,7 +861,9 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Buat Momen Besar Baru</h5>
+            <h5 class="modal-title" id="momenBesarModalTitle">
+              Buat Momen Besar Baru
+            </h5>
             <button
               type="button"
               class="btn-close"
@@ -850,6 +872,7 @@
           </div>
           <div class="modal-body">
             <form id="addMomenBesarForm">
+              <input type="hidden" id="momenBesarId" />
               <div class="mb-3">
                 <label for="momenBesarName" class="form-label"
                   >Nama Momen Besar</label
@@ -895,12 +918,12 @@
       </div>
     </div>
 
-    <!-- Add Kategori Modal -->
+    <!-- Add/Edit Kategori Modal -->
     <div class="modal fade" id="addKategoriModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Tambah Kategori</h5>
+            <h5 class="modal-title" id="kategoriModalTitle">Tambah Kategori</h5>
             <button
               type="button"
               class="btn-close"
@@ -910,6 +933,7 @@
           <div class="modal-body">
             <form id="addKategoriForm">
               <input type="hidden" id="kategoriMomenBesarId" />
+              <input type="hidden" id="kategoriId" />
               <div class="mb-3">
                 <label for="kategoriName" class="form-label"
                   >Nama Kategori</label
@@ -1099,7 +1123,7 @@
       </div>
     </div>
 
-    <!-- Photo View Modal -->
+    <!-- Photo View Modal - IMPROVED -->
     <div class="modal fade photo-modal" id="photoModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -1149,6 +1173,8 @@
       let peopleList = JSON.parse(localStorage.getItem("peopleList")) || [];
       let currentSelectedPeople = [];
       let currentEditingSubMomen = null;
+      let currentEditingMomenBesar = null;
+      let currentEditingKategori = null;
       let currentSubMomenImages = [];
 
       // DOM Elements
@@ -1176,10 +1202,10 @@
         // Save buttons
         document
           .getElementById("saveMomenBesarBtn")
-          .addEventListener("click", addMomenBesar);
+          .addEventListener("click", saveMomenBesar);
         document
           .getElementById("saveKategoriBtn")
-          .addEventListener("click", addKategori);
+          .addEventListener("click", saveKategori);
         document
           .getElementById("saveSubMomenBtn")
           .addEventListener("click", saveSubMomen);
@@ -1281,8 +1307,9 @@
         });
       }
 
-      // Add Momen Besar
-      function addMomenBesar() {
+      // Save Momen Besar (Add or Edit)
+      function saveMomenBesar() {
+        const id = parseInt(document.getElementById("momenBesarId").value);
         const name = document.getElementById("momenBesarName").value.trim();
         const description = document
           .getElementById("momenBesarDescription")
@@ -1293,31 +1320,80 @@
           return;
         }
 
-        const newMomenBesar = {
-          id: Date.now(),
-          name,
-          description,
-          categories: [],
-          createdAt: new Date().toISOString(),
-        };
+        let momenBesar;
+        if (currentEditingMomenBesar) {
+          // Edit existing momen besar
+          momenBesar = momenBesarList.find((m) => m.id === id);
+          if (!momenBesar) return;
 
-        momenBesarList.push(newMomenBesar);
+          momenBesar.name = name;
+          momenBesar.description = description;
+        } else {
+          // Add new momen besar
+          momenBesar = {
+            id: Date.now(),
+            name,
+            description,
+            categories: [],
+            createdAt: new Date().toISOString(),
+          };
+          momenBesarList.push(momenBesar);
+        }
+
         saveToLocalStorage();
         renderMoments();
         updateStats();
 
         // Show success
-        showSuccess("Momen besar berhasil ditambahkan!");
-        document.getElementById("addMomenBesarForm").reset();
+        showSuccess(
+          currentEditingMomenBesar
+            ? "Momen besar berhasil diperbarui!"
+            : "Momen besar berhasil ditambahkan!"
+        );
+        resetMomenBesarForm();
         bootstrap.Modal.getInstance(
           document.getElementById("addMomenBesarModal")
         ).hide();
       }
 
-      // Add Kategori
-      function addKategori() {
+      // Reset momen besar form
+      function resetMomenBesarForm() {
+        currentEditingMomenBesar = null;
+        document.getElementById("momenBesarId").value = "";
+        document.getElementById("addMomenBesarForm").reset();
+        document.getElementById("momenBesarModalTitle").textContent =
+          "Buat Momen Besar Baru";
+      }
+
+      // Edit Momen Besar
+      function editMomenBesar(id) {
+        const momenBesar = momenBesarList.find((m) => m.id === id);
+        if (!momenBesar) return;
+
+        // Set form values
+        document.getElementById("momenBesarId").value = momenBesar.id;
+        document.getElementById("momenBesarName").value = momenBesar.name;
+        document.getElementById("momenBesarDescription").value =
+          momenBesar.description || "";
+
+        // Update modal title
+        document.getElementById("momenBesarModalTitle").textContent =
+          "Edit Momen Besar";
+        currentEditingMomenBesar = momenBesar;
+
+        // Show modal
+        new bootstrap.Modal(
+          document.getElementById("addMomenBesarModal")
+        ).show();
+      }
+
+      // Save Kategori (Add or Edit)
+      function saveKategori() {
         const momenBesarId = parseInt(
           document.getElementById("kategoriMomenBesarId").value
+        );
+        const kategoriId = parseInt(
+          document.getElementById("kategoriId").value
         );
         const name = document.getElementById("kategoriName").value.trim();
         const description = document
@@ -1332,24 +1408,72 @@
         const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
         if (!momenBesar) return;
 
-        const newKategori = {
-          id: Date.now(),
-          name,
-          description,
-          subMoments: [],
-        };
+        let kategori;
+        if (currentEditingKategori) {
+          // Edit existing kategori
+          kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+          if (!kategori) return;
 
-        momenBesar.categories.push(newKategori);
+          kategori.name = name;
+          kategori.description = description;
+        } else {
+          // Add new kategori
+          kategori = {
+            id: Date.now(),
+            name,
+            description,
+            subMoments: [],
+          };
+          momenBesar.categories.push(kategori);
+        }
+
         saveToLocalStorage();
         renderMoments();
         updateStats();
 
         // Show success
-        showSuccess("Kategori berhasil ditambahkan!");
-        document.getElementById("addKategoriForm").reset();
+        showSuccess(
+          currentEditingKategori
+            ? "Kategori berhasil diperbarui!"
+            : "Kategori berhasil ditambahkan!"
+        );
+        resetKategoriForm();
         bootstrap.Modal.getInstance(
           document.getElementById("addKategoriModal")
         ).hide();
+      }
+
+      // Reset kategori form
+      function resetKategoriForm() {
+        currentEditingKategori = null;
+        document.getElementById("kategoriId").value = "";
+        document.getElementById("addKategoriForm").reset();
+        document.getElementById("kategoriModalTitle").textContent =
+          "Tambah Kategori";
+      }
+
+      // Edit Kategori
+      function editKategori(momenBesarId, kategoriId) {
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
+
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
+
+        // Set form values
+        document.getElementById("kategoriMomenBesarId").value = momenBesarId;
+        document.getElementById("kategoriId").value = kategoriId;
+        document.getElementById("kategoriName").value = kategori.name;
+        document.getElementById("kategoriDescription").value =
+          kategori.description || "";
+
+        // Update modal title
+        document.getElementById("kategoriModalTitle").textContent =
+          "Edit Kategori";
+        currentEditingKategori = kategori;
+
+        // Show modal
+        new bootstrap.Modal(document.getElementById("addKategoriModal")).show();
       }
 
       // Save Sub Momen (Add or Edit)
@@ -1540,6 +1664,7 @@
 
       // Open modal functions
       function openAddKategoriModal(momenBesarId) {
+        resetKategoriForm();
         document.getElementById("kategoriMomenBesarId").value = momenBesarId;
         new bootstrap.Modal(document.getElementById("addKategoriModal")).show();
       }
@@ -1778,6 +1903,11 @@
                   })">
                     <i class="fas fa-plus me-1"></i>Tambah Kategori
                   </button>
+                  <button class="btn btn-sm edit-btn me-2" onclick="editMomenBesar(${
+                    momenBesar.id
+                  })">
+                    <i class="fas fa-edit"></i>
+                  </button>
                   <button class="btn btn-sm btn-outline-danger" onclick="deleteMomenBesar(${
                     momenBesar.id
                   })">
@@ -1825,6 +1955,11 @@
                                 momenBesar.id
                               }, ${kategori.id})">
                                 <i class="fas fa-plus me-1"></i>Tambah Sub Momen
+                              </button>
+                              <button class="btn btn-sm edit-btn me-2" onclick="editKategori(${
+                                momenBesar.id
+                              }, ${kategori.id})">
+                                <i class="fas fa-edit"></i>
                               </button>
                               <button class="btn btn-sm btn-outline-danger" onclick="deleteKategori(${
                                 momenBesar.id
