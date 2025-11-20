@@ -2,12 +2,8 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Wishlist & Tabungan - Kelola Impian dan Keuangan</title>
-    <link rel="icon" type="image/x-icon" href="WHIS.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momen Spesial - Kelola Kenangan Berharga</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -43,7 +39,6 @@
         overflow-x: hidden;
       }
 
-      /* Navbar Mobile Friendly */
       .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -57,16 +52,6 @@
         font-size: 1.2rem;
       }
 
-      .navbar-toggler {
-        border: none;
-        padding: 0.25rem 0.5rem;
-      }
-
-      .navbar-toggler:focus {
-        box-shadow: none;
-      }
-
-      /* Hero Section Mobile */
       .hero-section {
         background: linear-gradient(
           135deg,
@@ -95,16 +80,15 @@
       .hero-title {
         font-weight: 800;
         margin-bottom: 1rem;
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 1.5rem;
         opacity: 0.9;
       }
 
-      /* Stats Section Mobile */
       .stats-section {
         margin-top: -2rem;
         position: relative;
@@ -142,32 +126,6 @@
         font-size: 0.9rem;
       }
 
-      /* Savings Section Mobile */
-      .savings-card {
-        background: linear-gradient(135deg, var(--success), #00a085);
-        color: white;
-        border-radius: 15px;
-        padding: 1.5rem;
-        box-shadow: 0 10px 30px rgba(0, 184, 148, 0.3);
-        transition: all 0.3s ease;
-        margin-bottom: 1.5rem;
-      }
-
-      .savings-amount {
-        font-size: 2rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-      }
-
-      .budget-summary {
-        background: white;
-        border-radius: 15px;
-        padding: 1.5rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        height: 100%;
-      }
-
-      /* Main Content Mobile */
       .main-content {
         padding: 3rem 0;
       }
@@ -179,33 +137,8 @@
         font-size: 1.5rem;
       }
 
-      /* Tabs Mobile */
-      .nav-tabs {
-        border-bottom: 2px solid #e9ecef;
-        margin-bottom: 1.5rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-
-      .nav-tabs .nav-link {
-        border: none;
-        color: #6c757d;
-        font-weight: 600;
-        padding: 0.75rem 1rem;
-        border-radius: 10px 10px 0 0;
-        transition: all 0.3s;
-        font-size: 0.9rem;
-        min-width: auto;
-      }
-
-      .nav-tabs .nav-link.active {
-        background: var(--primary);
-        color: white;
-      }
-
-      /* Wishlist Cards Mobile - Styling seperti Momen Spesial */
-      .wishlist-card {
+      /* Momen Besar Card */
+      .momen-besar-card {
         background: white;
         border-radius: 15px;
         overflow: hidden;
@@ -215,7 +148,7 @@
         border: 2px solid var(--primary);
       }
 
-      .wishlist-header {
+      .momen-besar-header {
         padding: 1.5rem;
         background: rgba(44, 62, 80, 0.05);
         cursor: pointer;
@@ -223,23 +156,23 @@
         border-bottom: 2px solid var(--primary);
       }
 
-      .wishlist-header:hover {
+      .momen-besar-header:hover {
         background: rgba(44, 62, 80, 0.1);
       }
 
-      .wishlist-title {
+      .momen-besar-title {
         font-weight: 700;
         color: var(--dark);
         margin-bottom: 0.5rem;
         font-size: 1.3rem;
       }
 
-      .wishlist-meta {
+      .momen-besar-meta {
         color: #6c757d;
         font-size: 0.9rem;
       }
 
-      .wishlist-content {
+      .momen-besar-content {
         padding: 1.5rem;
       }
 
@@ -270,8 +203,8 @@
         font-size: 0.8rem;
       }
 
-      /* Item Card */
-      .item-card {
+      /* Sub Momen Item */
+      .sub-momen-item {
         background: white;
         border-radius: 8px;
         padding: 1rem;
@@ -280,55 +213,36 @@
         transition: all 0.3s ease;
       }
 
-      .item-card:hover {
+      .sub-momen-item:hover {
         transform: translateX(5px);
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       }
 
-      .item-card.achieved {
-        background: rgba(39, 174, 96, 0.05);
-        border-color: var(--success);
-      }
-
-      .item-content {
+      .sub-momen-content {
         display: flex;
         justify-content: between;
         align-items: center;
       }
 
-      .item-info {
+      .sub-momen-info {
         flex: 1;
       }
 
-      .item-name {
+      .sub-momen-name {
         font-weight: 500;
         margin-bottom: 0.25rem;
       }
 
-      .item-price {
+      .sub-momen-date {
         color: #6c757d;
         font-size: 0.8rem;
       }
 
-      .item-actions {
+      .sub-momen-actions {
         display: flex;
         gap: 0.5rem;
       }
 
-      /* Progress Bars Mobile */
-      .progress {
-        height: 8px;
-        border-radius: 10px;
-        margin: 0.75rem 0;
-        background: #e9ecef;
-      }
-
-      .progress-bar {
-        border-radius: 10px;
-        transition: width 0.5s ease;
-      }
-
-      /* Buttons Mobile */
       .btn {
         border-radius: 8px;
         padding: 0.5rem 1rem;
@@ -373,7 +287,6 @@
         min-height: 32px;
       }
 
-      /* Floating Button Mobile */
       .floating-btn {
         position: fixed;
         bottom: 1.5rem;
@@ -410,7 +323,6 @@
         }
       }
 
-      /* Empty State Mobile */
       .empty-state {
         text-align: center;
         padding: 2.5rem 1rem;
@@ -429,33 +341,18 @@
         font-size: 1.25rem;
       }
 
-      /* Modal Mobile */
       .modal-content {
         border-radius: 15px;
         border: none;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
       }
 
-      .modal-header {
-        padding: 1.25rem;
-      }
-
-      .modal-body {
-        padding: 1.25rem;
-      }
-
-      .modal-footer {
-        padding: 1rem 1.25rem;
-      }
-
-      /* Form Controls Mobile */
       .form-control,
       .form-select {
         border-radius: 8px;
         padding: 0.75rem;
         border: 1px solid #e0e0e0;
         transition: all 0.3s ease;
-        font-size: 1rem;
       }
 
       .form-control:focus,
@@ -464,7 +361,179 @@
         box-shadow: 0 0 0 0.25rem rgba(44, 62, 80, 0.25);
       }
 
-      /* Image Upload Mobile */
+      .badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .progress {
+        height: 8px;
+        margin: 0.5rem 0;
+      }
+
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: var(--primary);
+        top: -10px;
+        border-radius: 50%;
+        animation: confetti-fall 5s linear forwards;
+        z-index: 10000;
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* People Tags */
+      .people-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .person-tag {
+        background: var(--primary);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .person-tag .remove-person {
+        cursor: pointer;
+        margin-left: 0.25rem;
+      }
+
+      /* People Management */
+      .people-management {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .person-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .person-item:last-child {
+        border-bottom: none;
+      }
+
+      .person-info {
+        flex: 1;
+      }
+
+      .person-name {
+        font-weight: 500;
+        margin-bottom: 0.1rem;
+      }
+
+      .person-type {
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+
+      /* Forum Section */
+      .forum-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+      }
+
+      .people-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .person-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 10px;
+        padding: 1rem;
+        width: calc(33.333% - 0.75rem);
+        transition: all 0.3s ease;
+      }
+
+      .person-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .person-card {
+          width: calc(50% - 0.75rem);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .person-card {
+          width: 100%;
+        }
+      }
+
+      /* Tab Navigation */
+      .nav-tabs .nav-link {
+        border: none;
+        color: #6c757d;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary);
+        background: transparent;
+      }
+
+      /* People Selection in Sub Momen */
+      .people-selection {
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .person-checkbox {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: background 0.2s;
+      }
+
+      .person-checkbox:hover {
+        background: #f8f9fa;
+      }
+
+      .person-checkbox input {
+        margin-right: 0.5rem;
+      }
+
+      /* Image Upload Styles */
       .image-upload-container {
         border: 2px dashed #ddd;
         border-radius: 10px;
@@ -490,171 +559,6 @@
         border: 2px solid var(--secondary);
       }
 
-      .item-image {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-right: 0.75rem;
-        border: 2px solid var(--secondary);
-        cursor: pointer;
-      }
-
-      .item-image-placeholder {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, var(--secondary), var(--primary));
-        border-radius: 8px;
-        margin-right: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.25rem;
-        border: 2px dashed var(--secondary);
-      }
-
-      /* Transaction History Mobile */
-      .transaction-history {
-        max-height: 300px;
-        overflow-y: auto;
-      }
-
-      .transaction-item {
-        padding: 0.75rem;
-        border-bottom: 1px solid #e9ecef;
-        transition: all 0.3s ease;
-      }
-
-      .transaction-item:hover {
-        background: #f8f9fa;
-      }
-
-      /* Footer Mobile */
-      footer {
-        background: var(--dark);
-        color: white;
-        padding: 2rem 0;
-        margin-top: 3rem;
-      }
-
-      /* Animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in {
-        animation: fadeIn 0.5s ease forwards;
-      }
-
-      /* Badge styles */
-      .badge {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.5rem;
-      }
-
-      /* Confetti */
-      .confetti {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background-color: var(--primary);
-        top: -10px;
-        border-radius: 50%;
-        animation: confetti-fall 5s linear forwards;
-        z-index: 10000;
-      }
-
-      @keyframes confetti-fall {
-        0% {
-          transform: translateY(0) rotate(0deg);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(100vh) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      /* Mobile-specific improvements */
-      @media (max-width: 576px) {
-        .container {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        .hero-title {
-          font-size: 1.75rem;
-        }
-
-        .hero-subtitle {
-          font-size: 0.9rem;
-        }
-
-        .stats-number {
-          font-size: 1.75rem;
-        }
-
-        .savings-amount {
-          font-size: 1.75rem;
-        }
-
-        .section-title {
-          font-size: 1.25rem;
-        }
-
-        .wishlist-title {
-          font-size: 1rem;
-        }
-
-        .btn {
-          width: 100%;
-          margin-bottom: 0.5rem;
-        }
-
-        .btn-group .btn {
-          width: auto;
-          margin-bottom: 0;
-        }
-
-        .d-flex.justify-content-between {
-          flex-direction: column;
-        }
-
-        .d-flex.justify-content-between > * {
-          margin-bottom: 0.75rem;
-        }
-
-        .d-flex.justify-content-between > *:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      .hierarchy-indicator {
-        margin-left: 1rem;
-        color: #6c757d;
-        font-size: 0.9rem;
-      }
-
-      .progress-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem;
-      }
-
-      .progress-text {
-        font-size: 0.8rem;
-        color: #6c757d;
-      }
-
       .photo-gallery {
         display: flex;
         flex-wrap: wrap;
@@ -677,6 +581,25 @@
         border-color: var(--primary);
       }
 
+      /* Photo Modal */
+      .photo-modal .modal-dialog {
+        max-width: 90%;
+        max-height: 90vh;
+      }
+
+      .photo-modal .modal-body {
+        padding: 0;
+        text-align: center;
+        background: #000;
+      }
+
+      .photo-modal .modal-body img {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      /* Edit Button Styles */
       .edit-btn {
         background: var(--warning);
         border: none;
@@ -687,6 +610,39 @@
         background: #e67e22;
         transform: translateY(-2px);
       }
+
+      @media (max-width: 576px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .hero-title {
+          font-size: 1.75rem;
+        }
+        .hero-subtitle {
+          font-size: 0.9rem;
+        }
+        .stats-number {
+          font-size: 1.75rem;
+        }
+        .section-title {
+          font-size: 1.25rem;
+        }
+        .btn {
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+        .btn-group .btn {
+          width: auto;
+          margin-bottom: 0;
+        }
+      }
+
+      .hierarchy-indicator {
+        margin-left: 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
     </style>
   </head>
   <body>
@@ -694,7 +650,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <i class="fas fa-piggy-bank me-2"></i>Wishlist & Tabungan
+          <i class="fas fa-mountain me-2"></i>Momen Spesial
         </a>
         <button
           class="navbar-toggler"
@@ -707,13 +663,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link active" href="#moments">Momen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#wishlists">Wishlist Saya</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#budget">Tabungan</a>
+              <a class="nav-link" href="#forum">Forum</a>
             </li>
           </ul>
         </div>
@@ -723,16 +676,17 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="container text-center position-relative">
-        <h1 class="hero-title">Wishlist & Tabungan Terpusat</h1>
+        <h1 class="hero-title">Kelola Momen Spesial Anda</h1>
         <p class="hero-subtitle">
-          Kelola wishlist dan tabunganmu di satu tempat dengan mudah
+          Atur pencapaian dan kenangan berharga dalam hidup Anda dengan sistem
+          hierarki yang terstruktur
         </p>
         <button
           class="btn btn-light btn-lg"
           data-bs-toggle="modal"
-          data-bs-target="#addWishlistModal"
+          data-bs-target="#addMomenBesarModal"
         >
-          <i class="fas fa-plus me-2"></i>Buat Wishlist Baru
+          <i class="fas fa-plus me-2"></i>Buat Momen Besar
         </button>
       </div>
     </section>
@@ -743,208 +697,119 @@
         <div class="row g-3">
           <div class="col-4">
             <div class="stats-card fade-in">
-              <div class="stats-number" id="totalWishlists">0</div>
-              <div class="stats-label">Wishlist</div>
+              <div class="stats-number" id="totalMomenBesar">0</div>
+              <div class="stats-label">Momen Besar</div>
             </div>
           </div>
           <div class="col-4">
             <div class="stats-card fade-in" style="animation-delay: 0.1s">
-              <div class="stats-number" id="totalCategories">0</div>
+              <div class="stats-number" id="totalKategori">0</div>
               <div class="stats-label">Kategori</div>
             </div>
           </div>
           <div class="col-4">
             <div class="stats-card fade-in" style="animation-delay: 0.2s">
-              <div class="stats-number" id="totalItems">0</div>
-              <div class="stats-label">Item</div>
+              <div class="stats-number" id="totalSubMomen">0</div>
+              <div class="stats-label">Sub Momen</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Savings Section -->
-    <section class="main-content" id="savings">
+    <!-- Main Content with Tabs -->
+    <section class="main-content">
       <div class="container">
-        <h2 class="section-title">Tabungan & Budget</h2>
-        <div class="row g-3">
-          <div class="col-12">
-            <div class="savings-card">
-              <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-3 mb-md-0">
-                  <h3 class="mb-2">Tabungan Saat Ini</h3>
-                  <div class="savings-amount" id="currentSavings">Rp 0</div>
-                  <p class="mb-0">Tabungan untuk semua wishlist</p>
-                </div>
-                <div class="col-12 col-md-6 text-md-end">
-                  <div class="d-grid d-md-block gap-2">
-                    <button
-                      class="btn btn-light me-md-2 mb-2 mb-md-0"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addSavingsModal"
-                    >
-                      <i class="fas fa-plus me-2"></i>Tambah
-                    </button>
-                    <button
-                      class="btn btn-light"
-                      data-bs-toggle="modal"
-                      data-bs-target="#withdrawSavingsModal"
-                    >
-                      <i class="fas fa-minus me-2"></i>Kurangi
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="budget-summary">
-              <h4 class="mb-3">Ringkasan Budget</h4>
-              <div class="d-flex justify-content-between mb-2">
-                <span>Total Dibutuhkan:</span>
-                <strong id="summaryNeeded">Rp 0</strong>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>Tabungan Saat Ini:</span>
-                <strong id="summarySavings">Rp 0</strong>
-              </div>
-              <div class="d-flex justify-content-between mb-3">
-                <span>Kekurangan:</span>
-                <strong id="summaryRemaining">Rp 0</strong>
-              </div>
-              <div class="progress mb-2">
-                <div
-                  class="progress-bar bg-success"
-                  role="progressbar"
-                  id="summaryProgress"
-                  style="width: 0%"
-                ></div>
-              </div>
-              <small class="text-muted" id="summaryPercentage"
-                >0% tercapai</small
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Content -->
-    <section class="main-content" id="wishlists">
-      <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
+        <ul class="nav nav-tabs mb-4" id="mainTabs">
+          <li class="nav-item">
+            <a
               class="nav-link active"
-              id="wishlists-tab"
+              id="moments-tab"
               data-bs-toggle="tab"
-              data-bs-target="#wishlists-content"
-              type="button"
-              role="tab"
+              href="#moments"
+              >Hierarki Momen Saya</a
             >
-              <i class="fas fa-th-list me-2"></i>Wishlist
-            </button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button
+          <li class="nav-item">
+            <a
               class="nav-link"
-              id="transactions-tab"
+              id="forum-tab"
               data-bs-toggle="tab"
-              data-bs-target="#transactions-content"
-              type="button"
-              role="tab"
+              href="#forum"
+              >Forum - Kelola Orang</a
             >
-              <i class="fas fa-history me-2"></i>Transaksi
-            </button>
           </li>
         </ul>
 
-        <div class="tab-content" id="myTabContent">
-          <!-- Wishlists Tab -->
-          <div
-            class="tab-pane fade show active"
-            id="wishlists-content"
-            role="tabpanel"
-          >
+        <div class="tab-content">
+          <!-- Moments Tab -->
+          <div class="tab-pane fade show active" id="moments">
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <h2 class="section-title mb-0">Daftar Wishlist Saya</h2>
-              <div class="dropdown">
-                <button
-                  class="btn btn-outline-primary btn-sm dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                >
-                  <i class="fas fa-filter me-1"></i>Filter
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="all"
-                      href="#"
-                      >Semua</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="completed"
-                      href="#"
-                      >Selesai</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="in-progress"
-                      href="#"
-                      >Dalam Proses</a
-                    >
-                  </li>
-                </ul>
-              </div>
+              <h2 class="section-title mb-0">Hierarki Momen Saya</h2>
             </div>
 
-            <div id="wishlistsContainer">
-              <!-- Wishlist items will be dynamically added here -->
+            <div id="momentsContainer">
+              <!-- Momen items will be dynamically added here -->
             </div>
 
             <!-- Empty State -->
             <div id="emptyState" class="empty-state">
-              <i class="fas fa-layer-group"></i>
-              <h3>Belum Ada Wishlist</h3>
-              <p>
-                Mulai buat wishlist impianmu dengan struktur hierarki yang
-                lengkap!
-              </p>
+              <i class="fas fa-trophy"></i>
+              <h3>Belum Ada Momen Besar</h3>
+              <p>Mulai buat momen besar pertama Anda dan atur pencapaiannya!</p>
               <button
                 class="btn btn-primary mt-3"
                 data-bs-toggle="modal"
-                data-bs-target="#addWishlistModal"
+                data-bs-target="#addMomenBesarModal"
               >
-                <i class="fas fa-plus me-2"></i>Buat Wishlist Pertama
+                <i class="fas fa-plus me-2"></i>Buat Momen Besar Pertama
               </button>
             </div>
           </div>
 
-          <!-- Transactions Tab -->
-          <div class="tab-pane fade" id="transactions-content" role="tabpanel">
-            <h2 class="section-title">Riwayat Transaksi Tabungan</h2>
+          <!-- Forum Tab -->
+          <div class="tab-pane fade" id="forum">
+            <div class="forum-section">
+              <h2 class="section-title">Forum - Kelola Orang</h2>
+              <p class="text-muted mb-4">
+                Kelola daftar orang yang akan dipilih saat membuat Sub Momen
+              </p>
 
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-0">
-                <div class="transaction-history" id="transactionHistory">
-                  <!-- Transaction items will be dynamically added here -->
+              <div class="people-management">
+                <h6>Tambah Orang Baru</h6>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="personName"
+                    placeholder="Nama orang"
+                  />
+                  <select class="form-select" id="personType">
+                    <option value="family">Keluarga</option>
+                    <option value="friend">Teman</option>
+                    <option value="partner">Pacar/Pasangan</option>
+                    <option value="colleague">Rekan Kerja</option>
+                  </select>
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    id="addPersonBtn"
+                  >
+                    <i class="fas fa-plus"></i> Tambah
+                  </button>
                 </div>
+              </div>
 
-                <div id="emptyTransactionState" class="empty-state py-4">
-                  <i class="fas fa-history"></i>
-                  <h5>Belum Ada Transaksi</h5>
-                  <p>
-                    Mulai tambahkan atau kurangi tabungan untuk melihat riwayat
-                    transaksi!
-                  </p>
-                </div>
+              <div class="people-list" id="peopleListContainer">
+                <!-- People list will be dynamically added here -->
+              </div>
+
+              <div id="emptyPeopleList" class="empty-state">
+                <i class="fas fa-users"></i>
+                <h3>Belum Ada Orang</h3>
+                <p>
+                  Tambahkan orang terdekat untuk memudahkan pembuatan Sub Momen
+                </p>
               </div>
             </div>
           </div>
@@ -956,8 +821,8 @@
     <footer>
       <div class="container text-center">
         <p>
-          &copy; 2023 Wishlist & Tabungan App. Kelola impian dan keuanganmu
-          dengan mudah!
+          &copy; 2023 Momen Spesial. Kelola setiap pencapaian berharga dalam
+          hidup Anda!
         </p>
       </div>
     </footer>
@@ -966,17 +831,17 @@
     <div
       class="floating-btn"
       data-bs-toggle="modal"
-      data-bs-target="#addWishlistModal"
+      data-bs-target="#addMomenBesarModal"
     >
       <i class="fas fa-plus"></i>
     </div>
 
-    <!-- Add Wishlist Modal -->
-    <div class="modal fade" id="addWishlistModal" tabindex="-1">
+    <!-- Add Momen Besar Modal -->
+    <div class="modal fade" id="addMomenBesarModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Buat Wishlist Baru</h5>
+            <h5 class="modal-title">Buat Momen Besar Baru</h5>
             <button
               type="button"
               class="btn-close"
@@ -984,28 +849,28 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="addWishlistForm">
+            <form id="addMomenBesarForm">
               <div class="mb-3">
-                <label for="wishlistName" class="form-label"
-                  >Nama Wishlist</label
+                <label for="momenBesarName" class="form-label"
+                  >Nama Momen Besar</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="wishlistName"
-                  placeholder="Contoh: Blooket Transformers"
+                  id="momenBesarName"
+                  placeholder="Contoh: Pencapaian Karir 2024"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="wishlistDescription" class="form-label"
+                <label for="momenBesarDescription" class="form-label"
                   >Deskripsi (Opsional)</label
                 >
                 <textarea
                   class="form-control"
-                  id="wishlistDescription"
+                  id="momenBesarDescription"
                   rows="3"
-                  placeholder="Deskripsi tentang wishlist ini..."
+                  placeholder="Deskripsi tentang momen besar ini..."
                 ></textarea>
               </div>
             </form>
@@ -1018,16 +883,20 @@
             >
               Batal
             </button>
-            <button type="button" class="btn btn-primary" id="saveWishlistBtn">
-              Simpan Wishlist
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="saveMomenBesarBtn"
+            >
+              Simpan Momen Besar
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Add Category Modal -->
-    <div class="modal fade" id="addCategoryModal" tabindex="-1">
+    <!-- Add Kategori Modal -->
+    <div class="modal fade" id="addKategoriModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -1039,29 +908,29 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="addCategoryForm">
-              <input type="hidden" id="categoryWishlistId" />
+            <form id="addKategoriForm">
+              <input type="hidden" id="kategoriMomenBesarId" />
               <div class="mb-3">
-                <label for="categoryName" class="form-label"
+                <label for="kategoriName" class="form-label"
                   >Nama Kategori</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="categoryName"
-                  placeholder="Contoh: Blooket 1"
+                  id="kategoriName"
+                  placeholder="Contoh: Promosi Jabatan"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="categoryDescription" class="form-label"
+                <label for="kategoriDescription" class="form-label"
                   >Deskripsi (Opsional)</label
                 >
                 <textarea
                   class="form-control"
-                  id="categoryDescription"
+                  id="kategoriDescription"
                   rows="3"
-                  placeholder="Deskripsi tentang kategori ini..."
+                  placeholder="Deskripsi kategori..."
                 ></textarea>
               </div>
             </form>
@@ -1074,7 +943,7 @@
             >
               Batal
             </button>
-            <button type="button" class="btn btn-primary" id="saveCategoryBtn">
+            <button type="button" class="btn btn-primary" id="saveKategoriBtn">
               Simpan Kategori
             </button>
           </div>
@@ -1082,12 +951,14 @@
       </div>
     </div>
 
-    <!-- Add Item Modal -->
-    <div class="modal fade" id="addItemModal" tabindex="-1">
+    <!-- Add/Edit Sub Momen Modal -->
+    <div class="modal fade" id="addSubMomenModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Tambah Item</h5>
+            <h5 class="modal-title" id="subMomenModalTitle">
+              Tambah Sub Momen
+            </h5>
             <button
               type="button"
               class="btn-close"
@@ -1095,34 +966,58 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="addItemForm">
-              <input type="hidden" id="itemWishlistId" />
-              <input type="hidden" id="itemCategoryId" />
+            <form id="addSubMomenForm">
+              <input type="hidden" id="subMomenMomenBesarId" />
+              <input type="hidden" id="subMomenKategoriId" />
+              <input type="hidden" id="subMomenId" />
               <div class="mb-3">
-                <label for="itemName" class="form-label">Nama Item</label>
+                <label for="subMomenName" class="form-label"
+                  >Nama Sub Momen</label
+                >
                 <input
                   type="text"
                   class="form-control"
-                  id="itemName"
-                  placeholder="Contoh: Optimus Prime"
+                  id="subMomenName"
+                  placeholder="Contoh: Naik jadi Manager"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="itemPrice" class="form-label">Harga (Rp)</label>
+                <label for="subMomenDate" class="form-label"
+                  >Tanggal Momen</label
+                >
                 <input
-                  type="number"
+                  type="date"
                   class="form-control"
-                  id="itemPrice"
-                  min="1"
+                  id="subMomenDate"
                   required
                 />
               </div>
-
-              <!-- Upload Foto Item -->
               <div class="mb-3">
-                <label class="form-label">Foto Item (Opsional)</label>
-                <div class="image-upload-container" id="imageUploadContainer">
+                <label for="subMomenDescription" class="form-label"
+                  >Deskripsi (Opsional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="subMomenDescription"
+                  rows="3"
+                  placeholder="Deskripsi sub momen..."
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Orang yang Terlibat</label>
+                <div class="people-tags" id="selectedPeopleTags"></div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-primary mt-2"
+                  onclick="openPeopleSelectionModal()"
+                >
+                  <i class="fas fa-plus me-1"></i>Pilih Orang
+                </button>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Foto Momen (Opsional)</label>
+                <div class="image-upload-container" id="subMomenImageUpload">
                   <i class="fas fa-cloud-upload-alt fa-2x mb-3 text-muted"></i>
                   <p class="mb-2">Klik atau drag & drop untuk upload foto</p>
                   <small class="text-muted"
@@ -1130,46 +1025,13 @@
                   >
                   <input
                     type="file"
-                    id="itemImage"
+                    id="subMomenImages"
                     accept="image/*"
+                    multiple
                     class="d-none"
                   />
                 </div>
-                <div id="imagePreview" class="text-center"></div>
-              </div>
-
-              <div class="mb-3">
-                <label for="itemTiktokLink" class="form-label"
-                  >Link TikTok (Opsional)</label
-                >
-                <input
-                  type="url"
-                  class="form-control"
-                  id="itemTiktokLink"
-                  placeholder="https://www.tiktok.com/..."
-                />
-              </div>
-              <div class="mb-3">
-                <label for="itemShopeeLink" class="form-label"
-                  >Link Shopee (Opsional)</label
-                >
-                <input
-                  type="url"
-                  class="form-control"
-                  id="itemShopeeLink"
-                  placeholder="https://shopee.co.id/..."
-                />
-              </div>
-              <div class="mb-3">
-                <label for="itemDescription" class="form-label"
-                  >Deskripsi (Opsional)</label
-                >
-                <textarea
-                  class="form-control"
-                  id="itemDescription"
-                  rows="3"
-                  placeholder="Deskripsi tentang item ini..."
-                ></textarea>
+                <div id="subMomenImagesPreview" class="photo-gallery"></div>
               </div>
             </form>
           </div>
@@ -1181,20 +1043,20 @@
             >
               Batal
             </button>
-            <button type="button" class="btn btn-primary" id="saveItemBtn">
-              Simpan Item
+            <button type="button" class="btn btn-primary" id="saveSubMomenBtn">
+              Simpan Sub Momen
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Add Savings Modal -->
-    <div class="modal fade" id="addSavingsModal" tabindex="-1">
+    <!-- People Selection Modal -->
+    <div class="modal fade" id="peopleSelectionModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Tambah Tabungan</h5>
+            <h5 class="modal-title">Pilih Orang yang Terlibat</h5>
             <button
               type="button"
               class="btn-close"
@@ -1202,31 +1064,20 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="addSavingsForm">
-              <div class="mb-3">
-                <label for="savingsAmount" class="form-label"
-                  >Jumlah Tabungan (Rp)</label
-                >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="savingsAmount"
-                  min="1"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="savingsDescription" class="form-label"
-                  >Keterangan (Opsional)</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="savingsDescription"
-                  placeholder="Contoh: Gaji bulanan, Hadiah, dll"
-                />
-              </div>
-            </form>
+            <div class="people-selection" id="peopleChecklist">
+              <!-- People checklist will be dynamically added here -->
+            </div>
+            <div id="emptyPeopleState" class="text-center py-4 text-muted">
+              <i class="fas fa-users fa-2x mb-3"></i>
+              <p>Belum ada orang yang ditambahkan</p>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                onclick="switchToForumTab()"
+              >
+                Tambah Orang Baru
+              </button>
+            </div>
           </div>
           <div class="modal-footer">
             <button
@@ -1236,20 +1087,24 @@
             >
               Batal
             </button>
-            <button type="button" class="btn btn-success" id="saveSavingsBtn">
-              Tambah Tabungan
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmPeopleSelection"
+            >
+              Simpan Pilihan
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Withdraw Savings Modal -->
-    <div class="modal fade" id="withdrawSavingsModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
+    <!-- Photo View Modal -->
+    <div class="modal fade photo-modal" id="photoModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Kurangi Tabungan</h5>
+            <h5 class="modal-title">Foto Momen</h5>
             <button
               type="button"
               class="btn-close"
@@ -1257,43 +1112,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="withdrawSavingsForm">
-              <div class="mb-3">
-                <label for="withdrawAmount" class="form-label"
-                  >Jumlah Penarikan (Rp)</label
-                >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="withdrawAmount"
-                  min="1"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="withdrawDescription" class="form-label"
-                  >Keterangan (Opsional)</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="withdrawDescription"
-                  placeholder="Contoh: Keperluan mendadak, Beli kebutuhan, dll"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Batal
-            </button>
-            <button type="button" class="btn btn-warning" id="saveWithdrawBtn">
-              Kurangi Tabungan
-            </button>
+            <img id="modalPhoto" src="" alt="Foto Momen" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -1309,7 +1128,7 @@
               style="font-size: 4rem"
             ></i>
             <h3 class="mb-3">Berhasil!</h3>
-            <p id="successMessage">Wishlist berhasil ditambahkan!</p>
+            <p id="successMessage">Momen berhasil ditambahkan!</p>
             <button
               type="button"
               class="btn btn-primary mt-3"
@@ -1322,180 +1141,159 @@
       </div>
     </div>
 
-    <!-- Photo Modal -->
-    <div class="modal fade photo-modal" id="photoModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Foto Item</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <img id="modalPhoto" src="" alt="Foto Item" class="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Data storage
-      let wishlists = JSON.parse(localStorage.getItem("wishlists")) || [];
-      let savings = parseInt(localStorage.getItem("savings")) || 0;
-      let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+      let momenBesarList =
+        JSON.parse(localStorage.getItem("momenBesarList")) || [];
+      let peopleList = JSON.parse(localStorage.getItem("peopleList")) || [];
+      let currentSelectedPeople = [];
+      let currentEditingSubMomen = null;
+      let currentSubMomenImages = [];
 
       // DOM Elements
-      const wishlistsContainer = document.getElementById("wishlistsContainer");
+      const momentsContainer = document.getElementById("momentsContainer");
       const emptyState = document.getElementById("emptyState");
-      const emptyTransactionState = document.getElementById(
-        "emptyTransactionState"
+      const totalMomenBesarEl = document.getElementById("totalMomenBesar");
+      const totalKategoriEl = document.getElementById("totalKategori");
+      const totalSubMomenEl = document.getElementById("totalSubMomen");
+      const peopleListContainer = document.getElementById(
+        "peopleListContainer"
       );
-      const transactionHistory = document.getElementById("transactionHistory");
-      const addWishlistForm = document.getElementById("addWishlistForm");
-      const saveWishlistBtn = document.getElementById("saveWishlistBtn");
-      const addCategoryForm = document.getElementById("addCategoryForm");
-      const saveCategoryBtn = document.getElementById("saveCategoryBtn");
-      const addItemForm = document.getElementById("addItemForm");
-      const saveItemBtn = document.getElementById("saveItemBtn");
-      const addSavingsForm = document.getElementById("addSavingsForm");
-      const saveSavingsBtn = document.getElementById("saveSavingsBtn");
-      const withdrawSavingsForm = document.getElementById(
-        "withdrawSavingsForm"
-      );
-      const saveWithdrawBtn = document.getElementById("saveWithdrawBtn");
-      const totalWishlistsEl = document.getElementById("totalWishlists");
-      const totalCategoriesEl = document.getElementById("totalCategories");
-      const totalItemsEl = document.getElementById("totalItems");
-      const currentSavingsEl = document.getElementById("currentSavings");
-      const summaryNeededEl = document.getElementById("summaryNeeded");
-      const summarySavingsEl = document.getElementById("summarySavings");
-      const summaryRemainingEl = document.getElementById("summaryRemaining");
-      const summaryProgressEl = document.getElementById("summaryProgress");
-      const summaryPercentageEl = document.getElementById("summaryPercentage");
-
-      // Image upload elements
-      const imageUploadContainer = document.getElementById(
-        "imageUploadContainer"
-      );
-      const itemImageInput = document.getElementById("itemImage");
-      const imagePreview = document.getElementById("imagePreview");
+      const emptyPeopleList = document.getElementById("emptyPeopleList");
 
       // Initialize the app
       document.addEventListener("DOMContentLoaded", function () {
-        renderWishlists();
+        renderMoments();
         updateStats();
-        updateSavingsDisplay();
-        renderTransactions();
+        renderPeopleList();
         setupEventListeners();
         setupImageUpload();
       });
 
       // Setup event listeners
       function setupEventListeners() {
-        // Save wishlist button
-        saveWishlistBtn.addEventListener("click", addWishlist);
-
-        // Save category button
-        saveCategoryBtn.addEventListener("click", addCategory);
-
-        // Save item button
-        saveItemBtn.addEventListener("click", addItem);
-
-        // Save savings button
-        saveSavingsBtn.addEventListener("click", addSavings);
-
-        // Save withdraw button
-        saveWithdrawBtn.addEventListener("click", withdrawSavings);
-
-        // Filter options
-        document.querySelectorAll(".filter-option").forEach((option) => {
-          option.addEventListener("click", function (e) {
-            e.preventDefault();
-            const filter = this.getAttribute("data-filter");
-            filterWishlists(filter);
-          });
-        });
+        // Save buttons
+        document
+          .getElementById("saveMomenBesarBtn")
+          .addEventListener("click", addMomenBesar);
+        document
+          .getElementById("saveKategoriBtn")
+          .addEventListener("click", addKategori);
+        document
+          .getElementById("saveSubMomenBtn")
+          .addEventListener("click", saveSubMomen);
+        document
+          .getElementById("addPersonBtn")
+          .addEventListener("click", addPerson);
+        document
+          .getElementById("confirmPeopleSelection")
+          .addEventListener("click", confirmPeopleSelection);
       }
 
       // Setup image upload functionality
       function setupImageUpload() {
-        // Click to upload
-        imageUploadContainer.addEventListener("click", function () {
-          itemImageInput.click();
-        });
+        const imageUpload = document.getElementById("subMomenImageUpload");
+        const imageInput = document.getElementById("subMomenImages");
 
-        // File selection
-        itemImageInput.addEventListener("change", function (e) {
-          handleImageUpload(e.target.files[0]);
-        });
+        if (imageUpload && imageInput) {
+          imageUpload.addEventListener("click", function () {
+            imageInput.click();
+          });
 
-        // Drag and drop
-        imageUploadContainer.addEventListener("dragover", function (e) {
-          e.preventDefault();
-          this.classList.add("dragover");
-        });
+          imageInput.addEventListener("change", function (e) {
+            handleImagesUpload(e.target.files);
+          });
 
-        imageUploadContainer.addEventListener("dragleave", function (e) {
-          e.preventDefault();
-          this.classList.remove("dragover");
-        });
+          // Drag and drop functionality
+          imageUpload.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            imageUpload.style.borderColor = "var(--primary)";
+            imageUpload.style.background = "rgba(44, 62, 80, 0.1)";
+          });
 
-        imageUploadContainer.addEventListener("drop", function (e) {
-          e.preventDefault();
-          this.classList.remove("dragover");
-          if (e.dataTransfer.files.length) {
-            handleImageUpload(e.dataTransfer.files[0]);
+          imageUpload.addEventListener("dragleave", function () {
+            imageUpload.style.borderColor = "#ddd";
+            imageUpload.style.background = "#f8f9fa";
+          });
+
+          imageUpload.addEventListener("drop", function (e) {
+            e.preventDefault();
+            imageUpload.style.borderColor = "#ddd";
+            imageUpload.style.background = "#f8f9fa";
+            handleImagesUpload(e.dataTransfer.files);
+          });
+        }
+      }
+
+      // Handle images upload
+      function handleImagesUpload(files) {
+        if (!files || files.length === 0) return;
+
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          if (!file.type.startsWith("image/")) {
+            alert("Silakan pilih file gambar yang valid!");
+            continue;
           }
+
+          if (file.size > 2 * 1024 * 1024) {
+            alert("Ukuran file maksimal 2MB!");
+            continue;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            currentSubMomenImages.push(e.target.result);
+            renderSubMomenImagesPreview();
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      // Render sub momen images preview
+      function renderSubMomenImagesPreview() {
+        const preview = document.getElementById("subMomenImagesPreview");
+        preview.innerHTML = "";
+
+        currentSubMomenImages.forEach((image, index) => {
+          const img = document.createElement("img");
+          img.src = image;
+          img.className = "photo-thumbnail";
+          img.onclick = function () {
+            viewPhoto(image);
+          };
+
+          const removeBtn = document.createElement("button");
+          removeBtn.className = "btn btn-sm btn-danger ms-1";
+          removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+          removeBtn.onclick = function (e) {
+            e.stopPropagation();
+            currentSubMomenImages.splice(index, 1);
+            renderSubMomenImagesPreview();
+          };
+
+          const container = document.createElement("div");
+          container.className = "d-inline-block";
+          container.appendChild(img);
+          container.appendChild(removeBtn);
+          preview.appendChild(container);
         });
       }
 
-      // Handle image upload
-      function handleImageUpload(file) {
-        if (!file || !file.type.startsWith("image/")) {
-          alert("Silakan pilih file gambar yang valid!");
-          return;
-        }
-
-        if (file.size > 2 * 1024 * 1024) {
-          alert("Ukuran file maksimal 2MB!");
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          imagePreview.innerHTML = `
-              <img src="${e.target.result}" class="image-preview" alt="Preview">
-              <button type="button" class="btn btn-sm btn-danger mt-2" onclick="clearImagePreview()">
-                  <i class="fas fa-times me-1"></i>Hapus Foto
-              </button>
-          `;
-        };
-        reader.readAsDataURL(file);
-      }
-
-      // Clear image preview
-      function clearImagePreview() {
-        imagePreview.innerHTML = "";
-        itemImageInput.value = "";
-      }
-
-      // Add a new wishlist
-      function addWishlist() {
-        const name = document.getElementById("wishlistName").value;
-        const description = document.getElementById(
-          "wishlistDescription"
-        ).value;
+      // Add Momen Besar
+      function addMomenBesar() {
+        const name = document.getElementById("momenBesarName").value.trim();
+        const description = document
+          .getElementById("momenBesarDescription")
+          .value.trim();
 
         if (!name) {
-          alert("Nama wishlist harus diisi!");
+          alert("Nama momen besar harus diisi!");
           return;
         }
 
-        const newWishlist = {
+        const newMomenBesar = {
           id: Date.now(),
           name,
           description,
@@ -1503,1142 +1301,685 @@
           createdAt: new Date().toISOString(),
         };
 
-        wishlists.push(newWishlist);
+        momenBesarList.push(newMomenBesar);
         saveToLocalStorage();
-        renderWishlists();
+        renderMoments();
         updateStats();
 
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Wishlist berhasil ditambahkan!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
-
-        // Reset form
-        addWishlistForm.reset();
-        const addWishlistModal = bootstrap.Modal.getInstance(
-          document.getElementById("addWishlistModal")
-        );
-        addWishlistModal.hide();
-
-        // Add confetti animation
-        createConfetti();
+        // Show success
+        showSuccess("Momen besar berhasil ditambahkan!");
+        document.getElementById("addMomenBesarForm").reset();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addMomenBesarModal")
+        ).hide();
       }
 
-      // Add a category to a wishlist
-      function addCategory() {
-        const wishlistId = parseInt(
-          document.getElementById("categoryWishlistId").value
+      // Add Kategori
+      function addKategori() {
+        const momenBesarId = parseInt(
+          document.getElementById("kategoriMomenBesarId").value
         );
-        const name = document.getElementById("categoryName").value;
-        const description = document.getElementById(
-          "categoryDescription"
-        ).value;
+        const name = document.getElementById("kategoriName").value.trim();
+        const description = document
+          .getElementById("kategoriDescription")
+          .value.trim();
 
-        if (!wishlistId || !name) {
+        if (!name) {
           alert("Nama kategori harus diisi!");
           return;
         }
 
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
 
-        const newCategory = {
+        const newKategori = {
           id: Date.now(),
           name,
           description,
-          items: [],
+          subMoments: [],
         };
 
-        wishlist.categories.push(newCategory);
+        momenBesar.categories.push(newKategori);
         saveToLocalStorage();
-        renderWishlists();
+        renderMoments();
         updateStats();
 
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Kategori berhasil ditambahkan!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
-
-        // Reset form
-        addCategoryForm.reset();
-        const addCategoryModal = bootstrap.Modal.getInstance(
-          document.getElementById("addCategoryModal")
-        );
-        addCategoryModal.hide();
+        // Show success
+        showSuccess("Kategori berhasil ditambahkan!");
+        document.getElementById("addKategoriForm").reset();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addKategoriModal")
+        ).hide();
       }
 
-      // Add an item to a category
-      function addItem() {
-        const wishlistId = parseInt(
-          document.getElementById("itemWishlistId").value
+      // Save Sub Momen (Add or Edit)
+      function saveSubMomen() {
+        const momenBesarId = parseInt(
+          document.getElementById("subMomenMomenBesarId").value
         );
-        const categoryId = parseInt(
-          document.getElementById("itemCategoryId").value
+        const kategoriId = parseInt(
+          document.getElementById("subMomenKategoriId").value
         );
-        const name = document.getElementById("itemName").value;
-        const price = parseInt(document.getElementById("itemPrice").value);
-        const tiktokLink = document.getElementById("itemTiktokLink").value;
-        const shopeeLink = document.getElementById("itemShopeeLink").value;
-        const description = document.getElementById("itemDescription").value;
+        const subMomenId = parseInt(
+          document.getElementById("subMomenId").value
+        );
+        const name = document.getElementById("subMomenName").value.trim();
+        const date = document.getElementById("subMomenDate").value;
+        const description = document
+          .getElementById("subMomenDescription")
+          .value.trim();
 
-        if (!wishlistId || !categoryId || !name || !price) {
-          alert("Nama dan harga item harus diisi!");
+        if (!name || !date) {
+          alert("Nama dan tanggal sub momen harus diisi!");
           return;
         }
 
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
 
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
 
-        // Get image data if available
-        let imageData = null;
-        const previewImg = imagePreview.querySelector("img");
-        if (previewImg) {
-          imageData = previewImg.src;
+        let subMomen;
+        if (currentEditingSubMomen) {
+          // Edit existing sub momen
+          subMomen = kategori.subMoments.find((s) => s.id === subMomenId);
+          if (!subMomen) return;
+
+          subMomen.name = name;
+          subMomen.date = date;
+          subMomen.description = description;
+          subMomen.people = [...currentSelectedPeople];
+          subMomen.images = [...currentSubMomenImages];
+        } else {
+          // Add new sub momen
+          subMomen = {
+            id: Date.now(),
+            name,
+            date,
+            description,
+            people: [...currentSelectedPeople],
+            images: [...currentSubMomenImages],
+          };
+          kategori.subMoments.push(subMomen);
         }
 
-        const newItem = {
-          id: Date.now(),
-          name,
-          price,
-          image: imageData,
-          tiktokLink,
-          shopeeLink,
-          description,
-          achieved: false,
-        };
-
-        category.items.push(newItem);
         saveToLocalStorage();
-        renderWishlists();
+        renderMoments();
         updateStats();
 
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Item berhasil ditambahkan!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
+        // Show success
+        showSuccess(
+          currentEditingSubMomen
+            ? "Sub momen berhasil diperbarui!"
+            : "Sub momen berhasil ditambahkan!"
         );
-        successModal.show();
-
-        // Reset form
-        addItemForm.reset();
-        clearImagePreview();
-        const addItemModal = bootstrap.Modal.getInstance(
-          document.getElementById("addItemModal")
-        );
-        addItemModal.hide();
+        resetSubMomenForm();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addSubMomenModal")
+        ).hide();
       }
 
-      // Add savings
-      function addSavings() {
-        const amount = parseInt(document.getElementById("savingsAmount").value);
-        const description = document.getElementById("savingsDescription").value;
-
-        if (!amount || amount <= 0) {
-          alert("Jumlah tabungan harus diisi dengan angka positif!");
-          return;
-        }
-
-        savings += amount;
-
-        // Add transaction
-        const transaction = {
-          id: Date.now(),
-          type: "deposit",
-          amount,
-          description: description || "Tabungan",
-          date: new Date().toISOString(),
-        };
-
-        transactions.unshift(transaction);
-
-        saveToLocalStorage();
-        updateSavingsDisplay();
-        renderTransactions();
-
-        // Show success message
-        document.getElementById(
-          "successMessage"
-        ).textContent = `Tabungan berhasil ditambahkan sebesar Rp ${amount.toLocaleString(
-          "id-ID"
-        )}!`;
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
-
-        // Reset form
-        addSavingsForm.reset();
-        const addSavingsModal = bootstrap.Modal.getInstance(
-          document.getElementById("addSavingsModal")
-        );
-        addSavingsModal.hide();
-
-        // Add confetti animation for large deposits
-        if (amount >= 100000) {
-          createConfetti();
-        }
+      // Reset sub momen form
+      function resetSubMomenForm() {
+        currentEditingSubMomen = null;
+        currentSelectedPeople = [];
+        currentSubMomenImages = [];
+        document.getElementById("subMomenId").value = "";
+        document.getElementById("addSubMomenForm").reset();
+        document.getElementById("selectedPeopleTags").innerHTML = "";
+        document.getElementById("subMomenImagesPreview").innerHTML = "";
+        document.getElementById("subMomenModalTitle").textContent =
+          "Tambah Sub Momen";
       }
 
-      // Withdraw savings
-      function withdrawSavings() {
-        const amount = parseInt(
-          document.getElementById("withdrawAmount").value
-        );
-        const description = document.getElementById(
-          "withdrawDescription"
-        ).value;
+      // Edit Sub Momen
+      function editSubMomen(momenBesarId, kategoriId, subMomenId) {
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
 
-        if (!amount || amount <= 0) {
-          alert("Jumlah penarikan harus diisi dengan angka positif!");
-          return;
-        }
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
 
-        if (amount > savings) {
-          alert("Jumlah penarikan melebihi tabungan yang tersedia!");
-          return;
-        }
+        const subMomen = kategori.subMoments.find((s) => s.id === subMomenId);
+        if (!subMomen) return;
 
-        savings -= amount;
+        // Set form values
+        document.getElementById("subMomenMomenBesarId").value = momenBesarId;
+        document.getElementById("subMomenKategoriId").value = kategoriId;
+        document.getElementById("subMomenId").value = subMomenId;
+        document.getElementById("subMomenName").value = subMomen.name;
+        document.getElementById("subMomenDate").value = subMomen.date;
+        document.getElementById("subMomenDescription").value =
+          subMomen.description || "";
 
-        // Add transaction
-        const transaction = {
-          id: Date.now(),
-          type: "withdrawal",
-          amount,
-          description: description || "Penarikan",
-          date: new Date().toISOString(),
-        };
+        // Set people
+        currentSelectedPeople = subMomen.people || [];
+        renderSelectedPeopleTags();
 
-        transactions.unshift(transaction);
+        // Set images
+        currentSubMomenImages = subMomen.images || [];
+        renderSubMomenImagesPreview();
 
-        saveToLocalStorage();
-        updateSavingsDisplay();
-        renderTransactions();
+        // Update modal title
+        document.getElementById("subMomenModalTitle").textContent =
+          "Edit Sub Momen";
+        currentEditingSubMomen = subMomen;
 
-        // Show success message
-        document.getElementById(
-          "successMessage"
-        ).textContent = `Tabungan berhasil dikurangi sebesar Rp ${amount.toLocaleString(
-          "id-ID"
-        )}!`;
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
-
-        // Reset form
-        withdrawSavingsForm.reset();
-        const withdrawSavingsModal = bootstrap.Modal.getInstance(
-          document.getElementById("withdrawSavingsModal")
-        );
-        withdrawSavingsModal.hide();
+        // Show modal
+        new bootstrap.Modal(document.getElementById("addSubMomenModal")).show();
       }
 
-      // Delete a wishlist
-      function deleteWishlist(id) {
-        if (confirm("Apakah Anda yakin ingin menghapus wishlist ini?")) {
-          wishlists = wishlists.filter((w) => w.id !== id);
+      // Delete functions
+      function deleteMomenBesar(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus momen besar ini?")) {
+          momenBesarList = momenBesarList.filter((m) => m.id !== id);
           saveToLocalStorage();
-          renderWishlists();
+          renderMoments();
           updateStats();
         }
       }
 
-      // Delete a category
-      function deleteCategory(wishlistId, categoryId) {
+      function deleteKategori(momenBesarId, kategoriId) {
         if (confirm("Apakah Anda yakin ingin menghapus kategori ini?")) {
-          const wishlist = wishlists.find((w) => w.id === wishlistId);
-          if (wishlist) {
-            wishlist.categories = wishlist.categories.filter(
-              (c) => c.id !== categoryId
+          const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+          if (momenBesar) {
+            momenBesar.categories = momenBesar.categories.filter(
+              (c) => c.id !== kategoriId
             );
             saveToLocalStorage();
-            renderWishlists();
+            renderMoments();
             updateStats();
           }
         }
       }
 
-      // Delete an item
-      function deleteItem(wishlistId, categoryId, itemId) {
-        if (confirm("Apakah Anda yakin ingin menghapus item ini?")) {
-          const wishlist = wishlists.find((w) => w.id === wishlistId);
-          if (wishlist) {
-            const category = wishlist.categories.find(
-              (c) => c.id === categoryId
+      function deleteSubMomen(momenBesarId, kategoriId, subMomenId) {
+        if (confirm("Apakah Anda yakin ingin menghapus sub momen ini?")) {
+          const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+          if (momenBesar) {
+            const kategori = momenBesar.categories.find(
+              (c) => c.id === kategoriId
             );
-            if (category) {
-              category.items = category.items.filter((i) => i.id !== itemId);
+            if (kategori) {
+              kategori.subMoments = kategori.subMoments.filter(
+                (s) => s.id !== subMomenId
+              );
               saveToLocalStorage();
-              renderWishlists();
+              renderMoments();
               updateStats();
             }
           }
         }
       }
 
-      // Toggle categories visibility
-      function toggleCategories(wishlistId) {
-        const categoriesContainer = document.getElementById(
-          `categories-${wishlistId}`
-        );
-        const toggleIcon = document.getElementById(`toggle-icon-${wishlistId}`);
-
-        if (categoriesContainer.style.display === "none") {
-          categoriesContainer.style.display = "block";
-          toggleIcon.className = "fas fa-chevron-up";
+      // Toggle functions
+      function toggleMomenBesarDetails(id) {
+        const content = document.getElementById(`momen-besar-content-${id}`);
+        const icon = document.getElementById(`momen-besar-icon-${id}`);
+        if (content.style.display === "none") {
+          content.style.display = "block";
+          icon.className = "fas fa-chevron-up";
         } else {
-          categoriesContainer.style.display = "none";
-          toggleIcon.className = "fas fa-chevron-down";
+          content.style.display = "none";
+          icon.className = "fas fa-chevron-down";
         }
       }
 
-      // Toggle items visibility
-      function toggleItems(categoryId) {
-        const itemsContainer = document.getElementById(`items-${categoryId}`);
-        const toggleIcon = document.getElementById(
-          `item-toggle-icon-${categoryId}`
-        );
-
-        if (itemsContainer.style.display === "none") {
-          itemsContainer.style.display = "block";
-          toggleIcon.className = "fas fa-chevron-up";
+      function toggleKategoriDetails(id) {
+        const content = document.getElementById(`kategori-content-${id}`);
+        const icon = document.getElementById(`kategori-icon-${id}`);
+        if (content.style.display === "none") {
+          content.style.display = "block";
+          icon.className = "fas fa-chevron-up";
         } else {
-          itemsContainer.style.display = "none";
-          toggleIcon.className = "fas fa-chevron-down";
+          content.style.display = "none";
+          icon.className = "fas fa-chevron-down";
         }
       }
 
-      // Edit wishlist name
-      function editWishlistName(wishlistId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const titleElement = document.getElementById(
-          `wishlist-title-${wishlistId}`
-        );
-        const currentName = wishlist.name;
-
-        titleElement.innerHTML = `
-          <input type="text" class="form-control" value="${currentName}" id="edit-wishlist-${wishlistId}">
-          <div class="mt-2">
-              <button class="btn btn-sm btn-success me-2" onclick="saveWishlistName(${wishlistId})">
-                  <i class="fas fa-check me-1"></i>Simpan
-              </button>
-              <button class="btn btn-sm btn-secondary" onclick="cancelEditWishlistName(${wishlistId}, '${currentName}')">
-                  <i class="fas fa-times me-1"></i>Batal
-              </button>
-          </div>
-      `;
-
-        document.getElementById(`edit-wishlist-${wishlistId}`).focus();
+      // Open modal functions
+      function openAddKategoriModal(momenBesarId) {
+        document.getElementById("kategoriMomenBesarId").value = momenBesarId;
+        new bootstrap.Modal(document.getElementById("addKategoriModal")).show();
       }
 
-      // Save wishlist name
-      function saveWishlistName(wishlistId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
+      function openAddSubMomenModal(momenBesarId, kategoriId) {
+        resetSubMomenForm();
+        document.getElementById("subMomenMomenBesarId").value = momenBesarId;
+        document.getElementById("subMomenKategoriId").value = kategoriId;
+        new bootstrap.Modal(document.getElementById("addSubMomenModal")).show();
+      }
 
-        const newName = document.getElementById(
-          `edit-wishlist-${wishlistId}`
-        ).value;
-        if (!newName.trim()) {
-          alert("Nama wishlist tidak boleh kosong!");
+      // People management functions
+      function addPerson() {
+        const name = document.getElementById("personName").value.trim();
+        const type = document.getElementById("personType").value;
+
+        if (!name) {
+          alert("Nama orang harus diisi!");
           return;
         }
 
-        wishlist.name = newName;
-        saveToLocalStorage();
-        renderWishlists();
+        savePersonToStorage(name, type);
+        document.getElementById("personName").value = "";
       }
 
-      // Cancel edit wishlist name
-      function cancelEditWishlistName(wishlistId, originalName) {
-        const titleElement = document.getElementById(
-          `wishlist-title-${wishlistId}`
-        );
-        titleElement.innerHTML = `
-          ${originalName}
-          <button class="btn btn-sm btn-outline-primary ms-2" onclick="editWishlistName(${wishlistId})">
-              <i class="fas fa-edit"></i>
-          </button>
-      `;
-      }
-
-      // Edit category name
-      function editCategoryName(wishlistId, categoryId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
-
-        const titleElement = document.getElementById(
-          `category-title-${categoryId}`
-        );
-        const currentName = category.name;
-
-        titleElement.innerHTML = `
-          <input type="text" class="form-control" value="${currentName}" id="edit-category-${categoryId}">
-          <div class="mt-2">
-              <button class="btn btn-sm btn-success me-2" onclick="saveCategoryName(${wishlistId}, ${categoryId})">
-                  <i class="fas fa-check me-1"></i>Simpan
-              </button>
-              <button class="btn btn-sm btn-secondary" onclick="cancelEditCategoryName(${wishlistId}, ${categoryId}, '${currentName}')">
-                  <i class="fas fa-times me-1"></i>Batal
-              </button>
-          </div>
-      `;
-
-        document.getElementById(`edit-category-${categoryId}`).focus();
-      }
-
-      // Save category name
-      function saveCategoryName(wishlistId, categoryId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
-
-        const newName = document.getElementById(
-          `edit-category-${categoryId}`
-        ).value;
-        if (!newName.trim()) {
-          alert("Nama kategori tidak boleh kosong!");
-          return;
-        }
-
-        category.name = newName;
-        saveToLocalStorage();
-        renderWishlists();
-      }
-
-      // Cancel edit category name
-      function cancelEditCategoryName(wishlistId, categoryId, originalName) {
-        const titleElement = document.getElementById(
-          `category-title-${categoryId}`
-        );
-        titleElement.innerHTML = `
-          ${originalName}
-          <button class="btn btn-sm btn-outline-primary ms-2" onclick="editCategoryName(${wishlistId}, ${categoryId})">
-              <i class="fas fa-edit"></i>
-          </button>
-      `;
-      }
-
-      // Edit item
-      function editItem(wishlistId, categoryId, itemId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
-
-        const item = category.items.find((i) => i.id === itemId);
-        if (!item) return;
-
-        const itemElement = document.getElementById(`item-${itemId}`);
-
-        itemElement.innerHTML = `
-          <div class="edit-item-form">
-              <div class="mb-3">
-                  <label class="form-label">Nama Item</label>
-                  <input type="text" class="form-control" id="edit-item-name-${itemId}" value="${
-          item.name
-        }" required>
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Harga (Rp)</label>
-                  <input type="number" class="form-control" id="edit-item-price-${itemId}" value="${
-          item.price
-        }" min="1" required>
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Foto Item</label>
-                  <div class="image-upload-container" onclick="document.getElementById('edit-item-image-${itemId}').click()">
-                      <i class="fas fa-cloud-upload-alt fa-2x mb-3 text-muted"></i>
-                      <p class="mb-2">Klik untuk ganti foto</p>
-                      <input type="file" id="edit-item-image-${itemId}" accept="image/*" class="d-none" onchange="handleEditImageUpload(${wishlistId}, ${categoryId}, ${itemId}, this.files[0])" />
-                  </div>
-                  ${
-                    item.image
-                      ? `<img src="${item.image}" class="image-preview mt-2" alt="Current Image">`
-                      : ""
-                  }
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Link TikTok</label>
-                  <input type="url" class="form-control" id="edit-item-tiktok-${itemId}" value="${
-          item.tiktokLink || ""
-        }" placeholder="https://www.tiktok.com/...">
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Link Shopee</label>
-                  <input type="url" class="form-control" id="edit-item-shopee-${itemId}" value="${
-          item.shopeeLink || ""
-        }" placeholder="https://shopee.co.id/...">
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control" id="edit-item-description-${itemId}" rows="2">${
-          item.description || ""
-        }</textarea>
-              </div>
-              <div class="d-flex justify-content-end">
-                  <button class="btn btn-sm btn-success me-2" onclick="saveItem(${wishlistId}, ${categoryId}, ${itemId})">
-                      <i class="fas fa-check me-1"></i>Simpan
-                  </button>
-                  <button class="btn btn-sm btn-secondary" onclick="cancelEditItem(${wishlistId}, ${categoryId}, ${itemId})">
-                      <i class="fas fa-times me-1"></i>Batal
-                  </button>
-              </div>
-          </div>
-      `;
-      }
-
-      // Handle edit image upload
-      function handleEditImageUpload(wishlistId, categoryId, itemId, file) {
-        if (!file || !file.type.startsWith("image/")) {
-          alert("Silakan pilih file gambar yang valid!");
-          return;
-        }
-
-        if (file.size > 2 * 1024 * 1024) {
-          alert("Ukuran file maksimal 2MB!");
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const wishlist = wishlists.find((w) => w.id === wishlistId);
-          const category = wishlist.categories.find((c) => c.id === categoryId);
-          const item = category.items.find((i) => i.id === itemId);
-
-          item.image = e.target.result;
-          saveToLocalStorage();
-          renderWishlists();
+      function savePersonToStorage(name, type) {
+        const newPerson = {
+          id: Date.now(),
+          name,
+          type,
+          createdAt: new Date().toISOString(),
         };
-        reader.readAsDataURL(file);
-      }
 
-      // Save item changes
-      function saveItem(wishlistId, categoryId, itemId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
-
-        const item = category.items.find((i) => i.id === itemId);
-        if (!item) return;
-
-        const newName = document.getElementById(
-          `edit-item-name-${itemId}`
-        ).value;
-        const newPrice = parseInt(
-          document.getElementById(`edit-item-price-${itemId}`).value
-        );
-        const newTiktokLink = document.getElementById(
-          `edit-item-tiktok-${itemId}`
-        ).value;
-        const newShopeeLink = document.getElementById(
-          `edit-item-shopee-${itemId}`
-        ).value;
-        const newDescription = document.getElementById(
-          `edit-item-description-${itemId}`
-        ).value;
-
-        if (!newName.trim()) {
-          alert("Nama item tidak boleh kosong!");
-          return;
-        }
-
-        if (!newPrice || newPrice <= 0) {
-          alert("Harga item harus diisi dengan angka positif!");
-          return;
-        }
-
-        item.name = newName;
-        item.price = newPrice;
-        item.tiktokLink = newTiktokLink;
-        item.shopeeLink = newShopeeLink;
-        item.description = newDescription;
-
+        peopleList.push(newPerson);
         saveToLocalStorage();
-        renderWishlists();
-
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Item berhasil diupdate!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
+        renderPeopleList();
+        showSuccess("Orang berhasil ditambahkan!");
       }
 
-      // Cancel edit item
-      function cancelEditItem(wishlistId, categoryId, itemId) {
-        renderWishlists();
-      }
-
-      // Mark item as achieved
-      function markItemAchieved(wishlistId, categoryId, itemId) {
-        const wishlist = wishlists.find((w) => w.id === wishlistId);
-        if (!wishlist) return;
-
-        const category = wishlist.categories.find((c) => c.id === categoryId);
-        if (!category) return;
-
-        const item = category.items.find((i) => i.id === itemId);
-        if (!item) return;
-
-        item.achieved = !item.achieved;
-        saveToLocalStorage();
-        renderWishlists();
-        updateSavingsDisplay();
-
-        // Show success message
-        if (item.achieved) {
-          document.getElementById(
-            "successMessage"
-          ).textContent = `Selamat! Item "${item.name}" berhasil dicapai!`;
-          const successModal = new bootstrap.Modal(
-            document.getElementById("successModal")
-          );
-          successModal.show();
-
-          // Add confetti animation
-          createConfetti();
+      function deletePerson(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus orang ini?")) {
+          peopleList = peopleList.filter((p) => p.id !== id);
+          saveToLocalStorage();
+          renderPeopleList();
         }
       }
 
-      // View photo in modal
+      function renderPeopleList() {
+        if (peopleList.length === 0) {
+          peopleListContainer.style.display = "none";
+          emptyPeopleList.style.display = "block";
+        } else {
+          peopleListContainer.style.display = "flex";
+          emptyPeopleList.style.display = "none";
+          peopleListContainer.innerHTML = "";
+
+          peopleList.forEach((person) => {
+            const personCard = document.createElement("div");
+            personCard.className = "person-card";
+            personCard.innerHTML = `
+              <div class="person-info">
+                <div class="person-name">${person.name}</div>
+                <div class="person-type">${getPersonTypeLabel(
+                  person.type
+                )}</div>
+              </div>
+              <button class="btn btn-sm btn-outline-danger mt-2" onclick="deletePerson(${
+                person.id
+              })">
+                <i class="fas fa-trash"></i> Hapus
+              </button>
+            `;
+            peopleListContainer.appendChild(personCard);
+          });
+        }
+      }
+
+      function getPersonTypeLabel(type) {
+        const labels = {
+          family: "Keluarga",
+          friend: "Teman",
+          partner: "Pacar/Pasangan",
+          colleague: "Rekan Kerja",
+        };
+        return labels[type] || type;
+      }
+
+      // People selection functions
+      function openPeopleSelectionModal() {
+        renderPeopleChecklist();
+        new bootstrap.Modal(
+          document.getElementById("peopleSelectionModal")
+        ).show();
+      }
+
+      function renderPeopleChecklist() {
+        const container = document.getElementById("peopleChecklist");
+        const empty = document.getElementById("emptyPeopleState");
+
+        if (peopleList.length === 0) {
+          container.style.display = "none";
+          empty.style.display = "block";
+        } else {
+          container.style.display = "block";
+          empty.style.display = "none";
+          container.innerHTML = "";
+
+          peopleList.forEach((person) => {
+            const isSelected = currentSelectedPeople.includes(person.id);
+            const item = document.createElement("div");
+            item.className = "person-checkbox";
+            item.innerHTML = `
+              <input class="form-check-input" type="checkbox" value="${
+                person.id
+              }" id="person-${person.id}" ${isSelected ? "checked" : ""}>
+              <label class="form-check-label" for="person-${person.id}">
+                ${
+                  person.name
+                } <span class="badge bg-secondary">${getPersonTypeLabel(
+              person.type
+            )}</span>
+              </label>
+            `;
+            container.appendChild(item);
+          });
+        }
+      }
+
+      function confirmPeopleSelection() {
+        const checkboxes = document.querySelectorAll(
+          '#peopleChecklist input[type="checkbox"]:checked'
+        );
+        currentSelectedPeople = Array.from(checkboxes).map((cb) =>
+          parseInt(cb.value)
+        );
+        renderSelectedPeopleTags();
+        bootstrap.Modal.getInstance(
+          document.getElementById("peopleSelectionModal")
+        ).hide();
+      }
+
+      function renderSelectedPeopleTags() {
+        const container = document.getElementById("selectedPeopleTags");
+        container.innerHTML = "";
+
+        currentSelectedPeople.forEach((personId) => {
+          const person = peopleList.find((p) => p.id === personId);
+          if (person) {
+            const tag = document.createElement("span");
+            tag.className = "person-tag";
+            tag.innerHTML = `
+              ${person.name}
+              <span class="remove-person" onclick="removeSelectedPerson(${person.id})">
+                <i class="fas fa-times"></i>
+              </span>
+            `;
+            container.appendChild(tag);
+          }
+        });
+      }
+
+      function removeSelectedPerson(personId) {
+        currentSelectedPeople = currentSelectedPeople.filter(
+          (id) => id !== personId
+        );
+        renderSelectedPeopleTags();
+      }
+
+      // Switch to Forum tab
+      function switchToForumTab() {
+        bootstrap.Modal.getInstance(
+          document.getElementById("peopleSelectionModal")
+        ).hide();
+        const forumTab = new bootstrap.Tab(
+          document.getElementById("forum-tab")
+        );
+        forumTab.show();
+      }
+
+      // Photo functions
       function viewPhoto(photoSrc) {
         document.getElementById("modalPhoto").src = photoSrc;
-        const photoModal = new bootstrap.Modal(
-          document.getElementById("photoModal")
-        );
-        photoModal.show();
+        new bootstrap.Modal(document.getElementById("photoModal")).show();
       }
 
-      // Render wishlists - dengan tampilan seperti Momen Spesial
-      function renderWishlists(filter = "all") {
-        let filteredWishlists = wishlists;
-
-        if (filter === "completed") {
-          filteredWishlists = wishlists.filter((w) => {
-            return (
-              w.categories.length > 0 &&
-              w.categories.every(
-                (c) => c.items.length > 0 && c.items.every((i) => i.achieved)
-              )
-            );
-          });
-        } else if (filter === "in-progress") {
-          filteredWishlists = wishlists.filter((w) => {
-            return w.categories.some((c) => c.items.some((i) => !i.achieved));
-          });
-        }
-
-        if (filteredWishlists.length === 0) {
-          wishlistsContainer.style.display = "none";
+      // Render moments
+      function renderMoments() {
+        if (momenBesarList.length === 0) {
+          momentsContainer.style.display = "none";
           emptyState.style.display = "block";
         } else {
-          wishlistsContainer.style.display = "block";
+          momentsContainer.style.display = "block";
           emptyState.style.display = "none";
+          momentsContainer.innerHTML = "";
 
-          wishlistsContainer.innerHTML = "";
+          momenBesarList.forEach((momenBesar, index) => {
+            const totalSubMoments = momenBesar.categories.reduce(
+              (total, kategori) => total + kategori.subMoments.length,
+              0
+            );
 
-          filteredWishlists.forEach((wishlist, index) => {
-            // Calculate totals for this wishlist
-            let totalPrice = 0;
-            let totalItems = 0;
-            let achievedItems = 0;
+            const momenBesarCard = document.createElement("div");
+            momenBesarCard.className = "momen-besar-card fade-in";
+            momenBesarCard.style.animationDelay = `${index * 0.1}s`;
 
-            wishlist.categories.forEach((category) => {
-              category.items.forEach((item) => {
-                if (!item.achieved) {
-                  totalPrice += item.price;
-                }
-                totalItems++;
-                if (item.achieved) achievedItems++;
-              });
-            });
-
-            const progressPercentage =
-              totalPrice > 0 ? Math.min((savings / totalPrice) * 100, 100) : 0;
-            const isCompleted = totalItems > 0 && achievedItems === totalItems;
-
-            const wishlistCard = document.createElement("div");
-            wishlistCard.className = "wishlist-card fade-in";
-            wishlistCard.style.animationDelay = `${index * 0.1}s`;
-
-            wishlistCard.innerHTML = `
-                <div class="wishlist-header" onclick="toggleCategories(${
-                  wishlist.id
-                })">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h4 class="wishlist-title">
-                                <span id="wishlist-title-${wishlist.id}">
-                                    ${wishlist.name}
-                                    <button class="btn btn-sm btn-outline-primary ms-2" onclick="event.stopPropagation(); editWishlistName(${
-                                      wishlist.id
-                                    })">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                </span>
-                                ${
-                                  isCompleted
-                                    ? '<span class="badge bg-success ms-2"><i class="fas fa-check me-1"></i>Selesai</span>'
-                                    : ""
-                                }
-                            </h4>
-                            <p class="wishlist-meta">${
-                              wishlist.categories.length
-                            } kategori, ${totalItems} item
-                                <span class="hierarchy-indicator">
-                                    ${achievedItems}/${totalItems} selesai
-                                </span>
-                            </p>
-                        </div>
-                        <i id="toggle-icon-${
-                          wishlist.id
-                        }" class="fas fa-chevron-down"></i>
-                    </div>
-                    ${
-                      totalItems > 0
-                        ? `
-                      <div class="progress-info">
-                          <span class="progress-text">Progress: ${Math.round(
-                            progressPercentage
-                          )}%</span>
-                      </div>
-                      <div class="progress">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: ${progressPercentage}%"></div>
-                      </div>
-                    `
-                        : ""
-                    }
-                </div>
-                <div class="wishlist-content" id="categories-${
-                  wishlist.id
-                }" style="display: none;">
-                    ${
-                      wishlist.description
-                        ? `<p class="mb-3">${wishlist.description}</p>`
-                        : ""
-                    }
-                    
-                    <div class="d-flex justify-content-end mb-3">
-                        <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddCategoryModal(${
-                          wishlist.id
-                        })">
-                            <i class="fas fa-plus me-1"></i>Tambah Kategori
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger" onclick="deleteWishlist(${
-                          wishlist.id
-                        })">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="kategori-list">
-                        ${
-                          wishlist.categories.length > 0
-                            ? wishlist.categories
-                                .map((category) => {
-                                  let categoryTotalPrice = 0;
-                                  let categoryTotalItems = 0;
-                                  let categoryAchievedItems = 0;
-
-                                  category.items.forEach((item) => {
-                                    if (!item.achieved) {
-                                      categoryTotalPrice += item.price;
-                                    }
-                                    categoryTotalItems++;
-                                    if (item.achieved) categoryAchievedItems++;
-                                  });
-
-                                  const categoryProgress =
-                                    categoryTotalPrice > 0
-                                      ? Math.min(
-                                          (savings / categoryTotalPrice) * 100,
-                                          100
-                                        )
-                                      : 0;
-                                  const categoryCompleted =
-                                    categoryTotalItems > 0 &&
-                                    categoryAchievedItems ===
-                                      categoryTotalItems;
-
-                                  return `
-                                <div class="kategori-card">
-                                    <div class="kategori-header" onclick="toggleItems(${
-                                      category.id
-                                    })">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h5 class="kategori-title">
-                                                    <span id="category-title-${
-                                                      category.id
-                                                    }">
-                                                        ${category.name}
-                                                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="event.stopPropagation(); editCategoryName(${
-                                                          wishlist.id
-                                                        }, ${category.id})">
-                                                            <i class="fas fa-edit"></i>
-                                                        </button>
-                                                    </span>
-                                                    ${
-                                                      categoryCompleted
-                                                        ? '<span class="badge bg-success ms-2"><i class="fas fa-check me-1"></i>Selesai</span>'
-                                                        : ""
-                                                    }
-                                                </h5>
-                                                <p class="kategori-meta">
-                                                    ${categoryTotalItems} item
-                                                    <span class="hierarchy-indicator">
-                                                        ${categoryAchievedItems}/${categoryTotalItems} selesai
-                                                    </span>
-                                                </p>
-                                            </div>
-                                            <i id="item-toggle-icon-${
-                                              category.id
-                                            }" class="fas fa-chevron-down"></i>
-                                        </div>
-                                        ${
-                                          categoryTotalItems > 0
-                                            ? `
-                                          <div class="progress-info">
-                                              <span class="progress-text">Progress: ${Math.round(
-                                                categoryProgress
-                                              )}%</span>
-                                          </div>
-                                          <div class="progress">
-                                              <div class="progress-bar bg-info" role="progressbar" style="width: ${categoryProgress}%"></div>
-                                          </div>
-                                        `
-                                            : ""
-                                        }
-                                    </div>
-                                    <div class="kategori-content" id="items-${
-                                      category.id
-                                    }" style="display: none;">
-                                        ${
-                                          category.description
-                                            ? `<p class="mb-2">${category.description}</p>`
-                                            : ""
-                                        }
-                                        
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <div></div>
-                                            <div>
-                                                <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddItemModal(${
-                                                  wishlist.id
-                                                }, ${category.id})">
-                                                    <i class="fas fa-plus me-1"></i>Tambah Item
-                                                </button>
-                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteCategory(${
-                                                  wishlist.id
-                                                }, ${category.id})">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="items-container">
-                                            ${
-                                              category.items.length > 0
-                                                ? category.items
-                                                    .map((item) => {
-                                                      const itemProgress =
-                                                        item.price > 0
-                                                          ? Math.min(
-                                                              (savings /
-                                                                item.price) *
-                                                                100,
-                                                              100
-                                                            )
-                                                          : 0;
-
-                                                      return `
-                                                    <div class="item-card ${
-                                                      item.achieved
-                                                        ? "achieved"
-                                                        : ""
-                                                    }" id="item-${item.id}">
-                                                        <div class="item-content">
-                                                            <div class="item-info">
-                                                                <div class="d-flex align-items-start">
-                                                                    <div class="me-3">
-                                                                        ${
-                                                                          item.image
-                                                                            ? `<img src="${item.image}" class="item-image" onclick="viewPhoto('${item.image}')" alt="${item.name}">`
-                                                                            : `<div class="item-image-placeholder"><i class="fas fa-image"></i></div>`
-                                                                        }
-                                                                    </div>
-                                                                    <div class="flex-grow-1">
-                                                                        <div class="item-name">
-                                                                            ${
-                                                                              item.name
-                                                                            }
-                                                                            ${
-                                                                              item.achieved
-                                                                                ? '<span class="badge bg-success ms-2"><i class="fas fa-check me-1"></i>Tercapai</span>'
-                                                                                : '<span class="badge bg-warning ms-2"><i class="fas fa-clock me-1"></i>Dalam Proses</span>'
-                                                                            }
-                                                                        </div>
-                                                                        <div class="item-price">Rp ${item.price.toLocaleString(
-                                                                          "id-ID"
-                                                                        )}</div>
-                                                                        <div class="progress-info">
-                                                                            <span class="progress-text">Progress: ${itemProgress.toFixed(
-                                                                              1
-                                                                            )}%</span>
-                                                                        </div>
-                                                                        <div class="progress" style="height: 5px;">
-                                                                            <div class="progress-bar" style="width: ${itemProgress}%"></div>
-                                                                        </div>
-                                                                        <div class="mt-1">
-                                                                            ${
-                                                                              item.tiktokLink
-                                                                                ? `<a href="${item.tiktokLink}" target="_blank" class="item-link"><i class="fab fa-tiktok me-1"></i>TikTok</a>`
-                                                                                : ""
-                                                                            }
-                                                                            ${
-                                                                              item.shopeeLink
-                                                                                ? `<a href="${item.shopeeLink}" target="_blank" class="item-link"><i class="fas fa-shopping-bag me-1"></i>Shopee</a>`
-                                                                                : ""
-                                                                            }
-                                                                        </div>
-                                                                        ${
-                                                                          item.description
-                                                                            ? `<div class="mt-1"><small class="text-muted">${item.description}</small></div>`
-                                                                            : ""
-                                                                        }
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="item-actions">
-                                                                <button class="btn btn-sm edit-btn" onclick="editItem(${
-                                                                  wishlist.id
-                                                                }, ${
-                                                        category.id
-                                                      }, ${item.id})">
-                                                                    <i class="fas fa-edit"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm ${
-                                                                  item.achieved
-                                                                    ? "btn-warning"
-                                                                    : "btn-success"
-                                                                }" onclick="markItemAchieved(${
-                                                        wishlist.id
-                                                      }, ${category.id}, ${
-                                                        item.id
-                                                      })">
-                                                                    <i class="fas ${
-                                                                      item.achieved
-                                                                        ? "fa-undo"
-                                                                        : "fa-check"
-                                                                    }"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteItem(${
-                                                                  wishlist.id
-                                                                }, ${
-                                                        category.id
-                                                      }, ${item.id})">
-                                                                    <i class="fas fa-times"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                `;
-                                                    })
-                                                    .join("")
-                                                : `
-                                              <div class="text-center py-3 text-muted">
-                                                <p>Belum ada item</p>
-                                              </div>
-                                            `
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                                })
-                                .join("")
-                            : `
-                          <div class="text-center py-4 text-muted">
-                            <p>Belum ada kategori</p>
-                          </div>
-                        `
-                        }
-                    </div>
-                </div>
-            `;
-
-            wishlistsContainer.appendChild(wishlistCard);
-          });
-        }
-      }
-
-      // Filter wishlists
-      function filterWishlists(filter) {
-        renderWishlists(filter);
-      }
-
-      // Render transactions
-      function renderTransactions() {
-        if (transactions.length === 0) {
-          transactionHistory.style.display = "none";
-          emptyTransactionState.style.display = "block";
-        } else {
-          transactionHistory.style.display = "block";
-          emptyTransactionState.style.display = "none";
-
-          transactionHistory.innerHTML = "";
-
-          transactions.forEach((transaction) => {
-            const transactionItem = document.createElement("div");
-            transactionItem.className = "transaction-item";
-
-            const date = new Date(transaction.date);
-            const formattedDate = `${date
-              .getDate()
-              .toString()
-              .padStart(2, "0")}/${(date.getMonth() + 1)
-              .toString()
-              .padStart(2, "0")}/${date.getFullYear()} ${date
-              .getHours()
-              .toString()
-              .padStart(2, "0")}:${date
-              .getMinutes()
-              .toString()
-              .padStart(2, "0")}`;
-
-            transactionItem.innerHTML = `
+            momenBesarCard.innerHTML = `
+              <div class="momen-besar-header" onclick="toggleMomenBesarDetails(${
+                momenBesar.id
+              })">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h6 class="mb-1">${transaction.description}</h6>
-                        <small class="text-muted">${formattedDate}</small>
-                    </div>
-                    <div class="text-end">
-                        <div class="${
-                          transaction.type === "deposit"
-                            ? "text-success"
-                            : "text-danger"
-                        } fw-bold">
-                            ${
-                              transaction.type === "deposit" ? "+" : "-"
-                            } Rp ${transaction.amount.toLocaleString("id-ID")}
-                        </div>
-                        <small class="text-muted">${
-                          transaction.type === "deposit"
-                            ? "Tabungan"
-                            : "Penarikan"
-                        }</small>
-                    </div>
+                  <div>
+                    <h4 class="momen-besar-title">${momenBesar.name}</h4>
+                    <p class="momen-besar-meta">
+                      ${
+                        momenBesar.categories.length
+                      } kategori • ${totalSubMoments} sub momen
+                    </p>
+                  </div>
+                  <i id="momen-besar-icon-${
+                    momenBesar.id
+                  }" class="fas fa-chevron-down"></i>
                 </div>
+              </div>
+              <div class="momen-besar-content" id="momen-besar-content-${
+                momenBesar.id
+              }" style="display: none;">
+                ${
+                  momenBesar.description
+                    ? `<p class="mb-3">${momenBesar.description}</p>`
+                    : ""
+                }
+                
+                <div class="d-flex justify-content-end mb-3">
+                  <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddKategoriModal(${
+                    momenBesar.id
+                  })">
+                    <i class="fas fa-plus me-1"></i>Tambah Kategori
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" onclick="deleteMomenBesar(${
+                    momenBesar.id
+                  })">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+                
+                <div class="kategori-list">
+                  ${
+                    momenBesar.categories.length > 0
+                      ? momenBesar.categories
+                          .map((kategori) => {
+                            const kategoriTotal = kategori.subMoments.length;
+
+                            return `
+                      <div class="kategori-card">
+                        <div class="kategori-header" onclick="toggleKategoriDetails(${
+                          kategori.id
+                        })">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                              <h5 class="kategori-title">${kategori.name}</h5>
+                              <p class="kategori-meta">
+                                ${kategoriTotal} sub momen
+                              </p>
+                            </div>
+                            <i id="kategori-icon-${
+                              kategori.id
+                            }" class="fas fa-chevron-down"></i>
+                          </div>
+                        </div>
+                        <div class="kategori-content" id="kategori-content-${
+                          kategori.id
+                        }" style="display: none;">
+                          ${
+                            kategori.description
+                              ? `<p class="mb-2">${kategori.description}</p>`
+                              : ""
+                          }
+                          
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div></div>
+                            <div>
+                              <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddSubMomenModal(${
+                                momenBesar.id
+                              }, ${kategori.id})">
+                                <i class="fas fa-plus me-1"></i>Tambah Sub Momen
+                              </button>
+                              <button class="btn btn-sm btn-outline-danger" onclick="deleteKategori(${
+                                momenBesar.id
+                              }, ${kategori.id})">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                          
+                          <div class="sub-momen-list">
+                            ${
+                              kategori.subMoments.length > 0
+                                ? kategori.subMoments
+                                    .map((subMomen) => {
+                                      const peopleNames = (
+                                        subMomen.people || []
+                                      ).map((personId) => {
+                                        const person = peopleList.find(
+                                          (p) => p.id === personId
+                                        );
+                                        return person ? person.name : "Unknown";
+                                      });
+
+                                      return `
+                                <div class="sub-momen-item">
+                                  <div class="sub-momen-content">
+                                    <div class="sub-momen-info">
+                                      <div class="sub-momen-name">
+                                        ${subMomen.name}
+                                      </div>
+                                      <div class="sub-momen-date">Tanggal: ${formatDate(
+                                        subMomen.date
+                                      )}</div>
+                                      ${
+                                        subMomen.description
+                                          ? `<div class="sub-momen-description mt-1"><small>${subMomen.description}</small></div>`
+                                          : ""
+                                      }
+                                      ${
+                                        peopleNames.length > 0
+                                          ? `
+                                        <div class="mt-1">
+                                          <small class="text-muted">Dengan: ${peopleNames.join(
+                                            ", "
+                                          )}</small>
+                                        </div>
+                                      `
+                                          : ""
+                                      }
+                                      ${
+                                        subMomen.images &&
+                                        subMomen.images.length > 0
+                                          ? `
+                                        <div class="mt-2">
+                                          <div class="photo-gallery">
+                                            ${subMomen.images
+                                              .map(
+                                                (image, idx) => `
+                                              <img src="${image}" class="photo-thumbnail" onclick="viewPhoto('${image}')" alt="Foto ${
+                                                  idx + 1
+                                                }">
+                                            `
+                                              )
+                                              .join("")}
+                                          </div>
+                                        </div>
+                                      `
+                                          : ""
+                                      }
+                                    </div>
+                                    <div class="sub-momen-actions">
+                                      <button class="btn btn-sm edit-btn" onclick="editSubMomen(${
+                                        momenBesar.id
+                                      }, ${kategori.id}, ${subMomen.id})">
+                                        <i class="fas fa-edit"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-danger" onclick="deleteSubMomen(${
+                                        momenBesar.id
+                                      }, ${kategori.id}, ${subMomen.id})">
+                                        <i class="fas fa-times"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              `;
+                                    })
+                                    .join("")
+                                : `
+                              <div class="text-center py-3 text-muted">
+                                <p>Belum ada sub momen</p>
+                              </div>
+                            `
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                          })
+                          .join("")
+                      : `
+                    <div class="text-center py-4 text-muted">
+                      <p>Belum ada kategori</p>
+                    </div>
+                  `
+                  }
+                </div>
+              </div>
             `;
 
-            transactionHistory.appendChild(transactionItem);
+            momentsContainer.appendChild(momenBesarCard);
           });
         }
-      }
-
-      // Open add category modal
-      function openAddCategoryModal(wishlistId) {
-        document.getElementById("categoryWishlistId").value = wishlistId;
-        const addCategoryModal = new bootstrap.Modal(
-          document.getElementById("addCategoryModal")
-        );
-        addCategoryModal.show();
-      }
-
-      // Open add item modal
-      function openAddItemModal(wishlistId, categoryId) {
-        document.getElementById("itemWishlistId").value = wishlistId;
-        document.getElementById("itemCategoryId").value = categoryId;
-        const addItemModal = new bootstrap.Modal(
-          document.getElementById("addItemModal")
-        );
-        addItemModal.show();
       }
 
       // Update statistics
       function updateStats() {
-        const totalWishlists = wishlists.length;
-        let totalCategories = 0;
-        let totalItems = 0;
+        const totalMomenBesar = momenBesarList.length;
+        let totalKategori = 0;
+        let totalSubMomen = 0;
 
-        wishlists.forEach((wishlist) => {
-          totalCategories += wishlist.categories.length;
-          wishlist.categories.forEach((category) => {
-            totalItems += category.items.length;
+        momenBesarList.forEach((momenBesar) => {
+          totalKategori += momenBesar.categories.length;
+          momenBesar.categories.forEach((kategori) => {
+            totalSubMomen += kategori.subMoments.length;
           });
         });
 
-        totalWishlistsEl.textContent = totalWishlists;
-        totalCategoriesEl.textContent = totalCategories;
-        totalItemsEl.textContent = totalItems;
+        totalMomenBesarEl.textContent = totalMomenBesar;
+        totalKategoriEl.textContent = totalKategori;
+        totalSubMomenEl.textContent = totalSubMomen;
       }
 
-      // Update savings display
-      function updateSavingsDisplay() {
-        let totalNeeded = 0;
-        wishlists.forEach((wishlist) => {
-          wishlist.categories.forEach((category) => {
-            category.items.forEach((item) => {
-              if (!item.achieved) {
-                totalNeeded += item.price;
-              }
-            });
-          });
+      // Helper functions
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
         });
-
-        currentSavingsEl.textContent = `Rp ${savings.toLocaleString("id-ID")}`;
-        summaryNeededEl.textContent = `Rp ${totalNeeded.toLocaleString(
-          "id-ID"
-        )}`;
-        summarySavingsEl.textContent = `Rp ${savings.toLocaleString("id-ID")}`;
-
-        const remaining = Math.max(0, totalNeeded - savings);
-        summaryRemainingEl.textContent = `Rp ${remaining.toLocaleString(
-          "id-ID"
-        )}`;
-
-        const progressPercentage =
-          totalNeeded > 0 ? Math.min((savings / totalNeeded) * 100, 100) : 0;
-        summaryProgressEl.style.width = `${progressPercentage}%`;
-        summaryPercentageEl.textContent = `${progressPercentage.toFixed(
-          1
-        )}% tercapai`;
       }
 
-      // Save to localStorage
       function saveToLocalStorage() {
-        localStorage.setItem("wishlists", JSON.stringify(wishlists));
-        localStorage.setItem("savings", savings.toString());
-        localStorage.setItem("transactions", JSON.stringify(transactions));
+        localStorage.setItem("momenBesarList", JSON.stringify(momenBesarList));
+        localStorage.setItem("peopleList", JSON.stringify(peopleList));
       }
 
-      // Create confetti animation
+      function showSuccess(message) {
+        document.getElementById("successMessage").textContent = message;
+        new bootstrap.Modal(document.getElementById("successModal")).show();
+      }
+
       function createConfetti() {
         const colors = ["#2c3e50", "#3498db", "#e74c3c", "#27ae60", "#9b59b6"];
-
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 50; i++) {
           const confetti = document.createElement("div");
           confetti.className = "confetti";
           confetti.style.left = Math.random() * 100 + "vw";
@@ -2647,12 +1988,8 @@
           confetti.style.width = Math.random() * 10 + 5 + "px";
           confetti.style.height = Math.random() * 10 + 5 + "px";
           confetti.style.animationDelay = Math.random() * 5 + "s";
-
           document.body.appendChild(confetti);
-
-          setTimeout(() => {
-            confetti.remove();
-          }, 5000);
+          setTimeout(() => confetti.remove(), 5000);
         }
       }
     </script>
