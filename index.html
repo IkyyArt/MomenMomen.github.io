@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momen Seru Bersama Teman - Simpan Kenangan Indah</title>
+    <title>Momen Spesial - Kelola Kenangan Berharga</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,15 +14,15 @@
     />
     <style>
       :root {
-        --primary: #ff6b6b;
-        --secondary: #4ecdc4;
-        --accent: #ffd166;
-        --light: #f7fff7;
-        --dark: #1a535c;
-        --success: #06d6a0;
-        --warning: #ffd166;
-        --danger: #ef476f;
-        --purple: #6a67ce;
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --success: #27ae60;
+        --warning: #f39c12;
+        --danger: #c0392b;
+        --purple: #9b59b6;
       }
 
       * {
@@ -32,14 +32,13 @@
       }
 
       body {
-        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
         min-height: 100vh;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--dark);
         overflow-x: hidden;
       }
 
-      /* Navbar */
       .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -53,12 +52,11 @@
         font-size: 1.2rem;
       }
 
-      /* Hero Section */
       .hero-section {
         background: linear-gradient(
           135deg,
           var(--primary) 0%,
-          var(--purple) 100%
+          var(--secondary) 100%
         );
         color: white;
         padding: 3rem 0;
@@ -91,7 +89,6 @@
         opacity: 0.9;
       }
 
-      /* Stats Section */
       .stats-section {
         margin-top: -2rem;
         position: relative;
@@ -129,7 +126,6 @@
         font-size: 0.9rem;
       }
 
-      /* Main Content */
       .main-content {
         padding: 3rem 0;
       }
@@ -141,82 +137,124 @@
         font-size: 1.5rem;
       }
 
-      /* Tabs */
-      .nav-tabs {
-        border-bottom: 2px solid #e9ecef;
-        margin-bottom: 1.5rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-
-      .nav-tabs .nav-link {
-        border: none;
-        color: #6c757d;
-        font-weight: 600;
-        padding: 0.75rem 1rem;
-        border-radius: 10px 10px 0 0;
-        transition: all 0.3s;
-        font-size: 0.9rem;
-        min-width: auto;
-      }
-
-      .nav-tabs .nav-link.active {
-        background: var(--primary);
-        color: white;
-      }
-
-      /* Moment Cards */
-      .moment-card {
+      /* Momen Besar Card */
+      .momen-besar-card {
         background: white;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
-        margin-bottom: 1.5rem;
-        border: 1px solid #f1f3f4;
+        margin-bottom: 2rem;
+        border: 2px solid var(--primary);
       }
 
-      .moment-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .moment-header {
-        padding: 1.25rem;
-        background: rgba(255, 107, 107, 0.05);
+      .momen-besar-header {
+        padding: 1.5rem;
+        background: rgba(44, 62, 80, 0.05);
         cursor: pointer;
         transition: background 0.3s;
+        border-bottom: 2px solid var(--primary);
       }
 
-      .moment-header:hover {
-        background: rgba(255, 107, 107, 0.1);
+      .momen-besar-header:hover {
+        background: rgba(44, 62, 80, 0.1);
       }
 
-      .moment-title {
+      .momen-besar-title {
         font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .momen-besar-meta {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .momen-besar-content {
+        padding: 1.5rem;
+      }
+
+      /* Kategori Card */
+      .kategori-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--secondary);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .kategori-header {
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+
+      .kategori-title {
+        font-weight: 600;
         color: var(--dark);
         margin-bottom: 0.25rem;
         font-size: 1.1rem;
       }
 
-      .moment-meta {
+      .kategori-meta {
         color: #6c757d;
         font-size: 0.8rem;
       }
 
-      .moment-content {
-        padding: 1.25rem;
+      /* Sub Momen Item */
+      .sub-momen-item {
+        background: white;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border: 1px solid #e9ecef;
+        transition: all 0.3s ease;
       }
 
-      /* Buttons */
+      .sub-momen-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sub-momen-item.achieved {
+        background: rgba(39, 174, 96, 0.05);
+        border-color: var(--success);
+      }
+
+      .sub-momen-content {
+        display: flex;
+        justify-content: between;
+        align-items: center;
+      }
+
+      .sub-momen-info {
+        flex: 1;
+      }
+
+      .sub-momen-name {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+
+      .sub-momen-date {
+        color: #6c757d;
+        font-size: 0.8rem;
+      }
+
+      .sub-momen-actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+
       .btn {
-        border-radius: 50px;
-        padding: 0.6rem 1.25rem;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
         font-weight: 600;
         transition: all 0.3s ease;
         font-size: 0.9rem;
-        min-height: 44px;
+        min-height: 40px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -228,7 +266,7 @@
       }
 
       .btn-primary:hover {
-        background: #ff5252;
+        background: #2c3e50;
         transform: translateY(-2px);
       }
 
@@ -237,19 +275,23 @@
         border: none;
       }
 
+      .btn-warning {
+        background: var(--warning);
+        border: none;
+      }
+
       .btn-light {
         background: white;
-        border: none;
+        border: 1px solid #dee2e6;
         color: var(--dark);
       }
 
       .btn-sm {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
-        min-height: 36px;
+        min-height: 32px;
       }
 
-      /* Floating Button */
       .floating-btn {
         position: fixed;
         bottom: 1.5rem;
@@ -263,7 +305,7 @@
         align-items: center;
         justify-content: center;
         font-size: 1.25rem;
-        box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+        box-shadow: 0 5px 20px rgba(231, 76, 60, 0.5);
         z-index: 1000;
         transition: all 0.3s ease;
         animation: pulse 2s infinite;
@@ -271,22 +313,21 @@
 
       .floating-btn:hover {
         transform: scale(1.1);
-        box-shadow: 0 8px 25px rgba(255, 209, 102, 0.7);
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
       }
 
       @keyframes pulse {
         0% {
-          box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+          box-shadow: 0 5px 20px rgba(231, 76, 60, 0.5);
         }
         50% {
-          box-shadow: 0 5px 30px rgba(255, 209, 102, 0.8);
+          box-shadow: 0 5px 30px rgba(231, 76, 60, 0.8);
         }
         100% {
-          box-shadow: 0 5px 20px rgba(255, 209, 102, 0.5);
+          box-shadow: 0 5px 20px rgba(231, 76, 60, 0.5);
         }
       }
 
-      /* Empty State */
       .empty-state {
         text-align: center;
         padding: 2.5rem 1rem;
@@ -296,177 +337,45 @@
       .empty-state i {
         font-size: 3rem;
         margin-bottom: 1rem;
-        color: var(--accent);
+        color: #dee2e6;
       }
 
       .empty-state h3 {
         margin-bottom: 0.75rem;
-        color: var(--dark);
+        color: #6c757d;
         font-size: 1.25rem;
       }
 
-      /* Modal */
       .modal-content {
         border-radius: 15px;
         border: none;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
       }
 
-      .modal-header {
-        padding: 1.25rem;
-      }
-
-      .modal-body {
-        padding: 1.25rem;
-      }
-
-      .modal-footer {
-        padding: 1rem 1.25rem;
-      }
-
-      /* Form Controls */
       .form-control,
       .form-select {
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 0.75rem;
         border: 1px solid #e0e0e0;
         transition: all 0.3s ease;
-        font-size: 1rem;
       }
 
       .form-control:focus,
       .form-select:focus {
         border-color: var(--primary);
-        box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+        box-shadow: 0 0 0 0.25rem rgba(44, 62, 80, 0.25);
       }
 
-      /* Image Upload */
-      .image-upload-container {
-        border: 2px dashed var(--secondary);
-        border-radius: 10px;
-        padding: 1.5rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        margin-bottom: 1rem;
-        background: rgba(78, 205, 196, 0.05);
-      }
-
-      .image-upload-container:hover {
-        border-color: var(--primary);
-        background: rgba(255, 107, 107, 0.05);
-      }
-
-      .image-preview {
-        max-width: 100%;
-        max-height: 200px;
-        border-radius: 10px;
-        margin: 0.75rem auto;
-        display: block;
-        border: 2px solid var(--secondary);
-      }
-
-      .item-image {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-right: 0.75rem;
-        border: 2px solid var(--secondary);
-        cursor: pointer;
-      }
-
-      .item-image-placeholder {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, var(--secondary), var(--primary));
-        border-radius: 8px;
-        margin-right: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.25rem;
-        border: 2px dashed var(--secondary);
-      }
-
-      /* Photo Gallery */
-      .photo-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-      }
-
-      .photo-thumbnail {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .photo-thumbnail:hover {
-        transform: scale(1.1);
-        border-color: var(--primary);
-      }
-
-      /* Memory Gallery */
-      .memory-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-      }
-
-      .memory-photo {
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid var(--accent);
-      }
-
-      .memory-photo:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--dark);
-        color: white;
-        padding: 2rem 0;
-        margin-top: 3rem;
-      }
-
-      /* Animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in {
-        animation: fadeIn 0.5s ease forwards;
-      }
-
-      /* Badge styles */
       .badge {
         font-size: 0.7rem;
         padding: 0.25rem 0.5rem;
       }
 
-      /* Confetti */
+      .progress {
+        height: 8px;
+        margin: 0.5rem 0;
+      }
+
       .confetti {
         position: fixed;
         width: 10px;
@@ -489,189 +398,185 @@
         }
       }
 
-      /* Mobile-specific improvements */
       @media (max-width: 576px) {
         .container {
           padding-left: 15px;
           padding-right: 15px;
         }
-
         .hero-title {
           font-size: 1.75rem;
         }
-
         .hero-subtitle {
           font-size: 0.9rem;
         }
-
         .stats-number {
           font-size: 1.75rem;
         }
-
         .section-title {
           font-size: 1.25rem;
         }
-
-        .moment-title {
-          font-size: 1rem;
-        }
-
         .btn {
           width: 100%;
           margin-bottom: 0.5rem;
         }
-
         .btn-group .btn {
           width: auto;
           margin-bottom: 0;
         }
-
-        .d-flex.justify-content-between {
-          flex-direction: column;
-        }
-
-        .d-flex.justify-content-between > * {
-          margin-bottom: 0.75rem;
-        }
-
-        .d-flex.justify-content-between > *:last-child {
-          margin-bottom: 0;
-        }
       }
 
-      /* Friend List */
-      .friend-list {
+      .hierarchy-indicator {
+        margin-left: 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .progress-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-text {
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+
+      /* Image Upload Styles */
+      .image-upload-container {
+        border: 2px dashed #ddd;
+        border-radius: 10px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        background: #f8f9fa;
+      }
+
+      .image-upload-container:hover {
+        border-color: var(--primary);
+        background: rgba(44, 62, 80, 0.05);
+      }
+
+      .image-preview {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 10px;
+        margin: 0.75rem auto;
+        display: block;
+        border: 2px solid var(--secondary);
+      }
+
+      .photo-gallery {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-top: 0.75rem;
       }
 
-      .friend-tag {
-        background: var(--secondary);
+      .photo-thumbnail {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .photo-thumbnail:hover {
+        transform: scale(1.1);
+        border-color: var(--primary);
+      }
+
+      /* People Tags */
+      .people-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .person-tag {
+        background: var(--primary);
         color: white;
-        padding: 0.25rem 0.5rem;
+        padding: 0.25rem 0.75rem;
         border-radius: 20px;
         font-size: 0.8rem;
-        display: inline-flex;
+        display: flex;
         align-items: center;
+        gap: 0.25rem;
       }
 
-      .friend-tag i {
-        margin-left: 0.25rem;
+      .person-tag .remove-person {
         cursor: pointer;
+        margin-left: 0.25rem;
       }
 
-      /* Swipe Gallery */
-      .swipe-gallery {
-        position: relative;
-        width: 100%;
-        height: 70vh;
-        overflow: hidden;
-        border-radius: 10px;
+      /* Photo Modal */
+      .photo-modal .modal-dialog {
+        max-width: 90%;
+        max-height: 90vh;
       }
 
-      .swipe-gallery-container {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.3s ease;
+      .photo-modal .modal-body {
+        padding: 0;
+        text-align: center;
+        background: #000;
       }
 
-      .swipe-gallery-slide {
-        flex: 0 0 100%;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .swipe-gallery-slide img {
+      .photo-modal .modal-body img {
         max-width: 100%;
-        max-height: 100%;
+        max-height: 80vh;
         object-fit: contain;
       }
 
-      .swipe-gallery-indicators {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        z-index: 10;
-      }
-
-      .swipe-gallery-indicator {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-
-      .swipe-gallery-indicator.active {
-        background-color: white;
-        transform: scale(1.2);
-      }
-
-      .swipe-gallery-nav {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .swipe-gallery:hover .swipe-gallery-nav {
-        opacity: 1;
-      }
-
-      .swipe-gallery-nav.prev {
-        left: 0;
-      }
-
-      .swipe-gallery-nav.next {
-        right: 0;
-      }
-
-      .swipe-gallery-nav-icon {
-        background-color: rgba(0, 0, 0, 0.5);
+      /* Edit Button Styles */
+      .edit-btn {
+        background: var(--warning);
+        border: none;
         color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
       }
 
-      /* Mobile swipe gallery improvements */
-      @media (max-width: 576px) {
-        .swipe-gallery {
-          height: 50vh;
-        }
+      .edit-btn:hover {
+        background: #e67e22;
+        transform: translateY(-2px);
+      }
 
-        .swipe-gallery-nav {
-          opacity: 1;
-          width: 40px;
-        }
+      /* People Management */
+      .people-management {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-        .swipe-gallery-nav-icon {
-          width: 35px;
-          height: 35px;
-          font-size: 14px;
-        }
+      .person-item {
+        display: flex;
+        justify-content: between;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .person-item:last-child {
+        border-bottom: none;
+      }
+
+      .person-info {
+        flex: 1;
+      }
+
+      .person-name {
+        font-weight: 500;
+        margin-bottom: 0.1rem;
+      }
+
+      .person-type {
+        font-size: 0.8rem;
+        color: #6c757d;
       }
     </style>
   </head>
@@ -680,7 +585,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <i class="fas fa-heart me-2"></i>Momen Seru Bersama Teman
+          <i class="fas fa-mountain me-2"></i>Momen Spesial
         </a>
         <button
           class="navbar-toggler"
@@ -693,13 +598,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Beranda</a>
+              <a class="nav-link active" href="#moments">Momen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#moments">Momen Saya</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#friends">Teman</a>
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#peopleManagementModal"
+                >Kelola Orang</a
+              >
             </li>
           </ul>
         </div>
@@ -709,17 +617,17 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="container text-center position-relative">
-        <h1 class="hero-title">Simpan Momen Berharga Bersama Teman</h1>
+        <h1 class="hero-title">Kelola Momen Spesial Anda</h1>
         <p class="hero-subtitle">
-          Kumpulkan kenangan indah, foto, dan cerita bersama teman-teman
-          terdekatmu
+          Atur pencapaian dan kenangan berharga dalam hidup Anda dengan sistem
+          hierarki yang terstruktur
         </p>
         <button
           class="btn btn-light btn-lg"
           data-bs-toggle="modal"
-          data-bs-target="#addMomentModal"
+          data-bs-target="#addMomenBesarModal"
         >
-          <i class="fas fa-plus me-2"></i>Buat Momen Baru
+          <i class="fas fa-plus me-2"></i>Buat Momen Besar
         </button>
       </div>
     </section>
@@ -730,20 +638,20 @@
         <div class="row g-3">
           <div class="col-4">
             <div class="stats-card fade-in">
-              <div class="stats-number" id="totalMoments">0</div>
-              <div class="stats-label">Momen</div>
+              <div class="stats-number" id="totalMomenBesar">0</div>
+              <div class="stats-label">Momen Besar</div>
             </div>
           </div>
           <div class="col-4">
             <div class="stats-card fade-in" style="animation-delay: 0.1s">
-              <div class="stats-number" id="totalFriends">0</div>
-              <div class="stats-label">Teman</div>
+              <div class="stats-number" id="totalKategori">0</div>
+              <div class="stats-label">Kategori</div>
             </div>
           </div>
           <div class="col-4">
             <div class="stats-card fade-in" style="animation-delay: 0.2s">
-              <div class="stats-number" id="totalPhotos">0</div>
-              <div class="stats-label">Foto</div>
+              <div class="stats-number" id="totalSubMomen">0</div>
+              <div class="stats-label">Sub Momen</div>
             </div>
           </div>
         </div>
@@ -753,137 +661,61 @@
     <!-- Main Content -->
     <section class="main-content" id="moments">
       <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title mb-0">Hierarki Momen Saya</h2>
+          <div class="dropdown">
             <button
-              class="nav-link active"
-              id="moments-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#moments-content"
+              class="btn btn-outline-primary btn-sm dropdown-toggle"
               type="button"
-              role="tab"
+              data-bs-toggle="dropdown"
             >
-              <i class="fas fa-images me-2"></i>Momen
+              <i class="fas fa-filter me-1"></i>Filter
             </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="friends-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#friends-content"
-              type="button"
-              role="tab"
-            >
-              <i class="fas fa-users me-2"></i>Teman
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="myTabContent">
-          <!-- Moments Tab -->
-          <div
-            class="tab-pane fade show active"
-            id="moments-content"
-            role="tabpanel"
-          >
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <h2 class="section-title mb-0">Daftar Momen Saya</h2>
-              <div class="dropdown">
-                <button
-                  class="btn btn-outline-primary btn-sm dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item filter-option"
+                  data-filter="all"
+                  href="#"
+                  >Semua</a
                 >
-                  <i class="fas fa-filter me-1"></i>Filter
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="all"
-                      href="#"
-                      >Semua</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="recent"
-                      href="#"
-                      >Terbaru</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item filter-option"
-                      data-filter="favorite"
-                      href="#"
-                      >Favorit</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="momentsContainer">
-              <!-- Moment items will be dynamically added here -->
-            </div>
-
-            <!-- Empty State -->
-            <div id="emptyState" class="empty-state">
-              <i class="fas fa-images"></i>
-              <h3>Belum Ada Momen</h3>
-              <p>Mulai buat momen berharga bersama teman-temanmu!</p>
-              <button
-                class="btn btn-primary mt-3"
-                data-bs-toggle="modal"
-                data-bs-target="#addMomentModal"
-              >
-                <i class="fas fa-plus me-2"></i>Buat Momen Pertama
-              </button>
-            </div>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item filter-option"
+                  data-filter="completed"
+                  href="#"
+                  >Selesai</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item filter-option"
+                  data-filter="in-progress"
+                  href="#"
+                  >Dalam Proses</a
+                >
+              </li>
+            </ul>
           </div>
+        </div>
 
-          <!-- Friends Tab -->
-          <div class="tab-pane fade" id="friends-content" role="tabpanel">
-            <h2 class="section-title">Daftar Teman</h2>
+        <div id="momentsContainer">
+          <!-- Momen items will be dynamically added here -->
+        </div>
 
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Tambah Teman Baru</h5>
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="friendName"
-                    placeholder="Nama teman"
-                  />
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    id="addFriendBtn"
-                  >
-                    <i class="fas fa-plus me-1"></i>Tambah
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-0">
-                <div class="friends-list" id="friendsList">
-                  <!-- Friend items will be dynamically added here -->
-                </div>
-
-                <div id="emptyFriendsState" class="empty-state py-4">
-                  <i class="fas fa-user-friends"></i>
-                  <h5>Belum Ada Teman</h5>
-                  <p>Tambahkan teman untuk mulai berbagi momen!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+          <i class="fas fa-trophy"></i>
+          <h3>Belum Ada Momen Besar</h3>
+          <p>Mulai buat momen besar pertama Anda dan atur pencapaiannya!</p>
+          <button
+            class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#addMomenBesarModal"
+          >
+            <i class="fas fa-plus me-2"></i>Buat Momen Besar Pertama
+          </button>
         </div>
       </div>
     </section>
@@ -892,8 +724,8 @@
     <footer>
       <div class="container text-center">
         <p>
-          &copy; 2023 Momen Seru Bersama Teman. Simpan kenangan indah bersama
-          teman-temanmu!
+          &copy; 2023 Momen Spesial. Kelola setiap pencapaian berharga dalam
+          hidup Anda!
         </p>
       </div>
     </footer>
@@ -902,17 +734,17 @@
     <div
       class="floating-btn"
       data-bs-toggle="modal"
-      data-bs-target="#addMomentModal"
+      data-bs-target="#addMomenBesarModal"
     >
       <i class="fas fa-plus"></i>
     </div>
 
-    <!-- Add Moment Modal -->
-    <div class="modal fade" id="addMomentModal" tabindex="-1">
+    <!-- Add Momen Besar Modal -->
+    <div class="modal fade" id="addMomenBesarModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Buat Momen Baru</h5>
+            <h5 class="modal-title">Buat Momen Besar Baru</h5>
             <button
               type="button"
               class="btn-close"
@@ -920,74 +752,29 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="addMomentForm">
+            <form id="addMomenBesarForm">
               <div class="mb-3">
-                <label for="momentName" class="form-label">Nama Momen</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="momentName"
-                  placeholder="Contoh: Liburan ke Bali"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="momentDate" class="form-label">Tanggal Momen</label>
-                <input
-                  type="date"
-                  class="form-control"
-                  id="momentDate"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="momentLocation" class="form-label"
-                  >Lokasi (Opsional)</label
+                <label for="momenBesarName" class="form-label"
+                  >Nama Momen Besar</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="momentLocation"
-                  placeholder="Contoh: Pantai Kuta, Bali"
+                  id="momenBesarName"
+                  placeholder="Contoh: Pencapaian Karir 2024"
+                  required
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">Teman yang Terlibat</label>
-                <div id="friendsChecklist" class="friends-checklist">
-                  <!-- Friends checklist will be dynamically added here -->
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="momentDescription" class="form-label"
-                  >Deskripsi Momen (Opsional)</label
+                <label for="momenBesarDescription" class="form-label"
+                  >Deskripsi (Opsional)</label
                 >
                 <textarea
                   class="form-control"
-                  id="momentDescription"
+                  id="momenBesarDescription"
                   rows="3"
-                  placeholder="Ceritakan momen spesial ini..."
+                  placeholder="Deskripsi tentang momen besar ini..."
                 ></textarea>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Foto Momen (Opsional)</label>
-                <div
-                  class="image-upload-container"
-                  id="momentImageUploadContainer"
-                >
-                  <i class="fas fa-cloud-upload-alt fa-2x mb-3 text-muted"></i>
-                  <p class="mb-2">Klik atau drag & drop untuk upload foto</p>
-                  <small class="text-muted"
-                    >Format: JPG, PNG, GIF (Max 2MB)</small
-                  >
-                  <input
-                    type="file"
-                    id="momentImages"
-                    accept="image/*"
-                    multiple
-                    class="d-none"
-                  />
-                </div>
-                <div id="momentImagesPreview" class="memory-gallery"></div>
               </div>
             </form>
           </div>
@@ -999,9 +786,342 @@
             >
               Batal
             </button>
-            <button type="button" class="btn btn-primary" id="saveMomentBtn">
-              Simpan Momen
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="saveMomenBesarBtn"
+            >
+              Simpan Momen Besar
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Kategori Modal -->
+    <div class="modal fade" id="addKategoriModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Tambah Kategori</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addKategoriForm">
+              <input type="hidden" id="kategoriMomenBesarId" />
+              <div class="mb-3">
+                <label for="kategoriName" class="form-label"
+                  >Nama Kategori</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="kategoriName"
+                  placeholder="Contoh: Promosi Jabatan"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="kategoriDescription" class="form-label"
+                  >Deskripsi (Opsional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="kategoriDescription"
+                  rows="3"
+                  placeholder="Deskripsi kategori..."
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-primary" id="saveKategoriBtn">
+              Simpan Kategori
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add/Edit Sub Momen Modal -->
+    <div class="modal fade" id="addSubMomenModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="subMomenModalTitle">
+              Tambah Sub Momen
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addSubMomenForm">
+              <input type="hidden" id="subMomenMomenBesarId" />
+              <input type="hidden" id="subMomenKategoriId" />
+              <input type="hidden" id="subMomenId" />
+              <div class="mb-3">
+                <label for="subMomenName" class="form-label"
+                  >Nama Sub Momen</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subMomenName"
+                  placeholder="Contoh: Naik jadi Manager"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subMomenDate" class="form-label"
+                  >Tanggal Target</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="subMomenDate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subMomenDescription" class="form-label"
+                  >Deskripsi (Opsional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="subMomenDescription"
+                  rows="3"
+                  placeholder="Deskripsi sub momen..."
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Orang yang Terlibat</label>
+                <div class="people-tags" id="selectedPeopleTags"></div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-primary mt-2"
+                  onclick="openPeopleSelectionModal()"
+                >
+                  <i class="fas fa-plus me-1"></i>Pilih Orang
+                </button>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Foto Momen (Opsional)</label>
+                <div class="image-upload-container" id="subMomenImageUpload">
+                  <i class="fas fa-cloud-upload-alt fa-2x mb-3 text-muted"></i>
+                  <p class="mb-2">Klik atau drag & drop untuk upload foto</p>
+                  <small class="text-muted"
+                    >Format: JPG, PNG, GIF (Max 2MB)</small
+                  >
+                  <input
+                    type="file"
+                    id="subMomenImages"
+                    accept="image/*"
+                    multiple
+                    class="d-none"
+                  />
+                </div>
+                <div id="subMomenImagesPreview" class="photo-gallery"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-primary" id="saveSubMomenBtn">
+              Simpan Sub Momen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- People Selection Modal -->
+    <div class="modal fade" id="peopleSelectionModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pilih Orang yang Terlibat</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="peopleChecklist">
+              <!-- People checklist will be dynamically added here -->
+            </div>
+            <div id="emptyPeopleState" class="text-center py-4 text-muted">
+              <i class="fas fa-users fa-2x mb-3"></i>
+              <p>Belum ada orang yang ditambahkan</p>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#addPersonModal"
+              >
+                Tambah Orang Baru
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmPeopleSelection"
+            >
+              Simpan Pilihan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- People Management Modal -->
+    <div class="modal fade" id="peopleManagementModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kelola Orang</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="people-management">
+              <h6>Tambah Orang Baru</h6>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="personName"
+                  placeholder="Nama orang"
+                />
+                <select class="form-select" id="personType">
+                  <option value="family">Keluarga</option>
+                  <option value="friend">Teman</option>
+                  <option value="partner">Pacar/Pasangan</option>
+                  <option value="colleague">Rekan Kerja</option>
+                </select>
+                <button class="btn btn-primary" type="button" id="addPersonBtn">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div id="peopleList">
+              <!-- People list will be dynamically added here -->
+            </div>
+            <div id="emptyPeopleList" class="text-center py-4 text-muted">
+              <i class="fas fa-users fa-2x mb-3"></i>
+              <p>Belum ada orang yang ditambahkan</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Person Modal -->
+    <div class="modal fade" id="addPersonModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Tambah Orang Baru</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addPersonForm">
+              <div class="mb-3">
+                <label for="newPersonName" class="form-label">Nama</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newPersonName"
+                  placeholder="Nama orang"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="newPersonType" class="form-label">Jenis</label>
+                <select class="form-select" id="newPersonType">
+                  <option value="family">Keluarga</option>
+                  <option value="friend">Teman</option>
+                  <option value="partner">Pacar/Pasangan</option>
+                  <option value="colleague">Rekan Kerja</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-primary" id="savePersonBtn">
+              Simpan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo View Modal -->
+    <div class="modal fade photo-modal" id="photoModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Foto Momen</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalPhoto" src="" alt="Foto Momen" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -1030,93 +1150,53 @@
       </div>
     </div>
 
-    <!-- Swipe Gallery Modal -->
-    <div class="modal fade" id="swipeGalleryModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Foto Momen</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="swipe-gallery" id="swipeGallery">
-              <div class="swipe-gallery-container" id="swipeGalleryContainer">
-                <!-- Slides will be added dynamically -->
-              </div>
-              <div class="swipe-gallery-indicators" id="swipeGalleryIndicators">
-                <!-- Indicators will be added dynamically -->
-              </div>
-              <div class="swipe-gallery-nav prev" onclick="swipeGalleryPrev()">
-                <div class="swipe-gallery-nav-icon">
-                  <i class="fas fa-chevron-left"></i>
-                </div>
-              </div>
-              <div class="swipe-gallery-nav next" onclick="swipeGalleryNext()">
-                <div class="swipe-gallery-nav-icon">
-                  <i class="fas fa-chevron-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Data storage
-      let moments = JSON.parse(localStorage.getItem("moments")) || [];
-      let friends = JSON.parse(localStorage.getItem("friends")) || [];
-      let currentSwipeGalleryData = null;
+      let momenBesarList =
+        JSON.parse(localStorage.getItem("momenBesarList")) || [];
+      let peopleList = JSON.parse(localStorage.getItem("peopleList")) || [];
+      let currentSelectedPeople = [];
+      let currentEditingSubMomen = null;
+      let currentSubMomenImages = [];
 
       // DOM Elements
       const momentsContainer = document.getElementById("momentsContainer");
       const emptyState = document.getElementById("emptyState");
-      const friendsList = document.getElementById("friendsList");
-      const emptyFriendsState = document.getElementById("emptyFriendsState");
-      const addMomentForm = document.getElementById("addMomentForm");
-      const saveMomentBtn = document.getElementById("saveMomentBtn");
-      const addFriendBtn = document.getElementById("addFriendBtn");
-      const friendNameInput = document.getElementById("friendName");
-      const friendsChecklist = document.getElementById("friendsChecklist");
-      const totalMomentsEl = document.getElementById("totalMoments");
-      const totalFriendsEl = document.getElementById("totalFriends");
-      const totalPhotosEl = document.getElementById("totalPhotos");
-      const momentImagesInput = document.getElementById("momentImages");
-      const momentImagesPreview = document.getElementById(
-        "momentImagesPreview"
-      );
-      const momentImageUploadContainer = document.getElementById(
-        "momentImageUploadContainer"
-      );
-      const swipeGalleryContainer = document.getElementById(
-        "swipeGalleryContainer"
-      );
-      const swipeGalleryIndicators = document.getElementById(
-        "swipeGalleryIndicators"
-      );
+      const totalMomenBesarEl = document.getElementById("totalMomenBesar");
+      const totalKategoriEl = document.getElementById("totalKategori");
+      const totalSubMomenEl = document.getElementById("totalSubMomen");
 
       // Initialize the app
       document.addEventListener("DOMContentLoaded", function () {
         renderMoments();
-        renderFriends();
         updateStats();
         setupEventListeners();
         setupImageUpload();
-        setupSwipeGallery();
+        renderPeopleList();
       });
 
       // Setup event listeners
       function setupEventListeners() {
-        // Save moment button
-        saveMomentBtn.addEventListener("click", addMoment);
-
-        // Add friend button
-        addFriendBtn.addEventListener("click", addFriend);
+        // Save buttons
+        document
+          .getElementById("saveMomenBesarBtn")
+          .addEventListener("click", addMomenBesar);
+        document
+          .getElementById("saveKategoriBtn")
+          .addEventListener("click", addKategori);
+        document
+          .getElementById("saveSubMomenBtn")
+          .addEventListener("click", saveSubMomen);
+        document
+          .getElementById("addPersonBtn")
+          .addEventListener("click", addPerson);
+        document
+          .getElementById("savePersonBtn")
+          .addEventListener("click", savePerson);
+        document
+          .getElementById("confirmPeopleSelection")
+          .addEventListener("click", confirmPeopleSelection);
 
         // Filter options
         document.querySelectorAll(".filter-option").forEach((option) => {
@@ -1130,71 +1210,23 @@
 
       // Setup image upload functionality
       function setupImageUpload() {
-        // Click to upload
-        momentImageUploadContainer.addEventListener("click", function () {
-          momentImagesInput.click();
-        });
+        const imageUpload = document.getElementById("subMomenImageUpload");
+        const imageInput = document.getElementById("subMomenImages");
 
-        // File selection
-        momentImagesInput.addEventListener("change", function (e) {
-          handleImagesUpload(e.target.files);
-        });
+        if (imageUpload && imageInput) {
+          imageUpload.addEventListener("click", function () {
+            imageInput.click();
+          });
 
-        // Drag and drop
-        momentImageUploadContainer.addEventListener("dragover", function (e) {
-          e.preventDefault();
-          this.classList.add("dragover");
-        });
-
-        momentImageUploadContainer.addEventListener("dragleave", function (e) {
-          e.preventDefault();
-          this.classList.remove("dragover");
-        });
-
-        momentImageUploadContainer.addEventListener("drop", function (e) {
-          e.preventDefault();
-          this.classList.remove("dragover");
-          if (e.dataTransfer.files.length) {
-            handleImagesUpload(e.dataTransfer.files);
-          }
-        });
+          imageInput.addEventListener("change", function (e) {
+            handleImagesUpload(e.target.files);
+          });
+        }
       }
 
-      // Setup swipe gallery functionality
-      function setupSwipeGallery() {
-        const swipeGallery = document.getElementById("swipeGallery");
-        let startX = 0;
-        let endX = 0;
-
-        swipeGallery.addEventListener("touchstart", (e) => {
-          startX = e.touches[0].clientX;
-        });
-
-        swipeGallery.addEventListener("touchmove", (e) => {
-          endX = e.touches[0].clientX;
-        });
-
-        swipeGallery.addEventListener("touchend", () => {
-          const diff = startX - endX;
-          const minSwipeDistance = 50;
-
-          if (Math.abs(diff) > minSwipeDistance) {
-            if (diff > 0) {
-              // Swipe left - next photo
-              swipeGalleryNext();
-            } else {
-              // Swipe right - previous photo
-              swipeGalleryPrev();
-            }
-          }
-        });
-      }
-
-      // Handle multiple images upload
+      // Handle images upload
       function handleImagesUpload(files) {
         if (!files || files.length === 0) return;
-
-        momentImagesPreview.innerHTML = "";
 
         for (let i = 0; i < files.length; i++) {
           const file = files[i];
@@ -1210,274 +1242,535 @@
 
           const reader = new FileReader();
           reader.onload = function (e) {
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            img.className = "memory-photo";
-            img.onclick = function () {
-              openSwipeGallery([e.target.result]);
-            };
-            momentImagesPreview.appendChild(img);
+            currentSubMomenImages.push(e.target.result);
+            renderSubMomenImagesPreview();
           };
           reader.readAsDataURL(file);
         }
       }
 
-      // Add a new moment
-      function addMoment() {
-        const name = document.getElementById("momentName").value;
-        const date = document.getElementById("momentDate").value;
-        const location = document.getElementById("momentLocation").value;
-        const description = document.getElementById("momentDescription").value;
+      // Render sub momen images preview
+      function renderSubMomenImagesPreview() {
+        const preview = document.getElementById("subMomenImagesPreview");
+        preview.innerHTML = "";
 
-        if (!name || !date) {
-          alert("Nama dan tanggal momen harus diisi!");
+        currentSubMomenImages.forEach((image, index) => {
+          const img = document.createElement("img");
+          img.src = image;
+          img.className = "photo-thumbnail";
+          img.onclick = function () {
+            viewPhoto(image);
+          };
+
+          const removeBtn = document.createElement("button");
+          removeBtn.className = "btn btn-sm btn-danger ms-1";
+          removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+          removeBtn.onclick = function (e) {
+            e.stopPropagation();
+            currentSubMomenImages.splice(index, 1);
+            renderSubMomenImagesPreview();
+          };
+
+          const container = document.createElement("div");
+          container.className = "d-inline-block";
+          container.appendChild(img);
+          container.appendChild(removeBtn);
+          preview.appendChild(container);
+        });
+      }
+
+      // Add Momen Besar
+      function addMomenBesar() {
+        const name = document.getElementById("momenBesarName").value.trim();
+        const description = document
+          .getElementById("momenBesarDescription")
+          .value.trim();
+
+        if (!name) {
+          alert("Nama momen besar harus diisi!");
           return;
         }
 
-        // Get selected friends
-        const selectedFriends = [];
-        document
-          .querySelectorAll(".friend-checkbox:checked")
-          .forEach((checkbox) => {
-            selectedFriends.push(parseInt(checkbox.value));
-          });
-
-        // Get uploaded images
-        const images = [];
-        momentImagesPreview.querySelectorAll("img").forEach((img) => {
-          images.push(img.src);
-        });
-
-        const newMoment = {
+        const newMomenBesar = {
           id: Date.now(),
           name,
-          date,
-          location,
           description,
-          friends: selectedFriends,
-          images: images,
-          favorite: false,
+          categories: [],
           createdAt: new Date().toISOString(),
         };
 
-        moments.push(newMoment);
+        momenBesarList.push(newMomenBesar);
         saveToLocalStorage();
         renderMoments();
         updateStats();
 
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Momen berhasil ditambahkan!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
-
-        // Reset form
-        addMomentForm.reset();
-        momentImagesPreview.innerHTML = "";
-        const addMomentModal = bootstrap.Modal.getInstance(
-          document.getElementById("addMomentModal")
-        );
-        addMomentModal.hide();
-
-        // Add confetti animation
-        createConfetti();
+        // Show success
+        showSuccess("Momen besar berhasil ditambahkan!");
+        document.getElementById("addMomenBesarForm").reset();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addMomenBesarModal")
+        ).hide();
       }
 
-      // Add a new friend
-      function addFriend() {
-        const name = friendNameInput.value.trim();
+      // Add Kategori
+      function addKategori() {
+        const momenBesarId = parseInt(
+          document.getElementById("kategoriMomenBesarId").value
+        );
+        const name = document.getElementById("kategoriName").value.trim();
+        const description = document
+          .getElementById("kategoriDescription")
+          .value.trim();
 
         if (!name) {
-          alert("Nama teman harus diisi!");
+          alert("Nama kategori harus diisi!");
           return;
         }
 
-        // Check if friend already exists
-        if (
-          friends.some(
-            (friend) => friend.name.toLowerCase() === name.toLowerCase()
-          )
-        ) {
-          alert("Teman dengan nama ini sudah ada!");
-          return;
-        }
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
 
-        const newFriend = {
+        const newKategori = {
           id: Date.now(),
           name,
-          addedAt: new Date().toISOString(),
+          description,
+          subMoments: [],
         };
 
-        friends.push(newFriend);
+        momenBesar.categories.push(newKategori);
         saveToLocalStorage();
-        renderFriends();
+        renderMoments();
         updateStats();
-        renderFriendsChecklist();
 
-        // Clear input
-        friendNameInput.value = "";
+        // Show success
+        showSuccess("Kategori berhasil ditambahkan!");
+        document.getElementById("addKategoriForm").reset();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addKategoriModal")
+        ).hide();
+      }
 
-        // Show success message
-        document.getElementById("successMessage").textContent =
-          "Teman berhasil ditambahkan!";
-        const successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
+      // Save Sub Momen (Add or Edit)
+      function saveSubMomen() {
+        const momenBesarId = parseInt(
+          document.getElementById("subMomenMomenBesarId").value
         );
-        successModal.show();
-      }
+        const kategoriId = parseInt(
+          document.getElementById("subMomenKategoriId").value
+        );
+        const subMomenId = parseInt(
+          document.getElementById("subMomenId").value
+        );
+        const name = document.getElementById("subMomenName").value.trim();
+        const date = document.getElementById("subMomenDate").value;
+        const description = document
+          .getElementById("subMomenDescription")
+          .value.trim();
 
-      // Delete a moment
-      function deleteMoment(id) {
-        if (confirm("Apakah Anda yakin ingin menghapus momen ini?")) {
-          moments = moments.filter((m) => m.id !== id);
-          saveToLocalStorage();
-          renderMoments();
-          updateStats();
+        if (!name || !date) {
+          alert("Nama dan tanggal sub momen harus diisi!");
+          return;
         }
-      }
 
-      // Delete a friend
-      function deleteFriend(id) {
-        if (confirm("Apakah Anda yakin ingin menghapus teman ini?")) {
-          friends = friends.filter((f) => f.id !== id);
-          saveToLocalStorage();
-          renderFriends();
-          updateStats();
-          renderFriendsChecklist();
-        }
-      }
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
 
-      // Toggle favorite status
-      function toggleFavorite(id) {
-        const moment = moments.find((m) => m.id === id);
-        if (moment) {
-          moment.favorite = !moment.favorite;
-          saveToLocalStorage();
-          renderMoments();
-        }
-      }
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
 
-      // Toggle moment details visibility
-      function toggleMomentDetails(id) {
-        const detailsContainer = document.getElementById(`details-${id}`);
-        const toggleIcon = document.getElementById(`toggle-icon-${id}`);
+        let subMomen;
+        if (currentEditingSubMomen) {
+          // Edit existing sub momen
+          subMomen = kategori.subMoments.find((s) => s.id === subMomenId);
+          if (!subMomen) return;
 
-        if (detailsContainer.style.display === "none") {
-          detailsContainer.style.display = "block";
-          toggleIcon.className = "fas fa-chevron-up";
+          subMomen.name = name;
+          subMomen.date = date;
+          subMomen.description = description;
+          subMomen.people = [...currentSelectedPeople];
+          subMomen.images = [...currentSubMomenImages];
         } else {
-          detailsContainer.style.display = "none";
-          toggleIcon.className = "fas fa-chevron-down";
+          // Add new sub momen
+          subMomen = {
+            id: Date.now(),
+            name,
+            date,
+            description,
+            people: [...currentSelectedPeople],
+            images: [...currentSubMomenImages],
+            achieved: false,
+          };
+          kategori.subMoments.push(subMomen);
+        }
+
+        saveToLocalStorage();
+        renderMoments();
+        updateStats();
+
+        // Show success
+        showSuccess(
+          currentEditingSubMomen
+            ? "Sub momen berhasil diperbarui!"
+            : "Sub momen berhasil ditambahkan!"
+        );
+        resetSubMomenForm();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addSubMomenModal")
+        ).hide();
+      }
+
+      // Reset sub momen form
+      function resetSubMomenForm() {
+        currentEditingSubMomen = null;
+        currentSelectedPeople = [];
+        currentSubMomenImages = [];
+        document.getElementById("subMomenId").value = "";
+        document.getElementById("addSubMomenForm").reset();
+        document.getElementById("selectedPeopleTags").innerHTML = "";
+        document.getElementById("subMomenImagesPreview").innerHTML = "";
+        document.getElementById("subMomenModalTitle").textContent =
+          "Tambah Sub Momen";
+      }
+
+      // Edit Sub Momen
+      function editSubMomen(momenBesarId, kategoriId, subMomenId) {
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
+
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
+
+        const subMomen = kategori.subMoments.find((s) => s.id === subMomenId);
+        if (!subMomen) return;
+
+        // Set form values
+        document.getElementById("subMomenMomenBesarId").value = momenBesarId;
+        document.getElementById("subMomenKategoriId").value = kategoriId;
+        document.getElementById("subMomenId").value = subMomenId;
+        document.getElementById("subMomenName").value = subMomen.name;
+        document.getElementById("subMomenDate").value = subMomen.date;
+        document.getElementById("subMomenDescription").value =
+          subMomen.description || "";
+
+        // Set people
+        currentSelectedPeople = subMomen.people || [];
+        renderSelectedPeopleTags();
+
+        // Set images
+        currentSubMomenImages = subMomen.images || [];
+        renderSubMomenImagesPreview();
+
+        // Update modal title
+        document.getElementById("subMomenModalTitle").textContent =
+          "Edit Sub Momen";
+        currentEditingSubMomen = subMomen;
+
+        // Show modal
+        new bootstrap.Modal(document.getElementById("addSubMomenModal")).show();
+      }
+
+      // Delete functions
+      function deleteMomenBesar(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus momen besar ini?")) {
+          momenBesarList = momenBesarList.filter((m) => m.id !== id);
+          saveToLocalStorage();
+          renderMoments();
+          updateStats();
         }
       }
 
-      // Open swipe gallery modal
-      function openSwipeGallery(photos, startIndex = 0) {
-        currentSwipeGalleryData = {
-          photos: photos,
-          currentIndex: startIndex,
+      function deleteKategori(momenBesarId, kategoriId) {
+        if (confirm("Apakah Anda yakin ingin menghapus kategori ini?")) {
+          const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+          if (momenBesar) {
+            momenBesar.categories = momenBesar.categories.filter(
+              (c) => c.id !== kategoriId
+            );
+            saveToLocalStorage();
+            renderMoments();
+            updateStats();
+          }
+        }
+      }
+
+      function deleteSubMomen(momenBesarId, kategoriId, subMomenId) {
+        if (confirm("Apakah Anda yakin ingin menghapus sub momen ini?")) {
+          const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+          if (momenBesar) {
+            const kategori = momenBesar.categories.find(
+              (c) => c.id === kategoriId
+            );
+            if (kategori) {
+              kategori.subMoments = kategori.subMoments.filter(
+                (s) => s.id !== subMomenId
+              );
+              saveToLocalStorage();
+              renderMoments();
+              updateStats();
+            }
+          }
+        }
+      }
+
+      // Toggle functions
+      function toggleMomenBesarDetails(id) {
+        const content = document.getElementById(`momen-besar-content-${id}`);
+        const icon = document.getElementById(`momen-besar-icon-${id}`);
+        if (content.style.display === "none") {
+          content.style.display = "block";
+          icon.className = "fas fa-chevron-up";
+        } else {
+          content.style.display = "none";
+          icon.className = "fas fa-chevron-down";
+        }
+      }
+
+      function toggleKategoriDetails(id) {
+        const content = document.getElementById(`kategori-content-${id}`);
+        const icon = document.getElementById(`kategori-icon-${id}`);
+        if (content.style.display === "none") {
+          content.style.display = "block";
+          icon.className = "fas fa-chevron-up";
+        } else {
+          content.style.display = "none";
+          icon.className = "fas fa-chevron-down";
+        }
+      }
+
+      // Mark as achieved
+      function markSubMomenAchieved(momenBesarId, kategoriId, subMomenId) {
+        const momenBesar = momenBesarList.find((m) => m.id === momenBesarId);
+        if (!momenBesar) return;
+
+        const kategori = momenBesar.categories.find((c) => c.id === kategoriId);
+        if (!kategori) return;
+
+        const subMomen = kategori.subMoments.find((s) => s.id === subMomenId);
+        if (!subMomen) return;
+
+        subMomen.achieved = !subMomen.achieved;
+        saveToLocalStorage();
+        renderMoments();
+
+        if (subMomen.achieved) {
+          showSuccess(`Selamat! "${subMomen.name}" berhasil dicapai!`);
+          createConfetti();
+        }
+      }
+
+      // Open modal functions
+      function openAddKategoriModal(momenBesarId) {
+        document.getElementById("kategoriMomenBesarId").value = momenBesarId;
+        new bootstrap.Modal(document.getElementById("addKategoriModal")).show();
+      }
+
+      function openAddSubMomenModal(momenBesarId, kategoriId) {
+        resetSubMomenForm();
+        document.getElementById("subMomenMomenBesarId").value = momenBesarId;
+        document.getElementById("subMomenKategoriId").value = kategoriId;
+        new bootstrap.Modal(document.getElementById("addSubMomenModal")).show();
+      }
+
+      // People management functions
+      function addPerson() {
+        const name = document.getElementById("personName").value.trim();
+        const type = document.getElementById("personType").value;
+
+        if (!name) {
+          alert("Nama orang harus diisi!");
+          return;
+        }
+
+        savePersonToStorage(name, type);
+        document.getElementById("personName").value = "";
+      }
+
+      function savePerson() {
+        const name = document.getElementById("newPersonName").value.trim();
+        const type = document.getElementById("newPersonType").value;
+
+        if (!name) {
+          alert("Nama orang harus diisi!");
+          return;
+        }
+
+        savePersonToStorage(name, type);
+        document.getElementById("addPersonForm").reset();
+        bootstrap.Modal.getInstance(
+          document.getElementById("addPersonModal")
+        ).hide();
+      }
+
+      function savePersonToStorage(name, type) {
+        const newPerson = {
+          id: Date.now(),
+          name,
+          type,
+          createdAt: new Date().toISOString(),
         };
 
-        renderSwipeGallery();
-        const modal = new bootstrap.Modal(
-          document.getElementById("swipeGalleryModal")
+        peopleList.push(newPerson);
+        saveToLocalStorage();
+        renderPeopleList();
+        showSuccess("Orang berhasil ditambahkan!");
+      }
+
+      function deletePerson(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus orang ini?")) {
+          peopleList = peopleList.filter((p) => p.id !== id);
+          saveToLocalStorage();
+          renderPeopleList();
+        }
+      }
+
+      function renderPeopleList() {
+        const container = document.getElementById("peopleList");
+        const empty = document.getElementById("emptyPeopleList");
+
+        if (peopleList.length === 0) {
+          container.style.display = "none";
+          empty.style.display = "block";
+        } else {
+          container.style.display = "block";
+          empty.style.display = "none";
+          container.innerHTML = "";
+
+          peopleList.forEach((person) => {
+            const personItem = document.createElement("div");
+            personItem.className = "person-item";
+            personItem.innerHTML = `
+              <div class="person-info">
+                <div class="person-name">${person.name}</div>
+                <div class="person-type">${getPersonTypeLabel(
+                  person.type
+                )}</div>
+              </div>
+              <button class="btn btn-sm btn-outline-danger" onclick="deletePerson(${
+                person.id
+              })">
+                <i class="fas fa-trash"></i>
+              </button>
+            `;
+            container.appendChild(personItem);
+          });
+        }
+      }
+
+      function getPersonTypeLabel(type) {
+        const labels = {
+          family: "Keluarga",
+          friend: "Teman",
+          partner: "Pacar/Pasangan",
+          colleague: "Rekan Kerja",
+        };
+        return labels[type] || type;
+      }
+
+      // People selection functions
+      function openPeopleSelectionModal() {
+        renderPeopleChecklist();
+        new bootstrap.Modal(
+          document.getElementById("peopleSelectionModal")
+        ).show();
+      }
+
+      function renderPeopleChecklist() {
+        const container = document.getElementById("peopleChecklist");
+        const empty = document.getElementById("emptyPeopleState");
+
+        if (peopleList.length === 0) {
+          container.style.display = "none";
+          empty.style.display = "block";
+        } else {
+          container.style.display = "block";
+          empty.style.display = "none";
+          container.innerHTML = "";
+
+          peopleList.forEach((person) => {
+            const isSelected = currentSelectedPeople.includes(person.id);
+            const item = document.createElement("div");
+            item.className = "form-check mb-2";
+            item.innerHTML = `
+              <input class="form-check-input" type="checkbox" value="${
+                person.id
+              }" id="person-${person.id}" ${isSelected ? "checked" : ""}>
+              <label class="form-check-label" for="person-${person.id}">
+                ${
+                  person.name
+                } <span class="badge bg-secondary">${getPersonTypeLabel(
+              person.type
+            )}</span>
+              </label>
+            `;
+            container.appendChild(item);
+          });
+        }
+      }
+
+      function confirmPeopleSelection() {
+        const checkboxes = document.querySelectorAll(
+          '#peopleChecklist input[type="checkbox"]:checked'
         );
-        modal.show();
-      }
-
-      // Render swipe gallery
-      function renderSwipeGallery() {
-        if (!currentSwipeGalleryData) return;
-
-        const { photos, currentIndex } = currentSwipeGalleryData;
-
-        // Clear previous content
-        swipeGalleryContainer.innerHTML = "";
-        swipeGalleryIndicators.innerHTML = "";
-
-        // Add slides
-        photos.forEach((photo, index) => {
-          const slide = document.createElement("div");
-          slide.className = "swipe-gallery-slide";
-          slide.innerHTML = `<img src="${photo}" alt="Foto ${index + 1}">`;
-          swipeGalleryContainer.appendChild(slide);
-
-          // Add indicator
-          const indicator = document.createElement("div");
-          indicator.className = `swipe-gallery-indicator ${
-            index === currentIndex ? "active" : ""
-          }`;
-          indicator.setAttribute("data-index", index);
-          indicator.onclick = () => goToSlide(index);
-          swipeGalleryIndicators.appendChild(indicator);
-        });
-
-        // Update position
-        updateSwipeGalleryPosition();
-      }
-
-      // Update swipe gallery position
-      function updateSwipeGalleryPosition() {
-        if (!currentSwipeGalleryData) return;
-        swipeGalleryContainer.style.transform = `translateX(-${
-          currentSwipeGalleryData.currentIndex * 100
-        }%)`;
-      }
-
-      // Go to specific slide
-      function goToSlide(index) {
-        if (!currentSwipeGalleryData) return;
-        currentSwipeGalleryData.currentIndex = index;
-        updateSwipeGalleryPosition();
-        updateSwipeGalleryIndicators();
-      }
-
-      // Update swipe gallery indicators
-      function updateSwipeGalleryIndicators() {
-        if (!currentSwipeGalleryData) return;
-        const indicators = document.querySelectorAll(
-          ".swipe-gallery-indicator"
+        currentSelectedPeople = Array.from(checkboxes).map((cb) =>
+          parseInt(cb.value)
         );
-        indicators.forEach((indicator, index) => {
-          if (index === currentSwipeGalleryData.currentIndex) {
-            indicator.classList.add("active");
-          } else {
-            indicator.classList.remove("active");
+        renderSelectedPeopleTags();
+        bootstrap.Modal.getInstance(
+          document.getElementById("peopleSelectionModal")
+        ).hide();
+      }
+
+      function renderSelectedPeopleTags() {
+        const container = document.getElementById("selectedPeopleTags");
+        container.innerHTML = "";
+
+        currentSelectedPeople.forEach((personId) => {
+          const person = peopleList.find((p) => p.id === personId);
+          if (person) {
+            const tag = document.createElement("span");
+            tag.className = "person-tag";
+            tag.innerHTML = `
+              ${person.name}
+              <span class="remove-person" onclick="removeSelectedPerson(${person.id})">
+                <i class="fas fa-times"></i>
+              </span>
+            `;
+            container.appendChild(tag);
           }
         });
       }
 
-      // Swipe gallery next
-      function swipeGalleryNext() {
-        if (!currentSwipeGalleryData) return;
-        const nextIndex =
-          (currentSwipeGalleryData.currentIndex + 1) %
-          currentSwipeGalleryData.photos.length;
-        goToSlide(nextIndex);
+      function removeSelectedPerson(personId) {
+        currentSelectedPeople = currentSelectedPeople.filter(
+          (id) => id !== personId
+        );
+        renderSelectedPeopleTags();
       }
 
-      // Swipe gallery previous
-      function swipeGalleryPrev() {
-        if (!currentSwipeGalleryData) return;
-        const prevIndex =
-          currentSwipeGalleryData.currentIndex === 0
-            ? currentSwipeGalleryData.photos.length - 1
-            : currentSwipeGalleryData.currentIndex - 1;
-        goToSlide(prevIndex);
+      // Photo functions
+      function viewPhoto(photoSrc) {
+        document.getElementById("modalPhoto").src = photoSrc;
+        new bootstrap.Modal(document.getElementById("photoModal")).show();
       }
 
       // Render moments
       function renderMoments(filter = "all") {
-        let filteredMoments = moments;
+        let filteredMoments = momenBesarList;
 
-        if (filter === "recent") {
-          filteredMoments = [...moments].sort(
-            (a, b) => new Date(b.date) - new Date(a.date)
+        if (filter === "completed") {
+          filteredMoments = momenBesarList.filter((momenBesar) =>
+            momenBesar.categories.some(
+              (kategori) =>
+                kategori.subMoments.length > 0 &&
+                kategori.subMoments.every((sub) => sub.achieved)
+            )
           );
-        } else if (filter === "favorite") {
-          filteredMoments = moments.filter((m) => m.favorite);
+        } else if (filter === "in-progress") {
+          filteredMoments = momenBesarList.filter((momenBesar) =>
+            momenBesar.categories.some((kategori) =>
+              kategori.subMoments.some((sub) => !sub.achieved)
+            )
+          );
         }
 
         if (filteredMoments.length === 0) {
@@ -1486,194 +1779,281 @@
         } else {
           momentsContainer.style.display = "block";
           emptyState.style.display = "none";
-
           momentsContainer.innerHTML = "";
 
-          filteredMoments.forEach((moment, index) => {
-            const momentCard = document.createElement("div");
-            momentCard.className = "moment-card fade-in";
-            momentCard.style.animationDelay = `${index * 0.1}s`;
+          filteredMoments.forEach((momenBesar, index) => {
+            const totalSubMoments = momenBesar.categories.reduce(
+              (total, kategori) => total + kategori.subMoments.length,
+              0
+            );
+            const achievedSubMoments = momenBesar.categories.reduce(
+              (total, kategori) =>
+                total +
+                kategori.subMoments.filter((sub) => sub.achieved).length,
+              0
+            );
+            const progressPercentage =
+              totalSubMoments > 0
+                ? (achievedSubMoments / totalSubMoments) * 100
+                : 0;
 
-            // Format date
-            const date = new Date(moment.date);
-            const formattedDate = `${date
-              .getDate()
-              .toString()
-              .padStart(2, "0")}/${(date.getMonth() + 1)
-              .toString()
-              .padStart(2, "0")}/${date.getFullYear()}`;
+            const momenBesarCard = document.createElement("div");
+            momenBesarCard.className = "momen-besar-card fade-in";
+            momenBesarCard.style.animationDelay = `${index * 0.1}s`;
 
-            // Get friend names
-            const friendNames = moment.friends.map((friendId) => {
-              const friend = friends.find((f) => f.id === friendId);
-              return friend ? friend.name : "Unknown";
-            });
+            momenBesarCard.innerHTML = `
+              <div class="momen-besar-header" onclick="toggleMomenBesarDetails(${
+                momenBesar.id
+              })">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="momen-besar-title">${momenBesar.name}</h4>
+                    <p class="momen-besar-meta">
+                      ${
+                        momenBesar.categories.length
+                      } kategori • ${totalSubMoments} sub momen
+                      <span class="hierarchy-indicator">
+                        ${achievedSubMoments}/${totalSubMoments} selesai
+                      </span>
+                    </p>
+                  </div>
+                  <i id="momen-besar-icon-${
+                    momenBesar.id
+                  }" class="fas fa-chevron-down"></i>
+                </div>
+                ${
+                  totalSubMoments > 0
+                    ? `
+                  <div class="progress-info">
+                    <span class="progress-text">Progress: ${Math.round(
+                      progressPercentage
+                    )}%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: ${progressPercentage}%"></div>
+                  </div>
+                `
+                    : ""
+                }
+              </div>
+              <div class="momen-besar-content" id="momen-besar-content-${
+                momenBesar.id
+              }" style="display: none;">
+                ${
+                  momenBesar.description
+                    ? `<p class="mb-3">${momenBesar.description}</p>`
+                    : ""
+                }
+                
+                <div class="d-flex justify-content-end mb-3">
+                  <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddKategoriModal(${
+                    momenBesar.id
+                  })">
+                    <i class="fas fa-plus me-1"></i>Tambah Kategori
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" onclick="deleteMomenBesar(${
+                    momenBesar.id
+                  })">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+                
+                <div class="kategori-list">
+                  ${
+                    momenBesar.categories.length > 0
+                      ? momenBesar.categories
+                          .map((kategori) => {
+                            const kategoriAchieved = kategori.subMoments.filter(
+                              (sub) => sub.achieved
+                            ).length;
+                            const kategoriTotal = kategori.subMoments.length;
+                            const kategoriProgress =
+                              kategoriTotal > 0
+                                ? (kategoriAchieved / kategoriTotal) * 100
+                                : 0;
 
-            momentCard.innerHTML = `
-                        <div class="moment-header" onclick="toggleMomentDetails(${
-                          moment.id
+                            return `
+                      <div class="kategori-card">
+                        <div class="kategori-header" onclick="toggleKategoriDetails(${
+                          kategori.id
                         })">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4 class="moment-title">
-                                        ${moment.name}
-                                        ${
-                                          moment.favorite
-                                            ? '<span class="badge bg-warning ms-2"><i class="fas fa-star me-1"></i>Favorit</span>'
-                                            : ""
-                                        }
-                                    </h4>
-                                    <p class="moment-meta">${formattedDate} ${
-              moment.location ? `• ${moment.location}` : ""
-            }</p>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i id="toggle-icon-${
-                                      moment.id
-                                    }" class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="moment-content" id="details-${
-                          moment.id
-                        }" style="display: none;">
-                            ${
-                              moment.description
-                                ? `<p class="mb-3">${moment.description}</p>`
-                                : ""
-                            }
-                            
-                            <div class="mb-3">
-                                <h6>Teman yang Terlibat:</h6>
-                                <div class="friend-list">
-                                    ${friendNames
-                                      .map(
-                                        (name) =>
-                                          `<span class="friend-tag">${name}</span>`
-                                      )
-                                      .join("")}
-                                </div>
-                            </div>
-                            
-                            ${
-                              moment.images.length > 0
-                                ? `
-                                <div class="mb-3">
-                                    <h6>Foto Momen:</h6>
-                                    <div class="memory-gallery">
-                                        ${moment.images
-                                          .map(
-                                            (img, idx) => `
-                                            <img src="${img}" class="memory-photo" onclick="openSwipeGallery(${JSON.stringify(
-                                              moment.images
-                                            ).replace(
-                                              /"/g,
-                                              "&quot;"
-                                            )}, ${idx})" alt="Foto momen ${
-                                              idx + 1
-                                            }">
-                                        `
-                                          )
-                                          .join("")}
-                                    </div>
-                                </div>
-                            `
-                                : ""
-                            }
-                            
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <button class="btn btn-sm ${
-                                      moment.favorite
-                                        ? "btn-warning"
-                                        : "btn-outline-warning"
-                                    }" onclick="event.stopPropagation(); toggleFavorite(${
-              moment.id
-            })">
-                                        <i class="fas ${
-                                          moment.favorite
-                                            ? "fa-star"
-                                            : "fa-star"
-                                        } me-1"></i>${
-              moment.favorite ? "Favorit" : "Tandai Favorit"
-            }
-                                    </button>
-                                </div>
-                                <div>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="event.stopPropagation(); deleteMoment(${
-                                      moment.id
-                                    })">
-                                        <i class="fas fa-trash me-1"></i>Hapus
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-
-            momentsContainer.appendChild(momentCard);
-          });
-        }
-      }
-
-      // Render friends
-      function renderFriends() {
-        if (friends.length === 0) {
-          friendsList.style.display = "none";
-          emptyFriendsState.style.display = "block";
-        } else {
-          friendsList.style.display = "block";
-          emptyFriendsState.style.display = "none";
-
-          friendsList.innerHTML = "";
-
-          friends.forEach((friend) => {
-            const friendItem = document.createElement("div");
-            friendItem.className = "p-3 border-bottom";
-
-            friendItem.innerHTML = `
-                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 class="mb-1">${friend.name}</h6>
-                                <small class="text-muted">Ditambahkan: ${new Date(
-                                  friend.addedAt
-                                ).toLocaleDateString("id-ID")}</small>
+                              <h5 class="kategori-title">${kategori.name}</h5>
+                              <p class="kategori-meta">
+                                ${kategoriTotal} sub momen
+                                <span class="hierarchy-indicator">
+                                  ${kategoriAchieved}/${kategoriTotal} selesai
+                                </span>
+                              </p>
                             </div>
-                            <button class="btn btn-sm btn-outline-danger" onclick="deleteFriend(${
-                              friend.id
-                            })">
-                                <i class="fas fa-trash"></i>
-                            </button>
+                            <i id="kategori-icon-${
+                              kategori.id
+                            }" class="fas fa-chevron-down"></i>
+                          </div>
+                          ${
+                            kategoriTotal > 0
+                              ? `
+                            <div class="progress-info">
+                              <span class="progress-text">Progress: ${Math.round(
+                                kategoriProgress
+                              )}%</span>
+                            </div>
+                            <div class="progress">
+                              <div class="progress-bar bg-info" role="progressbar" style="width: ${kategoriProgress}%"></div>
+                            </div>
+                          `
+                              : ""
+                          }
                         </div>
-                    `;
+                        <div class="kategori-content" id="kategori-content-${
+                          kategori.id
+                        }" style="display: none;">
+                          ${
+                            kategori.description
+                              ? `<p class="mb-2">${kategori.description}</p>`
+                              : ""
+                          }
+                          
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div></div>
+                            <div>
+                              <button class="btn btn-sm btn-outline-primary me-2" onclick="openAddSubMomenModal(${
+                                momenBesar.id
+                              }, ${kategori.id})">
+                                <i class="fas fa-plus me-1"></i>Tambah Sub Momen
+                              </button>
+                              <button class="btn btn-sm btn-outline-danger" onclick="deleteKategori(${
+                                momenBesar.id
+                              }, ${kategori.id})">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                          
+                          <div class="sub-momen-list">
+                            ${
+                              kategori.subMoments.length > 0
+                                ? kategori.subMoments
+                                    .map((subMomen) => {
+                                      const peopleNames = (
+                                        subMomen.people || []
+                                      ).map((personId) => {
+                                        const person = peopleList.find(
+                                          (p) => p.id === personId
+                                        );
+                                        return person ? person.name : "Unknown";
+                                      });
 
-            friendsList.appendChild(friendItem);
+                                      return `
+                                <div class="sub-momen-item ${
+                                  subMomen.achieved ? "achieved" : ""
+                                }">
+                                  <div class="sub-momen-content">
+                                    <div class="sub-momen-info">
+                                      <div class="sub-momen-name">
+                                        ${subMomen.name}
+                                        ${
+                                          subMomen.achieved
+                                            ? '<span class="badge bg-success ms-2"><i class="fas fa-check me-1"></i>Tercapai</span>'
+                                            : '<span class="badge bg-warning ms-2"><i class="fas fa-clock me-1"></i>Dalam Proses</span>'
+                                        }
+                                      </div>
+                                      <div class="sub-momen-date">Target: ${formatDate(
+                                        subMomen.date
+                                      )}</div>
+                                      ${
+                                        subMomen.description
+                                          ? `<div class="sub-momen-description mt-1"><small>${subMomen.description}</small></div>`
+                                          : ""
+                                      }
+                                      ${
+                                        peopleNames.length > 0
+                                          ? `
+                                        <div class="mt-1">
+                                          <small class="text-muted">Dengan: ${peopleNames.join(
+                                            ", "
+                                          )}</small>
+                                        </div>
+                                      `
+                                          : ""
+                                      }
+                                      ${
+                                        subMomen.images &&
+                                        subMomen.images.length > 0
+                                          ? `
+                                        <div class="mt-2">
+                                          <div class="photo-gallery">
+                                            ${subMomen.images
+                                              .map(
+                                                (image, idx) => `
+                                              <img src="${image}" class="photo-thumbnail" onclick="viewPhoto('${image}')" alt="Foto ${
+                                                  idx + 1
+                                                }">
+                                            `
+                                              )
+                                              .join("")}
+                                          </div>
+                                        </div>
+                                      `
+                                          : ""
+                                      }
+                                    </div>
+                                    <div class="sub-momen-actions">
+                                      <button class="btn btn-sm edit-btn" onclick="editSubMomen(${
+                                        momenBesar.id
+                                      }, ${kategori.id}, ${subMomen.id})">
+                                        <i class="fas fa-edit"></i>
+                                      </button>
+                                      <button class="btn btn-sm ${
+                                        subMomen.achieved
+                                          ? "btn-warning"
+                                          : "btn-success"
+                                      }" onclick="markSubMomenAchieved(${
+                                        momenBesar.id
+                                      }, ${kategori.id}, ${subMomen.id})">
+                                        <i class="fas ${
+                                          subMomen.achieved
+                                            ? "fa-undo"
+                                            : "fa-check"
+                                        }"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-danger" onclick="deleteSubMomen(${
+                                        momenBesar.id
+                                      }, ${kategori.id}, ${subMomen.id})">
+                                        <i class="fas fa-times"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              `;
+                                    })
+                                    .join("")
+                                : `
+                              <div class="text-center py-3 text-muted">
+                                <p>Belum ada sub momen</p>
+                              </div>
+                            `
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                          })
+                          .join("")
+                      : `
+                    <div class="text-center py-4 text-muted">
+                      <p>Belum ada kategori</p>
+                    </div>
+                  `
+                  }
+                </div>
+              </div>
+            `;
+
+            momentsContainer.appendChild(momenBesarCard);
           });
         }
-      }
-
-      // Render friends checklist for moment creation
-      function renderFriendsChecklist() {
-        friendsChecklist.innerHTML = "";
-
-        if (friends.length === 0) {
-          friendsChecklist.innerHTML =
-            '<p class="text-muted">Belum ada teman. Tambahkan teman terlebih dahulu.</p>';
-          return;
-        }
-
-        friends.forEach((friend) => {
-          const checkboxContainer = document.createElement("div");
-          checkboxContainer.className = "form-check";
-
-          checkboxContainer.innerHTML = `
-                    <input class="form-check-input friend-checkbox" type="checkbox" value="${friend.id}" id="friend-${friend.id}">
-                    <label class="form-check-label" for="friend-${friend.id}">
-                        ${friend.name}
-                    </label>
-                `;
-
-          friendsChecklist.appendChild(checkboxContainer);
-        });
       }
 
       // Filter moments
@@ -1683,29 +2063,44 @@
 
       // Update statistics
       function updateStats() {
-        const totalMoments = moments.length;
-        const totalFriends = friends.length;
+        const totalMomenBesar = momenBesarList.length;
+        let totalKategori = 0;
+        let totalSubMomen = 0;
 
-        let totalPhotos = 0;
-        moments.forEach((moment) => {
-          totalPhotos += moment.images.length;
+        momenBesarList.forEach((momenBesar) => {
+          totalKategori += momenBesar.categories.length;
+          momenBesar.categories.forEach((kategori) => {
+            totalSubMomen += kategori.subMoments.length;
+          });
         });
 
-        totalMomentsEl.textContent = totalMoments;
-        totalFriendsEl.textContent = totalFriends;
-        totalPhotosEl.textContent = totalPhotos;
+        totalMomenBesarEl.textContent = totalMomenBesar;
+        totalKategoriEl.textContent = totalKategori;
+        totalSubMomenEl.textContent = totalSubMomen;
       }
 
-      // Save to localStorage
+      // Helper functions
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        });
+      }
+
       function saveToLocalStorage() {
-        localStorage.setItem("moments", JSON.stringify(moments));
-        localStorage.setItem("friends", JSON.stringify(friends));
+        localStorage.setItem("momenBesarList", JSON.stringify(momenBesarList));
+        localStorage.setItem("peopleList", JSON.stringify(peopleList));
       }
 
-      // Create confetti animation
-      function createConfetti() {
-        const colors = ["#FF6B6B", "#4ECDC4", "#FFD166", "#06D6A0", "#6A67CE"];
+      function showSuccess(message) {
+        document.getElementById("successMessage").textContent = message;
+        new bootstrap.Modal(document.getElementById("successModal")).show();
+      }
 
+      function createConfetti() {
+        const colors = ["#2c3e50", "#3498db", "#e74c3c", "#27ae60", "#9b59b6"];
         for (let i = 0; i < 50; i++) {
           const confetti = document.createElement("div");
           confetti.className = "confetti";
@@ -1715,17 +2110,10 @@
           confetti.style.width = Math.random() * 10 + 5 + "px";
           confetti.style.height = Math.random() * 10 + 5 + "px";
           confetti.style.animationDelay = Math.random() * 5 + "s";
-
           document.body.appendChild(confetti);
-
-          setTimeout(() => {
-            confetti.remove();
-          }, 5000);
+          setTimeout(() => confetti.remove(), 5000);
         }
       }
-
-      // Initialize friends checklist
-      renderFriendsChecklist();
     </script>
   </body>
 </html>
