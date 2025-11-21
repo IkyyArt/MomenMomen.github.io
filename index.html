@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      /* CSS tetap sama seperti sebelumnya */
       :root {
         --primary: #2c3e50;
         --secondary: #3498db;
@@ -1101,7 +1102,7 @@
       </div>
     </div>
 
-    <!-- Photo Modal - SAMA PERSIS SEPERTI DI WISHLIST -->
+    <!-- Photo Modal - DIPERBAIKI: Tag penutup yang benar -->
     <div class="modal fade" id="photoModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -1115,6 +1116,7 @@
           </div>
           <div class="modal-body">
             <img id="modalPhoto" src="" alt="Foto Momen" class="img-fluid" />
+          </div>
         </div>
       </div>
     </div>
@@ -1172,7 +1174,31 @@
         renderPeopleList();
         setupEventListeners();
         setupImageUpload();
+
+        // Event delegation untuk elemen yang dibuat dinamis
+        setupEventDelegation();
       });
+
+      // Setup event delegation untuk elemen dinamis
+      function setupEventDelegation() {
+        document.addEventListener("click", function (e) {
+          // Toggle momen besar details
+          if (e.target.closest(".momen-besar-header")) {
+            const header = e.target.closest(".momen-besar-header");
+            const contentId = header.nextElementSibling.id;
+            const momenBesarId = contentId.replace("momen-besar-content-", "");
+            toggleMomenBesarDetails(parseInt(momenBesarId));
+          }
+
+          // Toggle kategori details
+          if (e.target.closest(".kategori-header")) {
+            const header = e.target.closest(".kategori-header");
+            const contentId = header.nextElementSibling.id;
+            const kategoriId = contentId.replace("kategori-content-", "");
+            toggleKategoriDetails(parseInt(kategoriId));
+          }
+        });
+      }
 
       // Setup event listeners
       function setupEventListeners() {
@@ -1192,6 +1218,17 @@
         document
           .getElementById("confirmPeopleSelection")
           .addEventListener("click", confirmPeopleSelection);
+
+        // Reset forms when modal is hidden
+        document
+          .getElementById("addMomenBesarModal")
+          .addEventListener("hidden.bs.modal", resetMomenBesarForm);
+        document
+          .getElementById("addKategoriModal")
+          .addEventListener("hidden.bs.modal", resetKategoriForm);
+        document
+          .getElementById("addSubMomenModal")
+          .addEventListener("hidden.bs.modal", resetSubMomenForm);
       }
 
       // Setup image upload functionality
@@ -1821,7 +1858,7 @@
         forumTab.show();
       }
 
-      // Photo functions - SAMA PERSIS SEPERTI DI WISHLIST
+      // Photo functions
       function viewPhoto(photoSrc) {
         document.getElementById("modalPhoto").src = photoSrc;
         new bootstrap.Modal(document.getElementById("photoModal")).show();
@@ -1848,9 +1885,7 @@
             momenBesarCard.style.animationDelay = `${index * 0.1}s`;
 
             momenBesarCard.innerHTML = `
-              <div class="momen-besar-header" onclick="toggleMomenBesarDetails(${
-                momenBesar.id
-              })">
+              <div class="momen-besar-header">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <h4 class="momen-besar-title">${momenBesar.name}</h4>
@@ -1901,9 +1936,7 @@
 
                             return `
                       <div class="kategori-card">
-                        <div class="kategori-header" onclick="toggleKategoriDetails(${
-                          kategori.id
-                        })">
+                        <div class="kategori-header">
                           <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <h5 class="kategori-title">${kategori.name}</h5>
