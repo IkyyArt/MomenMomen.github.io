@@ -220,7 +220,7 @@
 
       .sub-momen-content {
         display: flex;
-        justify-content: between;
+        justify-content: space-between;
         align-items: center;
       }
 
@@ -581,41 +581,6 @@
         border-color: var(--primary);
       }
 
-      /* Photo Modal - IMPROVED */
-      .photo-modal .modal-dialog {
-        max-width: 80%;
-        max-height: 80vh;
-      }
-
-      .photo-modal .modal-content {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-      }
-
-      .photo-modal .modal-header {
-        background: var(--primary);
-        color: white;
-        border-bottom: none;
-      }
-
-      .photo-modal .modal-body {
-        padding: 1rem;
-        text-align: center;
-        background: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .photo-modal .modal-body img {
-        max-width: 100%;
-        max-height: 60vh;
-        object-fit: contain;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
       /* Edit Button Styles */
       .edit-btn {
         background: var(--warning);
@@ -653,15 +618,28 @@
           width: auto;
           margin-bottom: 0;
         }
-        .photo-modal .modal-dialog {
-          max-width: 95%;
-        }
       }
 
       .hierarchy-indicator {
         margin-left: 1rem;
         color: #6c757d;
         font-size: 0.9rem;
+      }
+
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
@@ -1123,8 +1101,8 @@
       </div>
     </div>
 
-    <!-- Photo View Modal - IMPROVED -->
-    <div class="modal fade photo-modal" id="photoModal" tabindex="-1">
+    <!-- Photo Modal - SAMA PERSIS SEPERTI DI WISHLIST -->
+    <div class="modal fade" id="photoModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -1137,7 +1115,6 @@
           </div>
           <div class="modal-body">
             <img id="modalPhoto" src="" alt="Foto Momen" class="img-fluid" />
-          </div>
         </div>
       </div>
     </div>
@@ -1844,7 +1821,7 @@
         forumTab.show();
       }
 
-      // Photo functions
+      // Photo functions - SAMA PERSIS SEPERTI DI WISHLIST
       function viewPhoto(photoSrc) {
         document.getElementById("modalPhoto").src = photoSrc;
         new bootstrap.Modal(document.getElementById("photoModal")).show();
