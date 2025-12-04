@@ -25,6 +25,473 @@
         --purple: #9b59b6;
       }
 
+      /* ========================================= */
+      /* ANIMASI OFFLINE 404 PAGE - TEMA MOMEN SPESIAL */
+      /* ========================================= */
+
+      /* Halaman 404 */
+      .page_404 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        z-index: 9999;
+        padding: 40px 0;
+        overflow: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        opacity: 0;
+        animation: fadeIn404 0.6s ease forwards;
+      }
+
+      @keyframes fadeIn404 {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .page_404 .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      /* Judul 404 */
+      .four_zero_four_text {
+        text-align: center;
+        margin-bottom: 20px;
+        animation: slideDown404 0.8s ease-out 0.3s both;
+      }
+
+      @keyframes slideDown404 {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .four_zero_four_text h1 {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 100px;
+        font-weight: 800;
+        color: var(--accent);
+        margin: 0;
+        text-shadow: 0 0 30px rgba(231, 76, 60, 0.5);
+        position: relative;
+        animation: pulse404 2s infinite alternate;
+      }
+
+      @keyframes pulse404 {
+        0% {
+          text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+          transform: scale(1);
+        }
+        100% {
+          text-shadow: 0 0 40px rgba(231, 76, 60, 0.8);
+          transform: scale(1.05);
+        }
+      }
+
+      /* Ikon Offline Khusus Momen Spesial */
+      .four_zero_four_bg {
+        height: 320px;
+        position: relative;
+        margin: 40px 0;
+        animation: float404 6s ease-in-out infinite;
+      }
+
+      @keyframes float404 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-25px);
+        }
+      }
+
+      .offline-icon-special {
+        font-size: 180px;
+        color: rgba(231, 76, 60, 0.7);
+        position: relative;
+        z-index: 1;
+        animation: heartbeat 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .offline-icon-special:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(
+          circle,
+          rgba(231, 76, 60, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        z-index: -1;
+        animation: pulseGlow 3s infinite;
+      }
+
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+
+      /* Sinyal WiFi Animasi */
+      .wifi-signal-special {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 240px;
+        height: 240px;
+        z-index: 2;
+      }
+
+      .signal-special {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 4px solid rgba(52, 152, 219, 0.3);
+        border-radius: 50%;
+        animation: ripple404 3s linear infinite;
+      }
+
+      .signal-special:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+        border-color: rgba(231, 76, 60, 0.4);
+      }
+
+      .signal-special:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        animation-delay: 0.5s;
+        border-color: rgba(52, 152, 219, 0.4);
+      }
+
+      .signal-special:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        animation-delay: 1s;
+        border-color: rgba(155, 89, 182, 0.4);
+      }
+
+      @keyframes ripple404 {
+        0% {
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      /* Konten 404 */
+      .contant_box_404 {
+        text-align: center;
+        margin-top: -20px;
+        animation: slideUp404 0.8s ease-out 0.6s both;
+      }
+
+      @keyframes slideUp404 {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .contant_box_404 h3 {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 32px;
+        margin-bottom: 15px;
+        color: white;
+        font-weight: 600;
+      }
+
+      .contant_box_404 p {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 25px;
+        line-height: 1.6;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Tombol 404 */
+      .link_404 {
+        color: white !important;
+        padding: 14px 35px;
+        background: linear-gradient(135deg, var(--accent) 0%, #c0392b 100%);
+        margin: 15px 12px;
+        display: inline-block;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        position: relative;
+        overflow: hidden;
+        animation: bounce404 2s infinite;
+        min-width: 180px;
+      }
+
+      @keyframes bounce404 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .link_404:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .link_404:hover:before {
+        left: 100%;
+      }
+
+      .link_404:hover {
+        background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+        color: white !important;
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(231, 76, 60, 0.6);
+      }
+
+      /* Tombol alternatif */
+      .btn-alt-404 {
+        background: linear-gradient(
+          135deg,
+          var(--secondary) 0%,
+          #2980b9 100%
+        ) !important;
+        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+      }
+
+      .btn-alt-404:hover {
+        background: linear-gradient(
+          135deg,
+          #2980b9 0%,
+          #1f639c 100%
+        ) !important;
+        box-shadow: 0 10px 25px rgba(52, 152, 219, 0.6);
+      }
+
+      /* Indikator Offline */
+      .offline-indicator-special {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        background: linear-gradient(135deg, var(--accent), #c0392b);
+        color: white;
+        padding: 14px 25px;
+        border-radius: 50px;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        font-size: 14px;
+        font-weight: 500;
+        animation: slideInRight404 0.5s ease-out,
+          pulseIndicator 2s infinite 0.5s;
+        transform: translateX(100px);
+        opacity: 0;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @keyframes slideInRight404 {
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes pulseIndicator {
+        0%,
+        100% {
+          box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        50% {
+          box-shadow: 0 6px 25px rgba(231, 76, 60, 0.7);
+        }
+      }
+
+      /* Indikator Online */
+      .online-indicator-special {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        background: linear-gradient(135deg, var(--success), #229954);
+        color: white;
+        padding: 14px 25px;
+        border-radius: 50px;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        font-size: 14px;
+        font-weight: 500;
+        animation: slideInRight404 0.5s ease-out,
+          pulseIndicatorOnline 2s infinite 0.5s;
+        transform: translateX(100px);
+        opacity: 0;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @keyframes pulseIndicatorOnline {
+        0%,
+        100% {
+          box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+        50% {
+          box-shadow: 0 6px 25px rgba(39, 174, 96, 0.7);
+        }
+      }
+
+      /* Responsive Design untuk 404 Page */
+      @media (max-width: 768px) {
+        .four_zero_four_text h1 {
+          font-size: 70px;
+        }
+
+        .offline-icon-special {
+          font-size: 140px;
+        }
+
+        .offline-icon-special:before {
+          width: 180px;
+          height: 180px;
+        }
+
+        .wifi-signal-special {
+          width: 200px;
+          height: 200px;
+        }
+
+        .signal-special:nth-child(3) {
+          width: 170px;
+          height: 170px;
+        }
+
+        .contant_box_404 h3 {
+          font-size: 26px;
+        }
+
+        .contant_box_404 p {
+          font-size: 16px;
+          padding: 0 15px;
+        }
+
+        .link_404 {
+          display: block;
+          margin: 12px auto;
+          width: 85%;
+          max-width: 280px;
+        }
+
+        .offline-indicator-special,
+        .online-indicator-special {
+          top: 20px;
+          right: 20px;
+          left: 20px;
+          text-align: center;
+          padding: 12px 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .four_zero_four_text h1 {
+          font-size: 60px;
+        }
+
+        .offline-icon-special {
+          font-size: 120px;
+        }
+
+        .offline-icon-special:before {
+          width: 150px;
+          height: 150px;
+        }
+
+        .wifi-signal-special {
+          width: 180px;
+          height: 180px;
+        }
+
+        .signal-special:nth-child(2) {
+          width: 120px;
+          height: 120px;
+        }
+
+        .signal-special:nth-child(3) {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      /* ========================================= */
+      /* STYLE UTAMA APLIKASI MOMEN SPESIAL */
+      /* ========================================= */
       * {
         margin: 0;
         padding: 0;
@@ -787,6 +1254,69 @@
     </style>
   </head>
   <body>
+    <!-- ========================================= -->
+    <!-- ELEMEN UNTUK OFFLINE/ONLINE INDICATOR -->
+    <!-- ========================================= -->
+
+    <!-- Indikator Offline -->
+    <div class="offline-indicator-special" id="offlineIndicator">
+      <i class="fas fa-wifi-slash me-2"></i>Koneksi internet terputus
+    </div>
+
+    <!-- Indikator Online -->
+    <div class="online-indicator-special" id="onlineIndicator">
+      <i class="fas fa-wifi me-2"></i>Koneksi internet pulih
+    </div>
+
+    <!-- Halaman 404 Offline -->
+    <section class="page_404" id="page404">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 text-center">
+            <div class="four_zero_four_text">
+              <h1><strong>404</strong></h1>
+            </div>
+
+            <div class="four_zero_four_bg">
+              <div class="offline-icon-special">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="wifi-signal-special">
+                <div class="signal-special"></div>
+                <div class="signal-special"></div>
+                <div class="signal-special"></div>
+              </div>
+            </div>
+
+            <div class="contant_box_404">
+              <h3 class="h2">Sepertinya Anda sedang offline</h3>
+
+              <p>
+                Momen Spesial membutuhkan koneksi internet untuk menyimpan data
+                dengan aman. Namun jangan khawatir, momen-momen yang sudah ada
+                masih dapat Anda lihat.
+              </p>
+              <p>
+                Pastikan perangkat Anda terhubung ke internet untuk pengalaman
+                penuh.
+              </p>
+
+              <button class="link_404" onclick="checkConnection()">
+                <i class="fas fa-redo me-2"></i>Coba Lagi
+              </button>
+              <button class="link_404 btn-alt-404" onclick="goToDashboard()">
+                <i class="fas fa-calendar-alt me-2"></i>Lihat Momen Saya
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- KONTEN UTAMA APLIKASI -->
+    <!-- ========================================= -->
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
@@ -1306,6 +1836,110 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // =============================================
+      // FUNGSI UNTUK MENANGANI STATUS KONEKSI
+      // =============================================
+
+      let isOnline = navigator.onLine;
+      let onlineIndicatorTimeout = null;
+
+      // Initialize app dengan pengecekan koneksi
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check connection status saat pertama kali load
+        checkConnection();
+
+        // Set up event listeners untuk status online/offline
+        window.addEventListener("online", handleOnlineStatus);
+        window.addEventListener("offline", handleOnlineStatus);
+
+        // Inisialisasi fungsi aplikasi utama
+        initializeApp();
+      });
+
+      // Handle online/offline status
+      function handleOnlineStatus() {
+        isOnline = navigator.onLine;
+
+        if (isOnline) {
+          // Online - hide 404 page
+          document.getElementById("page404").style.display = "none";
+          document.getElementById("offlineIndicator").style.display = "none";
+
+          // Show online indicator
+          showOnlineIndicator();
+
+          // Show main app
+          document.querySelector(".hero-section").style.display = "block";
+          document.querySelector(".stats-section").style.display = "block";
+          document.querySelector(".main-content").style.display = "block";
+          document.querySelector("footer").style.display = "block";
+          document.querySelector(".navbar").style.display = "flex";
+          document.querySelector(".floating-btn").style.display = "flex";
+        } else {
+          // Offline - show 404 page
+          document.getElementById("page404").style.display = "block";
+          document.getElementById("offlineIndicator").style.display = "block";
+
+          // Hide main app (tapi tetap bisa lihat yang sudah ada)
+          document.querySelector(".hero-section").style.display = "none";
+          document.querySelector(".stats-section").style.display = "none";
+          document.querySelector(".main-content").style.display = "none";
+          document.querySelector("footer").style.display = "none";
+          document.querySelector(".navbar").style.display = "none";
+          document.querySelector(".floating-btn").style.display = "none";
+
+          // Hide online indicator if visible
+          document.getElementById("onlineIndicator").style.display = "none";
+        }
+      }
+
+      // Show online indicator
+      function showOnlineIndicator() {
+        const onlineIndicator = document.getElementById("onlineIndicator");
+        onlineIndicator.style.display = "block";
+
+        // Auto-hide after 3 seconds
+        clearTimeout(onlineIndicatorTimeout);
+        onlineIndicatorTimeout = setTimeout(() => {
+          onlineIndicator.style.display = "none";
+        }, 3000);
+      }
+
+      // Check connection manually
+      function checkConnection() {
+        if (navigator.onLine) {
+          // Online
+          handleOnlineStatus();
+
+          // If we were on the 404 page, show success message
+          if (document.getElementById("page404").style.display === "block") {
+            showSuccess(
+              "Koneksi internet telah pulih! Aplikasi siap digunakan."
+            );
+          }
+        } else {
+          // Offline
+          handleOnlineStatus();
+        }
+      }
+
+      // Go to dashboard (from 404 page)
+      function goToDashboard() {
+        if (isOnline) {
+          document.getElementById("page404").style.display = "none";
+
+          // Show main app
+          document.querySelector(".hero-section").style.display = "block";
+          document.querySelector(".stats-section").style.display = "block";
+          document.querySelector(".main-content").style.display = "block";
+          document.querySelector("footer").style.display = "block";
+          document.querySelector(".navbar").style.display = "flex";
+          document.querySelector(".floating-btn").style.display = "flex";
+        } else {
+          alert("Anda masih offline. Silakan cek koneksi internet Anda.");
+        }
+      }
+
+      // =============================================
       // IMAGE COMPRESSION FUNCTIONS
       // =============================================
 
@@ -1393,7 +2027,7 @@
       const emptyPeopleList = document.getElementById("emptyPeopleList");
 
       // Initialize the app
-      document.addEventListener("DOMContentLoaded", function () {
+      function initializeApp() {
         renderMoments();
         updateStats();
         renderPeopleList();
@@ -1403,7 +2037,7 @@
 
         // Check Local Storage usage
         checkLocalStorageUsage();
-      });
+      }
 
       // Check Local Storage usage
       function checkLocalStorageUsage() {
@@ -1638,6 +2272,12 @@
 
       // Save Momen Besar (Add or Edit)
       function saveMomenBesar() {
+        // Cek koneksi
+        if (!isOnline) {
+          alert("Anda harus online untuk menyimpan momen besar!");
+          return;
+        }
+
         const id = parseInt(document.getElementById("momenBesarId").value);
         const name = document.getElementById("momenBesarName").value.trim();
         const description = document
@@ -1718,6 +2358,12 @@
 
       // Save Kategori (Add or Edit)
       function saveKategori() {
+        // Cek koneksi
+        if (!isOnline) {
+          alert("Anda harus online untuk menyimpan kategori!");
+          return;
+        }
+
         const momenBesarId = parseInt(
           document.getElementById("kategoriMomenBesarId").value
         );
@@ -1807,6 +2453,12 @@
 
       // Save Sub Momen (Add or Edit) - DENGAN GAMBAR TERKOMPRESI
       function saveSubMomen() {
+        // Cek koneksi
+        if (!isOnline) {
+          alert("Anda harus online untuk menyimpan sub momen!");
+          return;
+        }
+
         const momenBesarId = parseInt(
           document.getElementById("subMomenMomenBesarId").value
         );
